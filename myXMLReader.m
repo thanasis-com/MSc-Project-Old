@@ -99,16 +99,20 @@ for i = 0 : N-1
     if ~isempty(unwantedPoints)
         tempIndex = true(size(boundx, 1), 1);
         tempIndex(unwantedPoints) = false;
-        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+        boundx=boundx(tempIndex, :);
+        boundy=boundy(tempIndex, :);
+        allPoints=horzcat(boundx,boundy);
     end
     
-    %eliminate the parts of the vesicles that are outside the right forbidden
+    %eliminate the parts of the vesicles that are outside the left forbidden
     %line
     unwantedPoints=find(boundx<forbidWidS);
     if ~isempty(unwantedPoints)
         tempIndex = true(size(boundx, 1), 1);
         tempIndex(unwantedPoints) = false;
-        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+        boundx=boundx(tempIndex, :);
+        boundy=boundy(tempIndex, :);
+        allPoints=horzcat(boundx,boundy);
     end
     
     %eliminate the parts of the vesicles that are outside the bottom forbidden
@@ -117,7 +121,9 @@ for i = 0 : N-1
     if ~isempty(unwantedPoints)
         tempIndex = true(size(boundx, 1), 1);
         tempIndex(unwantedPoints) = false;
-        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+        boundx=boundx(tempIndex, :);
+        boundy=boundy(tempIndex, :);
+        allPoints=horzcat(boundx,boundy);
     end
         
     %eliminate the parts of the vesicles that are outside the top forbidden
@@ -126,7 +132,13 @@ for i = 0 : N-1
     if ~isempty(unwantedPoints)
         tempIndex = true(size(boundx, 1), 1);
         tempIndex(unwantedPoints) = false;
-        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+        boundx=boundx(tempIndex, :);
+        boundy=boundy(tempIndex, :);
+        allPoints=horzcat(boundx,boundy);
+    end
+    
+    if(isempty(allPoints))
+        continue;
     end
     
     numberPolygons = numberPolygons+1;
@@ -137,37 +149,37 @@ end
 allPolygon(numberPolygons+1:N) = [];
 N = numberPolygons;
 
-% compute the areas of annotations and their radii
-regionX = zeros(heightSize, widthSize);
-for i = 1:heightSize
-    regionX(i,:) = i;
-end
-regionY = zeros(heightSize, widthSize);
-for i = 1:widthSize
-    regionY(:,i) = i;
-end
-
-polyCen = zeros(N,2);  % annotation centre
-polyArea = zeros(N,1);  % annotation area
-finalRegion = zeros(heightSize, widthSize);
-grTru = cell(N, 1);
-radii = zeros(N,1);
-for i = 1:N
-    xv = allPolygon{i,1}(:,2);
-    yv = allPolygon{i,1}(:,1);        
-    IN = inpolygon(regionX,regionY,xv,yv);
-    grTru{i,1} = find(IN == 1);
-    numPoints = length(grTru{i,1});
-    radii(i) = round(sqrt(numPoints/pi));
-    finalRegion = finalRegion | IN;
-    
-    % calculate the annotation area and centre coordinates
-    A = numPoints; 
-    centroids = regionprops(IN,'centroid');    
-    polyCen(i, :) = centroids.Centroid;
-    polyArea(i) = A;
-    
-end
+% % compute the areas of annotations and their radii
+% regionX = zeros(heightSize, widthSize);
+% for i = 1:heightSize
+%     regionX(i,:) = i;
+% end
+% regionY = zeros(heightSize, widthSize);
+% for i = 1:widthSize
+%     regionY(:,i) = i;
+% end
+% 
+ polyCen = zeros(N,2);  % annotation centre
+ polyArea = zeros(N,1);  % annotation area
+% finalRegion = zeros(heightSize, widthSize);
+ grTru = cell(N, 1);
+ radii = zeros(N,1);
+% for i = 1:N
+%     xv = allPolygon{i,1}(:,2);
+%     yv = allPolygon{i,1}(:,1);        
+%     IN = inpolygon(regionX,regionY,xv,yv);
+%     grTru{i,1} = find(IN == 1);
+%     numPoints = length(grTru{i,1});
+%     radii(i) = round(sqrt(numPoints/pi));
+%     finalRegion = finalRegion | IN;
+%     
+%     % calculate the annotation area and centre coordinates
+%     A = numPoints; 
+%     %centroids = regionprops(IN,'centroid');    
+%     %polyCen(i, :) = centroids.Centroid;
+%     polyArea(i) = A;
+%     
+% end
 
 
 
