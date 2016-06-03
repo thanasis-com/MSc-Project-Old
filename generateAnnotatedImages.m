@@ -4,15 +4,20 @@ images=dir('DataSet/*.png');
 %get all xmls files
 xmls=dir('DataSet/*.xml');
 
-for i=1:length(images)
+numOfVesicles=0;
+for j=1:length(images)
     
     %read a new image
-    I=imread(cat(2, 'DataSet/', images(i).name));
+    I=imread(cat(2, 'DataSet/', images(j).name));
     I = rgb2gray(I);
     [rows,cols]=size(I);
     
+    %extract image id (exrtacted by the name of the file)
+    imageID=strtok(cat(2, images(j).name), 'p');
+    
+    
     %read the respective xml file
-    xmlFile=cat(2, 'DataSet/', xmls(i).name);
+    xmlFile=cat(2, 'DataSet/', xmls(j).name);
     
     % forbidden lines
     r = 0.8;
@@ -24,6 +29,8 @@ for i=1:length(images)
     forbiddenLines.forbidHeiE = forbiddenLines.forbidHeiS+forbidHei-1;
 
     [N, grTru, allPolygon, radius, polyCen, polyArea] = myXMLReader(rows, cols, I, xmlFile, forbiddenLines);
+    
+    numOfVesicles=numOfVesicles+N;
     
     %% plot the ground truth
     figure;
@@ -43,6 +50,11 @@ for i=1:length(images)
         plot(xp, yp, 'b', 'linewidth',1);
         hold on;
     end
-
+    
+    %save each image to a file
+    saveas(gcf,cat(2, 'annotatedImages/annotation', imageID, '.png'));
     hold off;
 end
+
+disp(cat(2, num2str(numOfVesicles), ' vesicles in total'))
+
