@@ -86,19 +86,48 @@ for i = 0 : N-1
     boundx = allPoints(:, 1);
     boundy = allPoints(:, 2);   
     
-    
-    %if ~isempty(find(boundx>forbidWidE,1)) || ~isempty(find(boundy<forbidHeiS,1)) ...
-    %        || isempty(find(boundx>forbidWidS,1)) || isempty(find(boundy<forbidHeiE,1))   
-    %    continue;
-    %end
-    
-    %eliminate all the 
+    %eliminate all the vesicles that are entirely outside the forbidden
+    %lines
     if all(boundx>forbidWidE) || all(boundy<forbidHeiS) ...
             || all(boundx<forbidWidS) || all(boundy>forbidHeiE)
         continue;
     end
     
+    %eliminate the parts of the vesicles that are outside the right forbidden
+    %line
+    unwantedPoints=find(boundx>forbidWidE);
+    if ~isempty(unwantedPoints)
+        tempIndex = true(size(boundx, 1), 1);
+        tempIndex(unwantedPoints) = false;
+        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+    end
     
+    %eliminate the parts of the vesicles that are outside the right forbidden
+    %line
+    unwantedPoints=find(boundx<forbidWidS);
+    if ~isempty(unwantedPoints)
+        tempIndex = true(size(boundx, 1), 1);
+        tempIndex(unwantedPoints) = false;
+        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+    end
+    
+    %eliminate the parts of the vesicles that are outside the bottom forbidden
+    %line
+    unwantedPoints=find(boundy<forbidHeiS);
+    if ~isempty(unwantedPoints)
+        tempIndex = true(size(boundx, 1), 1);
+        tempIndex(unwantedPoints) = false;
+        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+    end
+        
+    %eliminate the parts of the vesicles that are outside the top forbidden
+    %line
+    unwantedPoints=find(boundy>forbidHeiE);
+    if ~isempty(unwantedPoints)
+        tempIndex = true(size(boundx, 1), 1);
+        tempIndex(unwantedPoints) = false;
+        allPoints=horzcat(boundx(tempIndex, :),boundy(tempIndex, :));
+    end
     
     numberPolygons = numberPolygons+1;
     allPolygon{numberPolygons,1} = allPoints;        
