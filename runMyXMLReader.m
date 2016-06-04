@@ -1,14 +1,10 @@
 
 
-%I = imread('images\October25_2013_Set_Labelled\3.jpg');
-I=imread('DataSet\17png.png');
+I=imread('DataSet\35png.png');
 I = rgb2gray(I);
 [rows,cols]=size(I);
 
-ChrixmlFile = 'groundTruth\xml labelled\Christian\3.xml';
-JohnxmlFile = 'groundTruth\xml labelled\John\3.1.xml';
-%xmlFile = ChrixmlFile;
-xmlFile='DataSet\17anno.xml';
+xmlFile='DataSet\35anno.xml';
 
 % forbidden lines
 r = 0.8;
@@ -40,5 +36,7 @@ for i=1:N
     plot(xp, yp, 'b', 'linewidth',1);
     hold on;
 end
+
+%saveas(gcf,cat(2, 'annotation', '1', '.png'));
 
 hold off;
