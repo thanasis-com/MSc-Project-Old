@@ -48,7 +48,6 @@ for i=1:length(allPolygon)
             
             polygonSize=length(polygon);
             j=j+numOfInbetween;
-            disp(cat(2, int2str(j), ' inbetween:', int2str(numOfInbetween)))
         else
             %if the two points are neighbours, then there is no need to add
             %inbetween points
@@ -57,6 +56,5 @@ for i=1:length(allPolygon)
     end
     
     contours{i}=polygon;
-    disp(cat(2, num2str(i), 'th polygon done'))
 
 end
