@@ -13,7 +13,7 @@ for i=1:length(allPolygon)
     %for each point of the polygon, check if its euclidean distance from
     %the next point is >1 and if yes, then add to the polygon all the
     %inbetween points
-    while(j<polygonSize)
+    while(j<=polygonSize)
         pointx=polygon(j,1);
         pointy=polygon(j,2);
         point=[pointx pointy];
