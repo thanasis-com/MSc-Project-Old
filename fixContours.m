@@ -31,7 +31,8 @@ for i=1:length(allPolygon)
         %euclidean distance squared
         if(norm(nextPoint-point)^2>2)
             %compute how many inbetween points to create
-            numOfInbetween=abs(max((nextPoint(2)-point(2)+2),nextPoint(1)-point(1)+2));
+            %+15 has been chosen by trial and error. it gives a good result
+            numOfInbetween=abs(max((nextPoint(2)-point(2)+15),nextPoint(1)-point(1)+15));
             %create the inbetween points
             additionalPoints=[round(linspace(point(1),nextPoint(1),numOfInbetween));...
                 round(linspace(point(2),nextPoint(2),numOfInbetween))];
