@@ -8,7 +8,13 @@ for i=1:length(allPolygon)
     polygon=allPolygon{i};
     
     polygonSize=length(polygon);
+    
     j=1;
+    
+    %eliminates polygons annotated by mistake (one-point polygons)
+    if(polygonSize<=2)
+        continue;
+    end
     
     %for each point of the polygon, check if its euclidean distance from
     %the next point is >1 and if yes, then add to the polygon all the
