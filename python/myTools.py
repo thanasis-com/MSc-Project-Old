@@ -29,19 +29,10 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 
 	return allImages
 	
+	
+#takes as input the output of the loadImages function
+#returns the images with a single channel
 def dumpAA(images):
-	images=images[:,0:3,:,:]
+	images=images[:,0:1,:,:]
 	
 	return images
-
-#takes as input the output of the loadImages function
-#returns the RGBA array as a RGB array by dumping the A dimension
-
-def dumpA(images):
-
-	fixedImages=list()
-
-	for i in range(0, len(images)-1):
-		fixedImages.append(images[i][:,0:3,:,:])
-
-	return fixedImages

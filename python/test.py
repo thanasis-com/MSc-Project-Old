@@ -28,8 +28,5 @@ temp=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 
 
 temp1=myTools.dumpAA(temp)
 	
-print(temp1.shape)
+plt.show(plt.imshow(temp1[0][0], cmap=cm.binary))
 
-plt.show(plt.imshow(temp[0][0], cmap=cm.binary))
-
-print(temp1)
