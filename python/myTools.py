@@ -18,19 +18,27 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 	NChannelsPerImage = imageChannels
 	
 	#the code below is a fast way to load all the images
-	images = [ Image.open(path + '/' + f, 'r') for f in filenames ]
-	for i in images :
+	imagesData = [ Image.open(path + '/' + f, 'r').getdata() for f in filenames ]
+	for i in imagesData :
 	    assert i.size == ImageSize
-	    assert len(i.getbands()) == NChannelsPerImage
+	    assert i.bands == NChannelsPerImage
 	 
-	ImageShape =  (1,) + ImageSize + (NChannelsPerImage,)
-	allImages = [ numpy.fromstring(i.tostring(), dtype='uint8', count=-1, sep='') for i in images ]
-	allImages = [ numpy.rollaxis(a.reshape(ImageShape), 3, 1) for a in allImages ]
+	allImages = numpy.asarray(imagesData)
+	nImages = len(filenames)
+	allImages = numpy.rollaxis(allImages, 2, 1).reshape(nImages, NChannelsPerImage, ImageSize[0], ImageSize[1])
 
 	return allImages
+	
+def dumpAA(images):
+	images=images[:,0:3,:,:]
+	
+	return images
 
+#takes as input the output of the loadImages function
+#returns the RGBA array as a RGB array by dumping the A dimension
 
 def dumpA(images):
+
 	fixedImages=list()
 
 	for i in range(0, len(images)-1):
