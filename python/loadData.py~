@@ -1,0 +1,21 @@
+import theano
+from PIL import Image
+
+from os import listdir
+from os.path import isfile, join
+
+
+#import all image names
+def loadImages(path)
+	onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+
+	ImageSize = (512, 512)
+	NChannelsPerImage = 3
+	images = [ Image.open(f, 'r') for f in batch ]
+	for i in images :
+	    assert i.size == ImageSize
+	    assert len(i.getbands()) == NChannelsPerImage
+	 
+	ImageShape =  (1,) + ImageSize + (NChannelsPerImage,)
+	allImages = [ numpy.fromstring(i.tostring(), dtype='uint8', count=-1, sep='') for i in images ]
+	allImages = [ numpy.rollaxis(a.reshape(ImageShape), 3, 1) for a in allImages ]
