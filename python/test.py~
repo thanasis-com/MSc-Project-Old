@@ -28,18 +28,11 @@ dataSet=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 102
 
 dataSet=myTools.oneDimension(dataSet)
 	
-plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
 
 masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
 
-plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
-
-
-#masks=masks[maskIDs.argsort()]
-#maskIDs=maskIDs[maskIDs.argsort()]
-
-#dataSet=dataSet[dataSetIDs.argsort()]
-#dataSetIDs=dataSetIDs[dataSetIDs.argsort()]
+#plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 
 
