@@ -17,22 +17,37 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 	#define the number of channels of the image
 	NChannelsPerImage = imageChannels
 	
-	#the code below is a fast way to load all the images
+	#the code below loads all the images
 	imagesData = [ Image.open(path + '/' + f, 'r').getdata() for f in filenames ]
+	
+	#extracts the id of the image
+	imageIDs=list()
+	for f in filenames:
+		id=int(filter(str.isdigit, f))
+		imageIDs.append(id)
+
+	imageIDs=numpy.array(imageIDs)	
+
 	for i in imagesData :
 	    assert i.size == ImageSize
 	    assert i.bands == NChannelsPerImage
 	 
 	allImages = numpy.asarray(imagesData)
 	nImages = len(filenames)
-	allImages = numpy.rollaxis(allImages, 2, 1).reshape(nImages, NChannelsPerImage, ImageSize[0], ImageSize[1])
+	if imageChannels==1:
+		allImages = numpy.rollaxis(allImages, 1, 1).reshape(nImages, NChannelsPerImage, ImageSize[0], ImageSize[1])
+	else:
+		allImages = numpy.rollaxis(allImages, 2, 1).reshape(nImages, NChannelsPerImage, ImageSize[0], ImageSize[1])
+
+	#sort the images according to their ID
+	allImages=allImages[imageIDs.argsort()]
 
 	return allImages
 	
 	
 #takes as input the output of the loadImages function
 #returns the images with a single channel
-def dumpAA(images):
+def oneDimension(images):
 	images=images[:,0:1,:,:]
 	
 	return images

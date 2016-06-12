@@ -24,9 +24,15 @@ from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
-temp=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 4)
+dataSet=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 4)
 
-temp1=myTools.dumpAA(temp)
+dataSet=myTools.oneDimension(dataSet)
 	
-plt.show(plt.imshow(temp1[0][0], cmap=cm.binary))
+plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
+
+masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
+
+plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
+
+
 
