@@ -52,7 +52,14 @@ for j=1:length(images)
     end
     
     %save each image to a file
-    saveas(gcf,cat(2, 'annotatedImages/annotation', imageID, '.png'));
+    
+    %this way the images are printed in the original size (1024x1024)
+    set(gcf, 'PaperPosition', [0 0 26 26]);
+    print(gcf, '-dpng', '-r100', [cat(2, 'annotatedImages/annotation', imageID, '.png')])
+    
+    %this way the images are printed in the default MATLAB size (1200x900)
+    %saveas(gcf,cat(2, 'annotatedImages/annotation', imageID, '.png'));
+    
     hold off;
 end
 
