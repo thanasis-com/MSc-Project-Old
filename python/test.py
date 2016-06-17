@@ -29,7 +29,6 @@ from sklearn.metrics import confusion_matrix
 
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
 
-#import transposeConv
 
 
 dataSet=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 4)
@@ -42,11 +41,14 @@ masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
 
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
-cropy=(1024-819)/2
-cropx=(1024-819)/2
+#cropy=(1024-819)/2
+#cropx=(1024-819)/2
 
-temp=dataSet[0:20,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
-test=dataSet[21:40,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
+#temp=dataSet[0:20,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
+#test=dataSet[21:40,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
+temp=myTools.crop(dataSet, 80)
+test=temp[21:40, :, :, :]
+temp=temp[0:20, :, :, :]
 
 #myTools.myConvNet(temp,masks)
 
