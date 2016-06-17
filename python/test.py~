@@ -1,17 +1,18 @@
 import myTools
+import myClasses
 
 import theano
 import numpy
 from PIL import Image
 
 import time
+import sys
 
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
 import theano.tensor as T
-import numpy
 from PIL import Image
 
 from os import listdir
@@ -26,7 +27,6 @@ from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
-import lasagne
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
 
 #import transposeConv
@@ -150,9 +150,9 @@ net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 net['conv2'] = lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5)
 net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
 net['unpool2']=lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
-net['deconv2']=Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5)
+net['deconv2']=myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5)
 net['unpool1']=lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-net['deconv1']=Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid)
+net['deconv1']=myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid)
 #net['conv2']=lasagne.layers.Conv2DLayer(net['pool1'], num_filters=1, filter_size=5)
 #net['shape']=lasagne.layers.ReshapeLayer(net['conv2'], shape= ([0], -1))
 
