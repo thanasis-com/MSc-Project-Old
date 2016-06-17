@@ -6,6 +6,8 @@ from PIL import Image
 from os import listdir
 from os.path import isfile, join
 
+import time
+
 import numpy as np
 import lasagne
 from lasagne import layers
@@ -25,6 +27,10 @@ from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, 
 def loadImages(path, imageHeight, imageWidth, imageChannels):
 	#get all filenames
 	filenames = [f for f in listdir(path) if isfile(join(path, f))]
+
+	print('Loading images...')
+	start_time = time.time()
+
 	#define the size of the image
 	ImageSize = (imageHeight, imageWidth)
 	#define the number of channels of the image
@@ -54,6 +60,9 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 
 	#sort the images according to their ID
 	allImages=allImages[imageIDs.argsort()]
+
+	end_time = time.time()
+	print('Loaded and reshaped %d images in %.2f seconds' % (len(filenames), end_time-start_time))
 
 	return allImages
 	

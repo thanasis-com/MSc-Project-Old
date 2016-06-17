@@ -5,6 +5,7 @@ import numpy
 from PIL import Image
 
 import time
+import sys
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -118,6 +119,7 @@ cropy=(1024-819)/2
 cropx=(1024-819)/2
 
 temp=dataSet[0:20,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
+test=dataSet[21:40,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
 
 #myTools.myConvNet(temp,masks)
 
@@ -125,6 +127,8 @@ temp=dataSet[0:20,:,cropx:1024-cropx-1,cropy:1024-cropy-1]
 for x in numpy.nditer(masks, op_flags=['readwrite']):
      if x>0:
              x[...]=1
+
+plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 #masks=masks.astype(numpy.int32)
 
@@ -164,12 +168,16 @@ print(lasagne.layers.get_output_shape(net['unpool1']))
 print(lasagne.layers.get_output_shape(net['deconv1']))
 #print(lasagne.layers.get_output_shape(net['shape']))
 
+print(lasagne.layers.count_params(net['deconv1']))
+
+sys.exit()
+
 lr = 0.1
 weight_decay = 1e-5
 
 #Loss function: mean cross-entropy
 prediction = lasagne.layers.get_output(net['deconv1'])
-loss = lasagne.objectives.categorical_crossentropy(prediction, target_var)
+loss = lasagne.objectives.binary_crossentropy(prediction, target_var)
 loss = loss.mean()
 
 #Also add weight decay to the cost function
@@ -182,7 +190,7 @@ updates = lasagne.updates.sgd(loss, params, learning_rate=lr)
 train_fn = theano.function([input_var, target_var], loss, updates=updates)
 
 test_prediction = lasagne.layers.get_output(net['deconv1'], deterministic=True)
-test_loss = lasagne.objectives.categorical_crossentropy(test_prediction,target_var)
+test_loss = lasagne.objectives.binary_crossentropy(test_prediction,target_var)
 test_loss = test_loss.mean()
 test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
@@ -192,7 +200,7 @@ get_preds = theano.function([input_var], test_prediction)
 n_examples = temp.shape[0]
 #n_batches = n_examples / batch_size
 
-epochs=10
+epochs=200
 n_batches=20
 batch_size=1
 
@@ -220,9 +228,17 @@ end_time = time.time()
 print('Training completed in %.2f seconds.' % (end_time - start_time))
 
 
-res=get_preds(temp)
+res=get_preds(test)
 
 #print(res[0][0])
+
+#for x in numpy.nditer(res, op_flags=['readwrite']):
+#     if x>0.5:
+#             x[...]=1
+#     else:
+#	      x[...]=0
+
+plt.show(plt.imshow(test[0][0], cmap=cm.binary))
 
 plt.show(plt.imshow(res[0][0], cmap=cm.binary))
 
