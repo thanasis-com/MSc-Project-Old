@@ -104,7 +104,8 @@ def crop(images, cropPercentage):
 	return croppedImages
  
 
-def createNN(data_size):
+#creates a convolutional neural network 
+def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
 	#creating symbolic variables for input and output
 	input_var = T.tensor4('input')
@@ -137,6 +138,152 @@ def createNN(data_size):
 
 	#print the total number of trainable parameters of the network
 	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
+
+	myNet=net['output']
+	
+	lr = 0.1
+	weight_decay = 1e-5
+	
+	#define how to get the prediction of the network
+	prediction = lasagne.layers.get_output(myNet)
+
+	#define the cost function
+	loss = lasagne.objectives.binary_crossentropy(prediction, target_var)
+	loss = loss.mean()
+	#also add weight decay to the cost function
+	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
+	loss += weight_decay * weightsl2
+
+	#get all the trainable parameters of the network
+	params = lasagne.layers.get_all_params(myNet, trainable=True)
+
+	#define the update function for each training step
+	updates = lasagne.updates.sgd(loss, params, learning_rate=lr)
+
+	#compile a train function
+	train_fn = theano.function([input_var, target_var], loss, updates=updates)
+
+ 	#defining same things for testing
+	##"deterministic=True" disables stochastic behaviour, such as dropout
+	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
+	test_loss = lasagne.objectives.binary_crossentropy(test_prediction,target_var)
+	test_loss = test_loss.mean()
+	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
+
+	#compile a theano validation function
+	val_fn = theano.function([input_var, target_var], [test_loss, test_acc])
+
+	#compile a theano function to make predictions with the network
+	get_preds = theano.function([input_var], test_prediction)
+
+	####### the actual training ########
+	print('--------------------')
+	#get the number of training examples
+	n_examples = X.shape[0]
+
+	start_time = time.time()
+
+	cost_history=[]
+	batch_cost_history=[]
+
+	#for each epoch train for all the batches
+	for epoch in xrange(epochs):
+		epoch_time_start=time.time()
+		#for each batch train and update the weights
+    		for batch in xrange(n_batches):
+        		x_batch = X[batch*batch_size: (batch+1) * batch_size]
+        		y_batch = Y[batch*batch_size: (batch+1) * batch_size]
+        
+        		this_cost = train_fn(x_batch, y_batch)
+	
+			batch_cost_history.append(this_cost)
+
+    		epoch_cost = np.mean(batch_cost_history)
+    		cost_history.append(epoch_cost)
+    		epoch_time_end = time.time()
+    		print('Epoch %d/%d, train error: %f. Elapsed time: %.2f seconds' % (epoch+1, epochs, epoch_cost, epoch_time_end-epoch_time_start))
+
+	end_time = time.time()
+	print('Training completed in %.2f seconds.' % (end_time - start_time))
+
+
+	return get_preds	
+
+
+
+def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
+
+	#creating symbolic variables for input and output
+	input_var = T.tensor4('input')
+	target_var = T.tensor4('targets')
+	
+	lr = 0.1
+	weight_decay = 1e-5
+	
+	#define how to get the prediction of the network
+	prediction = lasagne.layers.get_output(myNet)
+
+	#define the cost function
+	loss = lasagne.objectives.binary_crossentropy(prediction, target_var)
+	loss = loss.mean()
+	#also add weight decay to the cost function
+	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
+	loss += weight_decay * weightsl2
+
+	#get all the trainable parameters of the network
+	params = lasagne.layers.get_all_params(myNet, trainable=True)
+
+	#define the update function for each training step
+	updates = lasagne.updates.sgd(loss, params, learning_rate=lr)
+
+	#compile a train function
+	train_fn = theano.function([input_var, target_var], loss, updates=updates)
+
+ 	#defining same things for testing
+	##"deterministic=True" disables stochastic behaviour, such as dropout
+	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
+	test_loss = lasagne.objectives.binary_crossentropy(test_prediction,target_var)
+	test_loss = test_loss.mean()
+	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
+
+	#compile a theano validation function
+	val_fn = theano.function([input_var, target_var], [test_loss, test_acc])
+
+	#compile a theano function to make predictions with the network
+	get_preds = theano.function([input_var], test_prediction)
+
+	####### the actual training ########
+
+	#get the number of training examples
+	n_examples = X.shape[0]
+
+	start_time = time.time()
+
+	cost_history=[]
+	batch_cost_history=[]
+
+	#for each epoch train for all the batches
+	for epoch in xrange(epochs):
+		epoch_time_start=time.time()
+		#for each batch train and update the weights
+    		for batch in xrange(n_batches):
+        		x_batch = X[batch*batch_size: (batch+1) * batch_size]
+        		y_batch = Y[batch*batch_size: (batch+1) * batch_size]
+        
+        		this_cost = train_fn(x_batch, y_batch)
+	
+			batch_cost_history.append(this_cost)
+
+    		epoch_cost = np.mean(batch_cost_history)
+    		cost_history.append(epoch_cost)
+    		epoch_time_end = time.time()
+    		print('Epoch %d/%d, train error: %f. Elapsed time: %.2f seconds' % (epoch+1, epochs, epoch_cost, epoch_time_end-epoch_time_start))
+
+	end_time = time.time()
+	print('Training completed in %.2f seconds.' % (end_time - start_time))
+
+
+	return get_preds
 
 
 
