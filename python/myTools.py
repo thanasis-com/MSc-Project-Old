@@ -1,3 +1,4 @@
+import myClasses
 import theano
 import theano.tensor as T
 import numpy
@@ -27,7 +28,8 @@ from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, 
 def loadImages(path, imageHeight, imageWidth, imageChannels):
 	#get all filenames
 	filenames = [f for f in listdir(path) if isfile(join(path, f))]
-
+	
+	print('--------------------')
 	print('Loading images...')
 	start_time = time.time()
 
@@ -62,8 +64,8 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 	allImages=allImages[imageIDs.argsort()]
 
 	end_time = time.time()
-	print('Loaded and reshaped %d images in %.2f seconds' % (len(filenames), end_time-start_time))
-
+	print('Loaded and reshaped %d images in %.2f seconds' % (len(filenames), end_time-start_time))	
+	
 	return allImages
 	
 	
@@ -75,6 +77,7 @@ def oneDimension(images):
 	return images
 
 
+#crops the center piece of an image. cropPercentage defines the size of the resulting image
 def crop(images, cropPercentage):
 	#get the original dimensions of the images
 	originalXdim=images.shape[2]
@@ -95,16 +98,45 @@ def crop(images, cropPercentage):
 	actualNewXdim=croppedImages.shape[2]
 	actualNewYdim=croppedImages.shape[3]
 
-	print('Cropped images from %d x %d to %d x %d' % (originalXdim, originalYdim, actualNewXdim, actualNewYdim))
+	print('--------------------')
+	print('Cropped images from %d x %d to %d x %d' % (originalXdim, originalYdim, actualNewXdim, actualNewYdim))	
 
 	return croppedImages
  
 
+def createNN(data_size):
 
+	#creating symbolic variables for input and output
+	input_var = T.tensor4('input')
+	target_var = T.tensor4('targets')	
+	#initialising an empty network
+	net = {}
+	
+	#Input layer:
+	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
+	#the rest of the network structure
+	net['conv1'] = lasagne.layers.Conv2DLayer(net['data'], num_filters=10, filter_size=5)
+	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
+	net['conv2'] = lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5)
+	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
+	net['unpool2']=lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
+	net['deconv2']=myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5)
+	net['unpool1']=lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
+	net['output']=myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid)
 
+	print('--------------------')
+	print('Network architecture: \n')
+	
+	#get all layers
+	allLayers=lasagne.layers.get_all_layers(net['output'])
+	#for each layer print its shape information
+	for l in allLayers:
+		print(lasagne.layers.get_output_shape(l))
+		
 
-
+	#print the total number of trainable parameters of the network
+	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
 
 
 

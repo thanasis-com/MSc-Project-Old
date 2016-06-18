@@ -57,7 +57,7 @@ for x in numpy.nditer(masks, op_flags=['readwrite']):
      if x>0:
              x[...]=1
 
-plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 #masks=masks.astype(numpy.int32)
 
@@ -66,38 +66,7 @@ plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 data_size=(None,1,819,819)
 
-input_var = T.tensor4('input')
-target_var = T.tensor4('targets')	
-
-net = {}
-
-#Input layer:
-net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
-
-#Convolution + Pooling
-net['conv1'] = lasagne.layers.Conv2DLayer(net['data'], num_filters=10, filter_size=5)
-net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
-net['conv2'] = lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5)
-net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
-net['unpool2']=lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
-net['deconv2']=myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5)
-net['unpool1']=lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-net['deconv1']=myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid)
-#net['conv2']=lasagne.layers.Conv2DLayer(net['pool1'], num_filters=1, filter_size=5)
-#net['shape']=lasagne.layers.ReshapeLayer(net['conv2'], shape= ([0], -1))
-
-print(lasagne.layers.get_output_shape(net['data']))
-print(lasagne.layers.get_output_shape(net['conv1']))
-print(lasagne.layers.get_output_shape(net['pool1']))
-print(lasagne.layers.get_output_shape(net['conv2']))
-print(lasagne.layers.get_output_shape(net['pool2']))
-print(lasagne.layers.get_output_shape(net['unpool2']))
-print(lasagne.layers.get_output_shape(net['deconv2']))
-print(lasagne.layers.get_output_shape(net['unpool1']))
-print(lasagne.layers.get_output_shape(net['deconv1']))
-#print(lasagne.layers.get_output_shape(net['shape']))
-
-print(lasagne.layers.count_params(net['deconv1']))
+myTools.createNN(data_size)
 
 sys.exit()
 
@@ -129,7 +98,7 @@ get_preds = theano.function([input_var], test_prediction)
 n_examples = temp.shape[0]
 #n_batches = n_examples / batch_size
 
-epochs=200
+epochs=10
 n_batches=20
 batch_size=1
 
