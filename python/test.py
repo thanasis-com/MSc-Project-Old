@@ -42,8 +42,8 @@ masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 temp=myTools.crop(dataSet, 80)
-test=temp[21:40, :, :, :]
-train=temp[0:20, :, :, :]
+test=temp[30:40, :, :, :]
+train=temp[0:29, :, :, :]
 
 
 for x in numpy.nditer(masks, op_flags=['readwrite']):
@@ -60,7 +60,14 @@ masks=masks.astype(numpy.int32)
 
 data_size=(None,1,819,819)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:20, :, :, :], epochs=3000, n_batches=20, batch_size=1)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:29, :, :, :], epochs=20, n_batches=5, batch_size=6)
+
+res=myNet(train)
+
+plt.show(plt.imshow(train[0][0], cmap=cm.binary))
+
+plt.show(plt.imshow(res[0][0], cmap=cm.binary))
+
 
 res=myNet(test)
 

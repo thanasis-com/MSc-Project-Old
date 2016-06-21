@@ -117,14 +117,14 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	net['conv1'] = lasagne.layers.Conv2DLayer(net['data'], num_filters=10, filter_size=5)
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=10, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
-	net['conv2'] = lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5)
+	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
-	net['unpool2']=lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
-	net['deconv2']=myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5)
-	net['unpool1']=lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-	net['output']=myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid)
+	net['unpool2']= lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
+	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5))
+	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
+	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid))
 
 	print('--------------------')
 	print('Network architecture: \n')
@@ -141,14 +141,14 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
 	myNet=net['output']
 	
-	lr = 0.1
-	weight_decay = 1e-5
+	lr = 0.3
+	weight_decay = 0.0005
 	
 	#define how to get the prediction of the network
 	prediction = lasagne.layers.get_output(myNet)
 
 	#define the cost function
-	loss = lasagne.objectives.binary_crossentropy(prediction, target_var)
+	loss = lasagne.objectives.squared_error(prediction, target_var)
 	loss = loss.mean()
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
@@ -166,7 +166,7 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
  	#defining same things for testing
 	##"deterministic=True" disables stochastic behaviour, such as dropout
 	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
-	test_loss = lasagne.objectives.binary_crossentropy(test_prediction,target_var)
+	test_loss = lasagne.objectives.squared_error(test_prediction,target_var)
 	test_loss = test_loss.mean()
 	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
@@ -217,8 +217,9 @@ def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 	input_var = T.tensor4('input')
 	target_var = T.tensor4('targets')
 	
-	lr = 0.1
-	weight_decay = 1e-5
+	lr = 0.01
+	moment=0.9
+	weight_decay = 0.0005
 	
 	#define how to get the prediction of the network
 	prediction = lasagne.layers.get_output(myNet)
@@ -234,7 +235,7 @@ def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 	params = lasagne.layers.get_all_params(myNet, trainable=True)
 
 	#define the update function for each training step
-	updates = lasagne.updates.sgd(loss, params, learning_rate=lr)
+	updates = lasagne.updates.momentum(loss, params, learning_rate=lr, momentum=moment)
 
 	#compile a train function
 	train_fn = theano.function([input_var, target_var], loss, updates=updates)
