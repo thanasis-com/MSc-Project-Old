@@ -63,15 +63,13 @@ masks=masks.astype(numpy.int32)
 
 data_size=(None,1,819,819)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:34, :, :, :], epochs=1, n_batches=10, batch_size=3)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:34, :, :, :], epochs=1000, n_batches=7, batch_size=5)
 
 
 
 
 trainInstance=train[0]
 trainInstance=trainInstance.reshape(1, trainInstance.shape[0], trainInstance.shape[1], trainInstance.shape[2])
-
-print(trainInstance.shape)
 
 res=myNet(trainInstance)
 

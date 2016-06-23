@@ -9,6 +9,7 @@ from os.path import isfile, join
 
 import time
 
+import math
 import numpy as np
 import lasagne
 from lasagne import layers
@@ -20,7 +21,8 @@ from sklearn.metrics import confusion_matrix
 from skimage import exposure
 
 import lasagne
-from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
+from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer, Pool2DLayer
+from myClasses import Deconv2DLayer
 
 
 #imports all image names from a specific path and turns them into numpy arrays,
@@ -42,7 +44,7 @@ def loadImages(path, imageHeight, imageWidth, imageChannels):
 	#the code below loads all the images
 	imagesData = [ Image.open(path + '/' + f, 'r').getdata() for f in filenames ]
 	
-	#extracts the id of the image
+	#extracts the id of the imageimport math
 	imageIDs=list()
 	for f in filenames:
 		id=int(filter(str.isdigit, f))
@@ -79,7 +81,7 @@ def oneDimension(images):
 
 
 #crops the center piece of an image. cropPercentage defines the size of the resulting image
-def crop(images, cropPercentage):
+def cropCenter(images, cropPercentage):
 	#get the original dimensions of the images
 	originalXdim=images.shape[2]
 	originalYdim=images.shape[3]
@@ -104,6 +106,23 @@ def crop(images, cropPercentage):
 
 	return croppedImages
  
+
+#splits an image into four squares
+#def splitImages(images):
+#
+#	#get the original dimensions of the images
+#	originalXdim=images.shape[2]
+#	originalYdim=images.shape[3]
+#
+#	#compute crop boundaries
+#	xBoundary=originalXdim/2.0
+#	yBoundary=originalYdim/2.0
+
+
+
+
+
+
 
 #applies histogram equalisation to images
 def myHistEq(images):
@@ -267,6 +286,12 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 	end_time = time.time()
 	print('Training completed in %.2f seconds.' % (end_time - start_time))
 
+
+	#for each layer print the resulted filters
+	for l in range(1, len(allLayers)):
+		if isinstance(allLayers[l], Conv2DLayer):
+			visualize.plot_conv_weights(allLayers[l])
+	
 
 	return get_preds	
 
