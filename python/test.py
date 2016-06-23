@@ -41,10 +41,13 @@ masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
 
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
-temp=myTools.crop(dataSet, 80)
-test=temp[30:40, :, :, :]
-train=temp[0:29, :, :, :]
+dataSet=myTools.cropCenter(dataSet, 80)
 
+
+test=dataSet[35:40, :, :, :]
+train=dataSet[0:34, :, :, :]
+
+dataSet=None
 
 for x in numpy.nditer(masks, op_flags=['readwrite']):
      if x>0:
@@ -60,16 +63,27 @@ masks=masks.astype(numpy.int32)
 
 data_size=(None,1,819,819)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:29, :, :, :], epochs=20, n_batches=5, batch_size=6)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:34, :, :, :], epochs=1, n_batches=10, batch_size=3)
 
-res=myNet(train)
+
+
+
+trainInstance=train[0]
+trainInstance=trainInstance.reshape(1, trainInstance.shape[0], trainInstance.shape[1], trainInstance.shape[2])
+
+print(trainInstance.shape)
+
+res=myNet(trainInstance)
 
 plt.show(plt.imshow(train[0][0], cmap=cm.binary))
 
 plt.show(plt.imshow(res[0][0], cmap=cm.binary))
 
 
-res=myNet(test)
+testInstance=test[0]
+testInstance=testInstance.reshape(1, testInstance.shape[0], testInstance.shape[1], testInstance.shape[2])
+
+res=myNet(testInstance)
 
 plt.show(plt.imshow(test[0][0], cmap=cm.binary))
 
@@ -86,6 +100,7 @@ plt.show(plt.imshow(res[0][0], cmap=cm.binary))
 #rand=numpy.random.rand(10,1,819,819)
 #randMasks=numpy.random.random_integers(0,1, size=(10,1,819,819))
 #randMasks=numpy.random.random_sample(size=(41,1,819,819))
+
 
 
 
