@@ -17,6 +17,7 @@ from nolearn.lasagne import NeuralNet
 from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+from skimage import exposure
 
 import lasagne
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
@@ -104,6 +105,66 @@ def crop(images, cropPercentage):
 	return croppedImages
  
 
+#applies histogram equalisation to images
+def myHistEq(images):
+
+	print('--------------------')
+	print('Performing Histogram Equalisation...')
+	start_time = time.time()
+
+	#image values are expected to be float numbers
+	images=images.astype(theano.config.floatX)
+	
+	#apply histogram equalisation
+	images=exposure.equalize_hist(images)
+
+	end_time = time.time()
+	print('Histogram Equalisation completed in %.2f seconds' % (end_time-start_time))
+
+	return images
+
+
+#applies mean normalisation to images
+def myMeanNorm(images):
+	
+	print('--------------------')
+	print('Performing Mean Normalisation...')
+	start_time = time.time()
+
+	#image values are expected to be float numbers
+	images=images.astype(theano.config.floatX)
+	
+	minValue=images.min()
+	maxValue=images.max()
+
+	images -= minValue
+	images *=(255.0/(maxValue-minValue))
+
+	end_time = time.time()
+	print('Mean Normalisation completed in %.2f seconds' % (end_time-start_time))
+	
+	return images
+
+
+#applies contrast streching to images
+def myContrStrech(images):
+
+	print('--------------------')
+	print('Performing Contrast Streching...')
+	start_time = time.time()
+
+	#image values are expected to be float numbers
+	images=images.astype(theano.config.floatX)
+
+	p5, p95 = np.percentile(images, (5, 95))
+	img_rescale = exposure.rescale_intensity(images, in_range=(p5, p95))
+
+	end_time = time.time()
+	print('Contrast Streching completed in %.2f seconds' % (end_time-start_time))
+
+	return img_rescale
+
+
 #creates a convolutional neural network 
 def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
@@ -141,7 +202,7 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
 	myNet=net['output']
 	
-	lr = 0.3
+	lr = 0.2
 	weight_decay = 0.0005
 	
 	#define how to get the prediction of the network
