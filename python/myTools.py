@@ -222,14 +222,15 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 	myNet=net['output']
 	
 	lr = 0.2
-	weight_decay = 0.0005
+	weight_decay = 0.005
 	
 	#define how to get the prediction of the network
 	prediction = lasagne.layers.get_output(myNet)
 
 	#define the cost function
-	loss = lasagne.objectives.squared_error(prediction, target_var)
-	loss = loss.mean()
+	#loss = lasagne.objectives.squared_error(prediction, target_var)
+	#loss = loss.mean()
+	loss = myCostFunction(prediction, target_var)
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
 	loss += weight_decay * weightsl2
@@ -374,6 +375,16 @@ def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 
 
 
+def myCostFunction(a, b):
+  
+
+    r=np.float32(0.01)
+
+    sensitivity=r*T.sum(((a - b)**2)*a)/T.sum(a)
+    
+    specificity=(1-r)*T.sum(((a - b)**2)*(1-a))/T.sum(1-a)
+	
+    return sensitivity+specificity
 
 
 

@@ -31,21 +31,21 @@ from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, 
 
 
 
-dataSet=myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 4)
+dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
 dataSet=myTools.oneDimension(dataSet)
 	
 #plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
 
-masks=myTools.loadImages('/home/athanasiostsiaras/Downloads/masks', 819, 819, 1)
+masks=myTools.loadImages('../../masks', 819, 819, 1)
 
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
 dataSet=myTools.cropCenter(dataSet, 80)
 
 
-test=dataSet[35:40, :, :, :]
-train=dataSet[0:34, :, :, :]
+test=dataSet[39:40, :, :, :]
+train=dataSet[0:38, :, :, :]
 
 dataSet=None
 
@@ -63,7 +63,7 @@ masks=masks.astype(numpy.int32)
 
 data_size=(None,1,819,819)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:34, :, :, :], epochs=1000, n_batches=7, batch_size=5)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:38, :, :, :], epochs=30, n_batches=13, batch_size=3)
 
 
 

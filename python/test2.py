@@ -13,20 +13,31 @@ import theano.tensor as T
 import myTools
 
 
-# Load an example image
-img = myTools.loadImages('/home/athanasiostsiaras/Downloads/images', 1024, 1024, 4)
-img= myTools.oneDimension(img)
-img=img.astype(theano.config.floatX)
 
-imgage=img[0][0].crop(0,0,100,100)
+def myCostFunction(a, b):
+  
 
-plt.show(imshow(imgage))
+    r=np.float32(0.1)
+
+    sensitivity=r*T.sum(((a - b)**2)*a)/T.sum(a)
+    
+    specificity=(1-r)*T.sum(((a - b)**2)*(1-a))/T.sum(1-a)
+	
+    return sensitivity+specificity
 
 
+gt=numpy.zeros((2,2))
+gt[0,0]=1
+gt[1,0]=1
 
+s=numpy.zeros((2,2))
+s[0,0]=1
+s[1,1]=1
 
+print(gt)
+print(s)
 
-
+print(squared_error(s,gt))
 
 
 
