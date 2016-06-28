@@ -58,14 +58,14 @@ for x in numpy.nditer(masks, op_flags=['readwrite']):
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 #plt.show(plt.imshow(train[0][0], cmap=cm.binary))
 
-masks=masks.astype(numpy.int32)
+masks=masks.astype(numpy.float32)
 
 #temp=numpy.random.rand(12,1,819,819)
 #masks=numpy.random.random_integers(0,1, size=(12,1,819,819)).astype(numpy.int32) 
 
 data_size=(None,1,819,819)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:38, :, :, :], epochs=30, n_batches=13, batch_size=3)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:38, :, :, :], epochs=1, n_batches=13, batch_size=3)
 
 
 
