@@ -54,7 +54,7 @@ for x in numpy.nditer(masks, op_flags=['readwrite']):
              x[...]=1
 
 #plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
-plt.show(plt.imshow(train[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(train[0][0], cmap=cm.binary))
 
 masks=masks.astype(numpy.int32)
 
@@ -73,9 +73,9 @@ trainInstance=trainInstance.reshape(1, trainInstance.shape[0], trainInstance.sha
 
 res=myNet(trainInstance)
 
-plt.show(plt.imshow(train[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(train[0][0], cmap=cm.binary))
 
-plt.show(plt.imshow(res[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(res[0][0], cmap=cm.binary))
 
 
 testInstance=test[0]
@@ -83,9 +83,9 @@ testInstance=testInstance.reshape(1, testInstance.shape[0], testInstance.shape[1
 
 res=myNet(testInstance)
 
-plt.show(plt.imshow(test[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(test[0][0], cmap=cm.binary))
 
-plt.show(plt.imshow(res[0][0], cmap=cm.binary))
+#plt.show(plt.imshow(res[0][0], cmap=cm.binary))
 
 #sys.exit()
 

@@ -289,9 +289,9 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
 
 	#for each layer print the resulted filters
-	for l in range(1, len(allLayers)):
-		if isinstance(allLayers[l], Conv2DLayer):
-			visualize.plot_conv_weights(allLayers[l])
+	#for l in range(1, len(allLayers)):
+	#	if isinstance(allLayers[l], Conv2DLayer):
+	#		visualize.plot_conv_weights(allLayers[l])
 	
 
 	return get_preds	
