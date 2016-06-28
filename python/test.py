@@ -34,6 +34,8 @@ from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, 
 dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
 dataSet=myTools.oneDimension(dataSet)
+
+dataSet=dataSet.astype(numpy.float32)
 	
 #plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
 
