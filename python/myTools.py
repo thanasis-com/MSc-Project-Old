@@ -19,6 +19,8 @@ from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from skimage import exposure
+import skimage
+from skimage.transform import rotate
 
 import lasagne
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer, Pool2DLayer
@@ -107,19 +109,13 @@ def cropCenter(images, cropPercentage):
 	return croppedImages
  
 
-#splits an image into four squares
-#def splitImages(images):
-#
-#	#get the original dimensions of the images
-#	originalXdim=images.shape[2]
-#	originalYdim=images.shape[3]
-#
-#	#compute crop boundaries
-#	xBoundary=originalXdim/2.0
-#	yBoundary=originalYdim/2.0
 
-
-
+def imgTransform(img):
+	
+	res=numpy.fliplr(img)
+	res=rotate(res, 90) 
+	
+	return res
 
 
 
