@@ -23,8 +23,9 @@ dataSet= dataSet.astype(numpy.uint8)
 
 image=dataSet[0][0]
 
+myTools.imgTransform(image)
 
-plt.show(plt.imshow(myTools.imgTransform(image), cmap=cm.binary))
+#plt.show(plt.imshow(myTools.imgTransform(image), cmap=cm.binary))
 
 
 

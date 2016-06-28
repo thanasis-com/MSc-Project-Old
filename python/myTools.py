@@ -20,7 +20,11 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from skimage import exposure
 import skimage
-from skimage.transform import rotate
+
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+
 
 import lasagne
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer, Pool2DLayer
@@ -110,12 +114,37 @@ def cropCenter(images, cropPercentage):
  
 
 
-def imgTransform(img):
+def imgTransform(img, numOfTiles=4, overlap=False):
+
+	#rotation angles
+	angles=[90, 180, 270]
 	
-	res=numpy.fliplr(img)
-	res=rotate(res, 90) 
+	#get the size of the images
+	imgXsize=img.shape[0]
+	imgYsize=img.shape[1]	
 	
-	return res
+	#compute the size of the tiles
+	tileWidth=math.floor((imgXsize/numOfTiles)*2)
+	tileHeight=math.floor((imgXsize/numOfTiles)*2)
+
+	#apply mirroring
+	img=numpy.fliplr(img)
+	
+	#preallocate space for the tiles
+	tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+
+	bufferIndex=0
+	for i in angles:
+		#rotate the image
+		tempImg=skimage.transform.rotate(img, i) 
+		for x in range(numOfTiles/2):
+			for y in range(numOfTiles/2):
+				tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+				plt.show(plt.imshow(tile, cmap=cm.binary))
+				tiles[bufferIndex]=tile
+				bufferIndex+=1
+	
+	#return res
 
 
 
