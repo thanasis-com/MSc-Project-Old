@@ -35,7 +35,9 @@ dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
 dataSet=myTools.oneDimension(dataSet)
 
-dataSet=dataSet.astype(numpy.float32)
+#dataSet=dataSet.astype(numpy.float32)
+
+dataSet= dataSet.astype(numpy.uint8)
 	
 #plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
 
