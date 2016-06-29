@@ -41,6 +41,7 @@ dataSet=myTools.cropCenter(dataSet, 80)
 
 dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 	
+dataSet=dataSet.astype(numpy.float32)
 #plt.show(plt.imshow(dataSet[0][0], cmap=cm.binary))
 
 ### MASKS
