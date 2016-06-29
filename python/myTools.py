@@ -518,6 +518,16 @@ def myCostFunction(a, b):
     return sensitivity+specificity
 
 
+def myTestCostFunction(a, b):
+  
+
+    r=np.float32(0.01)
+
+    sensitivity=r*numpy.sum(((b - a)**2)*b)/numpy.sum(b)
+    
+    specificity=(1-r)*numpy.sum(((b - a)**2)*(1-b))/numpy.sum(1-b)
+	
+    return sensitivity+specificity
 
 
 
