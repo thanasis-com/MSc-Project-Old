@@ -184,6 +184,36 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 	return tiles
 
 
+def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
+
+	print('--------------------')
+	print('Augmenting the dataset...')
+	start_time = time.time()
+
+	if overlap==True:
+		#compute the size of the tiles
+		tileWidth=math.floor((imageWidth/numOfTiles)*3)
+		tileHeight=math.floor((imageHeight/numOfTiles)*3)
+	else:
+		#compute the size of the tiles
+		tileWidth=math.floor((imageWidth/numOfTiles)*2)
+		tileHeight=math.floor((imageHeight/numOfTiles)*2)
+
+	#preallocate space for the dataset (3 represents the number of the rotation angles)
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*3, tileWidth, tileHeight])
+
+	bufferIndex=0
+	for i in range(dataset.shape[0]):
+		newImgs=augmentImage(dataset[i][0], numOfTiles, overlap)
+		for j in range(newImgs.shape[0]):
+			augmented[bufferIndex]=newImgs[j]
+			bufferIndex+=1
+
+	end_time = time.time()
+	print('Augmented %d images in %.2f seconds' % (dataset.shape[0], end_time-start_time))	
+	
+	return augmented
+
 
 
 #applies histogram equalisation to images

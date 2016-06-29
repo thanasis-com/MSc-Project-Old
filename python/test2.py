@@ -15,17 +15,29 @@ import myTools
 
 
 
-dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
+#dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
-dataSet=myTools.oneDimension(dataSet)
+#dataSet=myTools.oneDimension(dataSet)
 
-dataSet= dataSet.astype(numpy.uint8)
+#dataSet= dataSet.astype(numpy.uint8)
 
-image=dataSet[0][0]
+#image=dataSet[0][0]
 
-myTools.imgTransform(image)
+masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-#plt.show(plt.imshow(myTools.imgTransform(image), cmap=cm.binary))
+
+for x in numpy.nditer(masks, op_flags=['readwrite']):
+     if x>50:
+             x[...]=1
+     else:
+	     x[...]=0
+
+masks=masks.astype(numpy.float32)
+
+
+temp=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+
+plt.show(plt.imshow(temp[0], cmap=cm.binary))
 
 
 
