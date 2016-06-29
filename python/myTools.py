@@ -114,7 +114,7 @@ def cropCenter(images, cropPercentage):
  
 
 
-def imgTransform(img, numOfTiles=4, overlap=False):
+def augmentImage(img, numOfTiles=4, overlap=False):
 
 	#rotation angles
 	angles=[90, 180, 270]
@@ -122,29 +122,66 @@ def imgTransform(img, numOfTiles=4, overlap=False):
 	#get the size of the images
 	imgXsize=img.shape[0]
 	imgYsize=img.shape[1]	
-	
-	#compute the size of the tiles
-	tileWidth=math.floor((imgXsize/numOfTiles)*2)
-	tileHeight=math.floor((imgXsize/numOfTiles)*2)
 
 	#apply mirroring
 	img=numpy.fliplr(img)
 	
-	#preallocate space for the tiles
-	tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+	if overlap==False:
 
-	bufferIndex=0
-	for i in angles:
-		#rotate the image
-		tempImg=skimage.transform.rotate(img, i) 
-		for x in range(numOfTiles/2):
-			for y in range(numOfTiles/2):
-				tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
-				plt.show(plt.imshow(tile, cmap=cm.binary))
-				tiles[bufferIndex]=tile
-				bufferIndex+=1
+		#compute the size of the tiles
+		tileWidth=math.floor((imgXsize/numOfTiles)*2)
+		tileHeight=math.floor((imgXsize/numOfTiles)*2)
+
+		#preallocate space for the tiles
+		tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+
+		bufferIndex=0
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(img, i) 
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
 	
-	#return res
+	if overlap==True:
+
+		#compute the size of the tiles
+		tileWidth=math.floor((imgXsize/numOfTiles)*3)
+		tileHeight=math.floor((imgXsize/numOfTiles)*3)
+		
+		#preallocate space for the tiles
+		tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+		
+		bufferIndex=0
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(img, i) 
+			j=0
+			k=tileWidth
+			l=0
+			m=tileHeight
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					
+					tile=tempImg[j:k,l:m]
+					print(l)
+					print(m)
+					print(j)
+					print(k)
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
+					l+=tileWidth/numOfTiles
+					m+=tileWidth/numOfTiles
+				l=0
+				m=tileHeight
+				j+=tileWidth/numOfTiles
+				k+=tileWidth/numOfTiles
+
+	return tiles
 
 
 
