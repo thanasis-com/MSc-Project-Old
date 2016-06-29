@@ -316,7 +316,7 @@ def myContrStrech(images):
 
 
 #creates a convolutional neural network 
-def createNN(data_size, X, Y, epochs, n_batches, batch_size):
+def createNN(data_size, X, Y, epochs, n_batches, batch_size, learning_rate, w_decay):
 
 	#creating symbolic variables for input and output
 	input_var = T.tensor4('input')
@@ -352,8 +352,8 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size):
 
 	myNet=net['output']
 	
-	lr = 0.2
-	weight_decay = 0.005
+	lr = learning_rate
+	weight_decay = w_decay
 	
 	#define how to get the prediction of the network
 	prediction = lasagne.layers.get_output(myNet)
@@ -511,9 +511,9 @@ def myCostFunction(a, b):
 
     r=np.float32(0.01)
 
-    sensitivity=r*T.sum(((a - b)**2)*a)/T.sum(a)
+    sensitivity=r*T.sum(((b - a)**2)*b)/T.sum(b)
     
-    specificity=(1-r)*T.sum(((a - b)**2)*(1-a))/T.sum(1-a)
+    specificity=(1-r)*T.sum(((b - a)**2)*(1-b))/T.sum(1-b)
 	
     return sensitivity+specificity
 
