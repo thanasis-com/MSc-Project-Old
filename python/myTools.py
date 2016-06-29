@@ -20,6 +20,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from skimage import exposure
 import skimage
+from skimage.transform import rotate
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -122,9 +123,7 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 	#get the size of the images
 	imgXsize=img.shape[0]
 	imgYsize=img.shape[1]	
-
-	#apply mirroring
-	img=numpy.fliplr(img)
+	
 	
 	if overlap==False:
 
@@ -132,19 +131,36 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 		tileWidth=math.floor((imgXsize/numOfTiles)*2)
 		tileHeight=math.floor((imgXsize/numOfTiles)*2)
 
-		#preallocate space for the tiles
-		tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+		#preallocate space for the tiles (2 refers to the two different types of mirroring)
+		tiles=numpy.empty([numOfTiles*len(angles)*2, tileHeight, tileWidth])
+
+		#apply mirroring (left-right)
+		flipedImg=numpy.fliplr(img)
 
 		bufferIndex=0
 		for i in angles:
 			#rotate the image
-			tempImg=skimage.transform.rotate(img, i) 
+			tempImg=skimage.transform.rotate(flipedImg, i) 
 			for x in range(numOfTiles/2):
 				for y in range(numOfTiles/2):
 					tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
 					#plt.show(plt.imshow(tile, cmap=cm.binary))
 					tiles[bufferIndex]=tile
 					bufferIndex+=1
+		
+		#apply mirroring (up-down)
+		flipedImg=numpy.flipud(img)
+		
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(flipedImg, i) 
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
+
 	
 	if overlap==True:
 
@@ -152,13 +168,16 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 		tileWidth=math.floor((imgXsize/numOfTiles)*3)
 		tileHeight=math.floor((imgXsize/numOfTiles)*3)
 		
-		#preallocate space for the tiles
-		tiles=numpy.empty([numOfTiles*len(angles), tileHeight, tileWidth])
+		#preallocate space for the tiles (2 refers to the two different types of mirroring)
+		tiles=numpy.empty([numOfTiles*len(angles)*2, tileHeight, tileWidth])
 		
+		#apply mirroring (left-right)
+		flipedImg=numpy.fliplr(img)
+	
 		bufferIndex=0
 		for i in angles:
 			#rotate the image
-			tempImg=skimage.transform.rotate(img, i) 
+			tempImg=skimage.transform.rotate(flipedImg, i) 
 			j=0
 			k=tileWidth
 			l=0
@@ -167,10 +186,30 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 				for y in range(numOfTiles/2):
 					
 					tile=tempImg[j:k,l:m]
-					print(l)
-					print(m)
-					print(j)
-					print(k)
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
+					l+=tileWidth/numOfTiles
+					m+=tileWidth/numOfTiles
+				l=0
+				m=tileHeight
+				j+=tileWidth/numOfTiles
+				k+=tileWidth/numOfTiles
+
+		#apply mirroring (up-down)
+		flipedImg=numpy.flipud(img)
+
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(flipedImg, i) 
+			j=0
+			k=tileWidth
+			l=0
+			m=tileHeight
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					
+					tile=tempImg[j:k,l:m]
 					#plt.show(plt.imshow(tile, cmap=cm.binary))
 					tiles[bufferIndex]=tile
 					bufferIndex+=1
@@ -199,8 +238,8 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileWidth=math.floor((imageWidth/numOfTiles)*2)
 		tileHeight=math.floor((imageHeight/numOfTiles)*2)
 
-	#preallocate space for the dataset (3 represents the number of the rotation angles)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*3, tileWidth, tileHeight])
+	#preallocate space for the dataset (3 refers to the number of the rotation angles, 2 refers to the types of mirroring)
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*3*2, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
@@ -211,8 +250,8 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 
 	end_time = time.time()
 	print('Augmented %d images in %.2f seconds' % (dataset.shape[0], end_time-start_time))	
-	
-	return augmented
+
+	return augmented.reshape(augmented.shape[0], 1, augmented.shape[1], augmented.shape[2])	
 
 
 

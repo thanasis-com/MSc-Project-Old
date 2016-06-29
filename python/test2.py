@@ -15,29 +15,35 @@ import myTools
 
 
 
-#dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
+dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
-#dataSet=myTools.oneDimension(dataSet)
+dataSet=myTools.oneDimension(dataSet)
 
-#dataSet= dataSet.astype(numpy.uint8)
+dataSet= dataSet.astype(numpy.uint8)
+
+dataSet=myTools.cropCenter(dataSet, 80)
 
 #image=dataSet[0][0]
 
-masks=myTools.loadImages('../../masks', 819, 819, 1)
+#masks=myTools.loadImages('../../masks', 819, 819, 1)
 
 
-for x in numpy.nditer(masks, op_flags=['readwrite']):
-     if x>50:
-             x[...]=1
-     else:
-	     x[...]=0
+#for x in numpy.nditer(masks, op_flags=['readwrite']):
+#     if x>50:
+#             x[...]=1
+#     else:
+#	     x[...]=0
 
-masks=masks.astype(numpy.float32)
+#masks=masks.astype(numpy.float32)
 
 
-temp=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+temp=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 
-plt.show(plt.imshow(temp[0], cmap=cm.binary))
+print(temp.shape)
+
+plt.show(plt.imshow(temp[0][0], cmap=cm.binary))
+
+plt.show(plt.imshow(temp[300][0], cmap=cm.binary))
 
 
 
