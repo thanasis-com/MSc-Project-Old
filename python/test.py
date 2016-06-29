@@ -82,6 +82,9 @@ batchSize=math.floor(train.shape[0]/numOfBatches)
 myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epochs=1, n_batches=numOfBatches, batch_size=batchSize, learning_rate=0.2, w_decay=0.005)
 
 
+res=myNet(test)
+
+print(myTools.myTestCostFunction(res,masks[splitPoint+1:dataSet.shape[0], :, :, :]))
 
 
 trainInstance=train[0]
