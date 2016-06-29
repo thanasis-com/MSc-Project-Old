@@ -84,7 +84,7 @@ myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epoch
 
 res=myNet(test)
 
-print(myTools.myTestCostFunction(res,masks[splitPoint+1:dataSet.shape[0], :, :, :]))
+print(myTools.myTestCostFunction(res,masks[splitPoint+1:masks.shape[0], :, :, :]))
 
 
 trainInstance=train[0]
