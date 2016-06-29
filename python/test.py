@@ -87,8 +87,6 @@ res=myNet(test)
 
 print(myTools.myTestCostFunction(res,masks[splitPoint+1:masks.shape[0], :, :, :]))
 
-print(sklearn.metrics.log_loss(masks[splitPoint+1:masks.shape[0], :, :, :].astype(numpy.int), res))
-
 
 trainInstance=train[0]
 trainInstance=trainInstance.reshape(1, trainInstance.shape[0], trainInstance.shape[1], trainInstance.shape[2])
