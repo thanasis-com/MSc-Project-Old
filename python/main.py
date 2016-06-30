@@ -25,9 +25,9 @@ import sklearn
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
 
 
-argLR=sys.argv[1]
+argLR=float(sys.argv[1])
 
-argWD=sys.argv[2]
+argWD=float(sys.argv[2])
 
 print('Learning rate: %d' % (argLR))
 print('Weight decay: %d' % (argWD))
