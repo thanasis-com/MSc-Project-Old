@@ -6,9 +6,9 @@ from PIL import Image
 import time
 import sys
 import math
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+#import matplotlib
+#import matplotlib.pyplot as plt
+#import matplotlib.cm as cm
 import theano.tensor as T
 from PIL import Image
 from os import listdir

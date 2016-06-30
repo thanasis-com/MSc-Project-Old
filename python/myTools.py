@@ -22,9 +22,9 @@ from skimage import exposure
 import skimage
 from skimage.transform import rotate
 
-import matplotlib
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+#import matplotlib
+#import matplotlib.pyplot as plt
+#import matplotlib.cm as cm
 
 
 import lasagne
