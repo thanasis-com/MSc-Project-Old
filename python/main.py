@@ -33,6 +33,7 @@ argEpochs=int(sys.argv[3])
 
 print('Learning rate: %f' % (argLR))
 print('Weight decay: %f' % (argWD))
+print('Number of epochs: %d' % (argEpochs))
 
 ### DATASET
 dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
