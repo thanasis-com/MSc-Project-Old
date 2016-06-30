@@ -27,7 +27,7 @@ from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, 
 
 argLR=sys.argv[1]
 
-argWD=ses.argv[2]
+argWD=sys.argv[2]
 
 print(argLR)
 print(argWD)
