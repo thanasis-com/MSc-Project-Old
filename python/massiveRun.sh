@@ -1,5 +1,5 @@
 
-for LR in 0.0001 0.0005 0.001 0.005 0.01 0.05 0.1 0.2
+for LR in 0.0001
 do
-	echo "$LR"
+	THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python main.py $LR 0.005 1 >> res.txt
 done
