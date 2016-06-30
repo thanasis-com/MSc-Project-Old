@@ -29,8 +29,8 @@ argLR=sys.argv[1]
 
 argWD=sys.argv[2]
 
-print(argLR)
-print(argWD)
+print('Learning rate: %d' % (argLR))
+print('Weight decay: %d' % (argWD))
 
 ### DATASET
 dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
