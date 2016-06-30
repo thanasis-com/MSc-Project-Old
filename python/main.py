@@ -29,8 +29,8 @@ argLR=float(sys.argv[1])
 
 argWD=float(sys.argv[2])
 
-print('Learning rate: %d' % (argLR))
-print('Weight decay: %d' % (argWD))
+print('Learning rate: %f' % (argLR))
+print('Weight decay: %f' % (argWD))
 
 ### DATASET
 dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
@@ -82,7 +82,7 @@ myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epoch
 
 res=myNet(test)
 
-print(myTools.myTestCostFunction(res,masks[splitPoint+1:masks.shape[0], :, :, :]))
+print('Total cost on test set: %f' % (myTools.myTestCostFunction(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
 
 
