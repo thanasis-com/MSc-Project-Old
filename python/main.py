@@ -29,6 +29,8 @@ argLR=float(sys.argv[1])
 
 argWD=float(sys.argv[2])
 
+argEpochs=int(sys.argv[3])
+
 print('Learning rate: %f' % (argLR))
 print('Weight decay: %f' % (argWD))
 
@@ -77,7 +79,7 @@ numOfBatches=50
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epochs=1, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epochs=argEpochs, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
 
 res=myNet(test)
