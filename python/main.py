@@ -25,6 +25,13 @@ import sklearn
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
 
 
+argLR=sys.argv[1]
+
+argWD=ses.argv[2]
+
+print(argLR)
+print(argWD)
+
 ### DATASET
 dataSet=myTools.loadImages('../../images', 1024, 1024, 4)
 
@@ -69,7 +76,8 @@ data_size=(None,1,imgsWidth,imgsHeight)
 numOfBatches=50
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
-myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epochs=1, n_batches=numOfBatches, batch_size=batchSize, learning_rate=0.2, w_decay=0.005)
+
+myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], epochs=1, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
 
 res=myNet(test)

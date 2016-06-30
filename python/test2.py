@@ -13,33 +13,9 @@ import theano.tensor as T
 
 import myTools
 
-
-def myCostFunction(a, b):
-  
-
-    r=np.float32(0.01)
-
-    sensitivity=r*numpy.sum(((b - a)**2)*b)/numpy.sum(b)
-    
-    specificity=(1-r)*numpy.sum(((b - a)**2)*(1-b))/numpy.sum(1-b)
-	
-    return sensitivity+specificity
+import sys
 
 
-
-### MASKS
-masks=myTools.loadImages('../../masks', 819, 819, 1)
-
-for x in numpy.nditer(masks, op_flags=['readwrite']):
-     if x>0:
-             x[...]=1
-
-masks=masks.astype(numpy.float32)
-
-masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
-
-masks=masks.astype(numpy.float32)
-
-print(myCostFunction(masks,masks))
-
+print(sys.argv[0])
+print(sys.argv[1])
 
