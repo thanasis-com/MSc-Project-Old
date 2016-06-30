@@ -16,6 +16,9 @@ import myTools
 import sys
 
 
-print(sys.argv[0])
-print(sys.argv[1])
+argLR=float(sys.argv[1])
 
+argWD=float(sys.argv[2])
+
+print('Learning rate: %f' % (argLR))
+print('Weight decay: %f' % (argWD))
