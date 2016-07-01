@@ -542,7 +542,7 @@ def myTestCrossEntropy(predictions, targets):
 
 	r=np.float32(0.06)
 	
-	return -1*targets*math.log(predictions)*(1-r)+(-1)*(1-targets)*math.log(1-predictions)*r
+	return -1*targets*numpy.log(predictions)*(1-r)+(-1)*(1-targets)*numpy.log(1-predictions)*r
 
 
 
