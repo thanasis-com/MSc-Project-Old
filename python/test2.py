@@ -16,6 +16,14 @@ import myTools
 import sys
 
 
+def myTestCrossEntropy(predictions, targets):
+
+	r=np.float32(0.06)
+	
+	return numpy.average(-1*targets*numpy.log(predictions)*(1-r)+(-1)*(1-targets)*numpy.log(1-predictions)*r)
+
+
+
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
 temp=0
@@ -29,9 +37,5 @@ for x in numpy.nditer(masks, op_flags=['readwrite']):
      else:
  	     x[...]=0
 
-print(masks[0][0])
-plt.show(plt.imshow(masks[0][0]))
-print(temp)
-print(whole)
-print(float(temp)/whole)
 
+print('Total cost on test set: %f' % (myTestCrossEntropy(masks,masks)))

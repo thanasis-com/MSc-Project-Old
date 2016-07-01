@@ -316,7 +316,7 @@ def myContrStrech(images):
 
 
 #creates a convolutional neural network 
-def createNN(data_size, X, Y, epochs, n_batches, batch_size, learning_rate, w_decay):
+def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learning_rate, w_decay):
 
 	#creating symbolic variables for input and output
 	input_var = T.tensor4('input')
@@ -332,10 +332,19 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size, learning_rate, w_de
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=10, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
-	net['unpool2']= lasagne.layers.InverseLayer(net['pool2'], net['pool2'])
+	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=10, filter_size=5))
+	net['pool3'] = lasagne.layers.Pool2DLayer(net['conv3'], pool_size=2)
+	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=10, filter_size=5))
+	net['pool4'] = lasagne.layers.Pool2DLayer(net['conv4'], pool_size=2)
+	net['unpool4']= lasagne.layers.InverseLayer(net['pool4'], net['pool4'])
+	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool4'], num_filters=10, filter_size=5))
+	net['unpool3']= lasagne.layers.InverseLayer(net['deconv4'], net['pool3'])
+	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=10, filter_size=5))
+	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
 	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=10, filter_size=5))
 	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
 	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=5, nonlinearity=lasagne.nonlinearities.sigmoid))
+
 
 	print('--------------------')
 	print('Network architecture: \n')
@@ -379,12 +388,12 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size, learning_rate, w_de
  	#defining same things for testing
 	##"deterministic=True" disables stochastic behaviour, such as dropout
 	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
-	test_loss = lasagne.objectives.squared_error(test_prediction,target_var)
+	test_loss = myCrossEntropy(test_prediction, target_var)
 	test_loss = test_loss.mean()
 	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
 	#compile a theano validation function
-	val_fn = theano.function([input_var, target_var], [test_loss, test_acc])
+	val_fn = theano.function([input_var, target_var], test_loss)
 
 	#compile a theano function to make predictions with the network
 	get_preds = theano.function([input_var], test_prediction)
