@@ -361,7 +361,8 @@ def createNN(data_size, X, Y, epochs, n_batches, batch_size, learning_rate, w_de
 	#define the cost function
 	#loss = lasagne.objectives.squared_error(prediction, target_var)
 	#loss = loss.mean()
-	loss = myCostFunction(prediction, target_var)
+	loss = myCrossEntropy(prediction, target_var)
+	loss = loss.mean()
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
 	loss += weight_decay * weightsl2
@@ -528,6 +529,34 @@ def myTestCostFunction(a, b):
     specificity=r*numpy.sum(((b - a)**2)*(1-b))/numpy.sum(1-b)
 	
     return sensitivity+specificity
+
+
+def myCrossEntropy(predictions, targets):
+
+	r=np.float32(0.06)
+	
+	return -1*targets*T.log(predictions)*(1-r)+(-1)*(1-targets)*T.log(1-predictions)*r
+	
+
+def myTestCrossEntropy(predictions, targets):
+
+	r=np.float32(0.06)
+	
+	return -1*targets*T.log(predictions)*(1-r)+(-1)*(1-targets)*T.log(1-predictions)*r
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
