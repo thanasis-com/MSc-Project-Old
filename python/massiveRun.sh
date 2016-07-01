@@ -1,5 +1,5 @@
 
-for LR in 0.0001
+for WD in 0.0001
 do
-	THEANO_FLAGS=mode=FAST_RUN,device=$2,floatX=float32 python main.py $LR $1 1 >> res0.txt
+	THEANO_FLAGS=mode=FAST_RUN,device=$2,floatX=float32 python main.py $1 $WD 1 >> $3
 done
