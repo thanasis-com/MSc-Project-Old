@@ -16,9 +16,22 @@ import myTools
 import sys
 
 
-argLR=float(sys.argv[1])
+masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-argWD=float(sys.argv[2])
+temp=0
+whole=0
 
-print('Learning rate: %f' % (argLR))
-print('Weight decay: %f' % (argWD))
+for x in numpy.nditer(masks, op_flags=['readwrite']):
+     whole+=1
+     if x>0:
+             x[...]=1
+	     temp+=1
+     else:
+ 	     x[...]=0
+
+print(masks[0][0])
+plt.show(plt.imshow(masks[0][0]))
+print(temp)
+print(whole)
+print(float(temp)/whole)
+
