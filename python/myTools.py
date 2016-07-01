@@ -422,8 +422,9 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 
     		epoch_cost = np.mean(batch_cost_history)
     		cost_history.append(epoch_cost)
+		test_cost = val_fn(valX, valY)
     		epoch_time_end = time.time()
-    		print('Epoch %d/%d, train error: %f. Elapsed time: %.2f seconds' % (epoch+1, epochs, epoch_cost, epoch_time_end-epoch_time_start))
+    		print('Epoch %d/%d, train error: %f, val error: %f. Elapsed time: %.2f seconds' % (epoch+1, epochs, epoch_cost, test_cost, epoch_time_end-epoch_time_start))
 
 	end_time = time.time()
 	print('Training completed in %.2f seconds.' % (end_time - start_time))
