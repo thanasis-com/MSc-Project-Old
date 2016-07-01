@@ -24,7 +24,6 @@ from sklearn.metrics import confusion_matrix
 import sklearn
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
 
-
 argLR=float(sys.argv[1])
 
 argWD=float(sys.argv[2])

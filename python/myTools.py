@@ -509,11 +509,11 @@ def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 def myCostFunction(a, b):
   
 
-    r=np.float32(0.01)
+    r=np.float32(0.06)
 
-    sensitivity=r*T.sum(((b - a)**2)*b)/T.sum(b)
+    sensitivity=(1-r)*T.sum(((b - a)**2)*b)/T.sum(b)
     
-    specificity=(1-r)*T.sum(((b - a)**2)*(1-b))/T.sum(1-b)
+    specificity=r*T.sum(((b - a)**2)*(1-b))/T.sum(1-b)
 	
     return sensitivity+specificity
 
@@ -521,11 +521,11 @@ def myCostFunction(a, b):
 def myTestCostFunction(a, b):
   
 
-    r=np.float32(0.01)
+    r=np.float32(0.06)
 
-    sensitivity=r*numpy.sum(((b - a)**2)*b)/numpy.sum(b)
+    sensitivity=(1-r)*numpy.sum(((b - a)**2)*b)/numpy.sum(b)
     
-    specificity=(1-r)*numpy.sum(((b - a)**2)*(1-b))/numpy.sum(1-b)
+    specificity=r*numpy.sum(((b - a)**2)*(1-b))/numpy.sum(1-b)
 	
     return sensitivity+specificity
 
