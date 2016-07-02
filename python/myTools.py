@@ -337,7 +337,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=128, filter_size=5))
 	#net['pool4'] = lasagne.layers.Pool2DLayer(net['conv4'], pool_size=2)
 	#net['unpool4']= lasagne.layers.InverseLayer(net['pool4'], net['pool4'])
-	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=128, filter_size=5))
+	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool4'], num_filters=128, filter_size=5))
 	net['unpool3']= lasagne.layers.InverseLayer(net['deconv4'], net['pool3'])
 	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=64, filter_size=5))
 	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
@@ -362,7 +362,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	myNet=net['output']
 	
 	lr = learning_rate
-	weight_decay = w_decayne, 10, 198, 198)
+	weight_decay = w_decay
 	
 	#define how to get the prediction of the network
 	prediction = lasagne.layers.get_output(myNet)
