@@ -344,7 +344,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=32, filter_size=5))
 	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
 	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=16, filter_size=5))
-	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
+	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
 
 
 	print('--------------------')
