@@ -328,7 +328,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=4, filter_size=5))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=20, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=20, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
@@ -343,7 +343,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
 	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=20, filter_size=5))
 	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=4, filter_size=5))
+	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=20, filter_size=5))
 	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
 
 
@@ -570,4 +570,4 @@ def myTestCrossEntropy(predictions, targets):
 
 
 
-
+#
