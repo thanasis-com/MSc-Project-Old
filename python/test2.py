@@ -10,32 +10,36 @@ from skimage.transform import rotate
 import numpy
 import theano
 import theano.tensor as T
-
+import scipy
 import myTools
 
 import sys
 
 
-def myTestCrossEntropy(predictions, targets):
-
-	r=np.float32(0.06)
-	
-	return numpy.average(-1*targets*numpy.log(predictions)*(1-r)+(-1)*(1-targets)*numpy.log(1-predictions)*r)
-
-
-
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-temp=0
-whole=0
-
 for x in numpy.nditer(masks, op_flags=['readwrite']):
-     whole+=1
      if x>0:
-             x[...]=1
-	     temp+=1
+             x[...]=0
      else:
- 	     x[...]=0
+	     x[...]=1
 
 
-print('Total cost on test set: %f' % (myTestCrossEntropy(masks,masks)))
+#plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
+temp=scipy.ndimage.morphology.distance_transform_edt(masks)
+
+for x in numpy.nditer(temp, op_flags=['readwrite']):
+     if x>16:
+             x[...]=16
+
+print(numpy.amax(temp))
+print(numpy.amin(temp))
+masks=masks.astype(numpy.float32)
+
+temp=temp/float(numpy.amax(temp))
+
+print(temp)
+print(numpy.amax(temp))
+print(numpy.amin(temp))
+
+plt.show(plt.imshow(temp[0][0], cmap=cm.binary))
