@@ -14,7 +14,7 @@ import scipy
 import myTools
 
 import sys
-
+from PIL import Image
 
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
@@ -32,14 +32,5 @@ for x in numpy.nditer(temp, op_flags=['readwrite']):
      if x>16:
              x[...]=16
 
-print(numpy.amax(temp))
-print(numpy.amin(temp))
-masks=masks.astype(numpy.float32)
-
-temp=temp/float(numpy.amax(temp))
-
-print(temp)
-print(numpy.amax(temp))
-print(numpy.amin(temp))
-
-plt.show(plt.imshow(temp[0][0], cmap=cm.binary))
+Image.fromarray(temp[0][0]).convert('RGB').save('output.png')
+#im.save("output.png")
