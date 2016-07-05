@@ -381,7 +381,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	params = lasagne.layers.get_all_params(myNet, trainable=True)
 
 	#define the update function for each training step
-	updates = lasagne.updates.momentum(loss, params, learning_rate=lr,momentum=0.5)
+	updates = lasagne.updates.momentum(loss, params, learning_rate=lr,momentum=0.9)
 
 	#compile a train function
 	train_fn = theano.function([input_var, target_var], loss, updates=updates)
