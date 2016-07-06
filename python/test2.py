@@ -16,21 +16,18 @@ import myTools
 import sys
 from PIL import Image
 
-masks=myTools.loadImages('../../masks', 819, 819, 1)
+from scipy import misc
 
-for x in numpy.nditer(masks, op_flags=['readwrite']):
-     if x>0:
-             x[...]=0
-     else:
-	     x[...]=1
+face = misc.imread('output1.png')
+type(face)      
 
+print(face.shape) 
+print(face.dtype)
 
-#plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
-temp=scipy.ndimage.morphology.distance_transform_edt(masks)
+print(face)
 
-for x in numpy.nditer(temp, op_flags=['readwrite']):
-     if x>16:
-             x[...]=16
+print(numpy.amax(face))
+print(numpy.amin(face))
+print(numpy.mean(face))
 
-Image.fromarray(temp[0][0]).convert('RGB').save('output.png')
-#im.save("output.png")
+plt.show(plt.imshow(face, cmap=cm.binary))

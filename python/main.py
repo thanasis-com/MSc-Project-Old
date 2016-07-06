@@ -87,10 +87,7 @@ res=myNet(test)
 print('Total cost on test set: %f' % (myTools.myTestCrossEntropy(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
 Image.fromarray(res[0][0]).convert('RGB').save('output1.png')
+print(res[0][0])
+print(numpy.mean(res[0][0]))
 #Image.fromarray(temp[0][0]).convert('RGB').save('output2.png')
-
-
-
-
-
 
