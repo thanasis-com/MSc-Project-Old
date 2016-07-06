@@ -5,6 +5,7 @@ import numpy
 import pylab
 from PIL import Image
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import time
 import sys
 import math
