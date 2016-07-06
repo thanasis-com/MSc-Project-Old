@@ -2,6 +2,7 @@ import myTools
 import myClasses
 import theano
 import numpy
+import pylab
 from PIL import Image
 import time
 import sys
@@ -86,8 +87,13 @@ res=myNet(test)
 
 print('Total cost on test set: %f' % (myTools.myTestCrossEntropy(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
-Image.fromarray(res[0][0]).convert('RGB').save('output1.png')
-print(res[0][0])
-print(numpy.mean(res[0][0]))
-#Image.fromarray(temp[0][0]).convert('RGB').save('output2.png')
+plt.imshow(res[0][0], cmap=cm.binary)
+pylab.savefig('output1.png', bbox_inches='tight')
+
+plt.imshow(res[1][0], cmap=cm.binary)
+pylab.savefig('output2.png', bbox_inches='tight')
+
+
+
+
 
