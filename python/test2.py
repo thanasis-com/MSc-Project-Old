@@ -21,8 +21,6 @@ test=numpy.array([[0.58683, 0.3219283], [0.56384, 0.48238]])
 
 #png.Writer.write(pngfile, numpy.reshape(test, (-1, column_count*plane_count)))
 
-plt.imshow(test, cmap=cm.binary)
-pylab.savefig('output.png', bbox_inches='tight')
-#Image.fromarray(numpy.array([[0.58683, 0.3219283], [0.56384, 0.48238]])).convert('RGB').save('output1.png')
+numpy.save("outfile.npy", test)
 
 

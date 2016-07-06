@@ -89,12 +89,9 @@ res=myNet(test)
 
 print('Total cost on test set: %f' % (myTools.myTestCrossEntropy(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
-plt.imshow(res[0][0], cmap=cm.binary)
-pylab.savefig('output1.png', bbox_inches='tight')
 
-plt.imshow(res[1][0], cmap=cm.binary)
-pylab.savefig('output2.png', bbox_inches='tight')
-
+numpy.save("outfile1.npy", res[0][0])
+numpy.save("outfile2.npy", res[1][0])
 
 
 
