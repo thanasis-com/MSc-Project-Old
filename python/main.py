@@ -4,6 +4,7 @@ import theano
 import numpy
 import pylab
 from PIL import Image
+import matplotlib.pyplot as plt
 import time
 import sys
 import math
