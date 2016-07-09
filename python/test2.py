@@ -12,15 +12,21 @@ import theano
 import theano.tensor as T
 import scipy
 import myTools
-
+import pylab
 import sys
 from PIL import Image
 import png
+import math
 
-test=numpy.array([[0.58683, 0.3219283], [0.56384, 0.48238]])
+one = np.load("outfile1.npy")
+two = np.load("outfile2.npy")
 
-#png.Writer.write(pngfile, numpy.reshape(test, (-1, column_count*plane_count)))
+plt.imshow(one, cmap=cm.binary)
+pylab.savefig('out7.png', bbox_inches='tight')
+plt.imshow(two, cmap=cm.binary)
+pylab.savefig('out8.png', bbox_inches='tight')
 
-numpy.save("outfile.npy", test)
+
+
 
 
