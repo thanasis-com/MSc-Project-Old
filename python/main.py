@@ -46,7 +46,7 @@ dataSet=dataSet.astype(numpy.uint8)
 
 dataSet=myTools.cropCenter(dataSet, 80)
 
-dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+#dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 	
 dataSet=dataSet.astype(numpy.float32)
 
@@ -60,7 +60,7 @@ for x in numpy.nditer(masks, op_flags=['readwrite']):
 
 masks=masks.astype(numpy.float32)
 
-masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+#masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 
 masks=masks.astype(numpy.float32)
 
@@ -78,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=50
+numOfBatches=8
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
