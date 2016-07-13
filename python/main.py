@@ -44,7 +44,7 @@ dataSet=myTools.oneDimension(dataSet)
 
 dataSet=dataSet.astype(numpy.uint8)
 
-dataSet=myTools.cropCenter(dataSet, 80.8)
+dataSet=myTools.cropCenter(dataSet, 81.2)
 
 #dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 	
