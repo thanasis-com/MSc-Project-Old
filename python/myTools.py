@@ -120,7 +120,7 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 	#rotation angles
 	angles=[90, 180, 270]
 	
-	#get the size of the images
+	#get the size of the image
 	imgXsize=img.shape[0]
 	imgYsize=img.shape[1]	
 	
@@ -223,11 +223,52 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 	return tiles
 
 
+
+def augmentImage1(img, numOfTiles=1):
+
+	#rotation angles
+	angles=[90, 180, 270]
+	
+	#get the size of the image
+	imgXsize=img.shape[0]
+	imgYsize=img.shape[1]	
+
+	#compute the size of the tiles
+	tileWidth=imgXsize
+	tileHeight=imgYsize
+
+	#preallocate space for the tiles (2 refers to the two different types of mirroring)
+	tiles=numpy.empty([numOfTiles*len(angles)*2, tileHeight, tileWidth])
+
+	#apply mirroring (left-right)
+	flipedImg=numpy.fliplr(img)
+
+	bufferIndex=0
+	for i in angles:
+		#rotate the image
+		tempImg=skimage.transform.rotate(flipedImg, i) 
+		tiles[bufferIndex]=tempImg
+		bufferIndex+=1
+
+	#apply mirroring (up-down)
+	flipedImg=numpy.flipud(img)
+
+	for i in angles:
+		#rotate the image
+		tempImg=skimage.transform.rotate(flipedImg, i) 
+		tiles[bufferIndex]=tempImg
+		bufferIndex+=1
+
+	return tiles
+
+
+
 def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 
 	print('--------------------')
 	print('Augmenting the dataset...')
 	start_time = time.time()
+
 
 	if overlap==True:
 		#compute the size of the tiles
@@ -238,12 +279,22 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileWidth=math.floor((imageWidth/numOfTiles)*2)
 		tileHeight=math.floor((imageHeight/numOfTiles)*2)
 
+	#if we do not want tiling
+	if numOfTiles==1:
+		tileWidth=imageWidth
+		tileHeight=imageHeight
+
 	#preallocate space for the dataset (3 refers to the number of the rotation angles, 2 refers to the types of mirroring)
 	augmented=numpy.empty([dataset.shape[0]*numOfTiles*3*2, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
-		newImgs=augmentImage(dataset[i][0], numOfTiles, overlap)
+		#if we want tiling, then use the augmentImage function
+		if numOfTiles!=1:
+			newImgs=augmentImage(dataset[i][0], numOfTiles, overlap)
+		else:
+			newImgs=augmentImage1(dataset[i][0])
+		
 		for j in range(newImgs.shape[0]):
 			augmented[bufferIndex]=newImgs[j]
 			bufferIndex+=1
@@ -252,6 +303,8 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 	print('Augmented %d images in %.2f seconds' % (dataset.shape[0], end_time-start_time))	
 
 	return augmented.reshape(augmented.shape[0], 1, augmented.shape[1], augmented.shape[2])	
+
+	
 
 
 
