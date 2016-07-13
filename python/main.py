@@ -44,7 +44,7 @@ dataSet=myTools.oneDimension(dataSet)
 
 dataSet=dataSet.astype(numpy.uint8)
 
-dataSet=myTools.cropCenter(dataSet, 80)
+dataSet=myTools.cropCenter(dataSet, 80.8)
 
 #dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 	
@@ -78,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=8
+numOfBatches=7
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
