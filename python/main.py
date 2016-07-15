@@ -78,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=7
+numOfBatches=20
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
