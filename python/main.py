@@ -54,9 +54,7 @@ dataSet=dataSet.astype(numpy.float32)
 ### MASKS
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-#for x in numpy.nditer(masks, op_flags=['readwrite']):
-#     if x>0:
-#             x[...]=1
+#masks[masks>0]=1
 
 masks=masks.astype(numpy.float32)
 
@@ -80,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=17
+numOfBatches=57
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 

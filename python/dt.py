@@ -22,15 +22,18 @@ from scipy import ndimage
 
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-for x in numpy.nditer(masks, op_flags=['readwrite']):
-     if x>0:
-             x[...]=1
+
+masks[masks>0]=1
+
 
 for x in numpy.nditer(masks, op_flags=['readwrite']):
      if x==1:
              x[...]=0
      else:
 	     x[...]=1
+
+masks[masks==1]=0
+masks[masks!=0]=1
 
 
 masks=masks.astype(numpy.float32)
@@ -41,9 +44,11 @@ for i in xrange(masks.shape[0]):
 	masks[i][0]=ndimage.distance_transform_edt(masks[i][0])
 
 
-for x in numpy.nditer(masks, op_flags=['readwrite']):
-     if x>20:
-             x[...]=20
+#for x in numpy.nditer(masks, op_flags=['readwrite']):
+#     if x>20:
+#             x[...]=20
+
+masks[masks>20]=20
 
 print(numpy.amax(masks))
 

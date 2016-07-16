@@ -118,9 +118,7 @@ def cropCenter(images, cropPercentage):
 
 def dt(masks, threshold):
 	
-	for x in numpy.nditer(masks, op_flags=['readwrite']):
-     		if x>0:
-             		x[...]=1
+	masks[masks>0]=1
 
 	for x in numpy.nditer(masks, op_flags=['readwrite']):
      		if x==1:
@@ -133,9 +131,7 @@ def dt(masks, threshold):
 	for i in xrange(masks.shape[0]):
 		masks[i][0]=ndimage.distance_transform_edt(masks[i][0])
 	
-	for x in numpy.nditer(masks, op_flags=['readwrite']):
-     		if x>threshold:
-             		x[...]=threshold
+	masks[masks>threshold]=threshold
 
 	masks=masks/numpy.amax(masks).astype(numpy.float32)
 	masks=masks.astype(numpy.float32)
@@ -147,7 +143,7 @@ def dt(masks, threshold):
 def augmentImage(img, numOfTiles=4, overlap=False):
 
 	#rotation angles
-	angles=[0, 90]
+	angles=[0]
 	
 	#get the size of the image
 	imgXsize=img.shape[0]
@@ -326,7 +322,7 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileHeight=imageHeight
 
 	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*2*3, tileWidth, tileHeight])
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
@@ -519,7 +515,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 
     		epoch_cost = np.mean(batch_cost_history)
     		cost_history.append(epoch_cost)
-		test_cost = val_fn(valX, valY)
+		#spliting the calculation of the test loss to half, so that it does not waste much memory
+		test_cost1 = val_fn(valX[0:math.floor(valX.shape[0]/2),:,:,:], valY[0:math.floor(valY.shape[0]/2),:,:,:])
+		test_cost2 = val_fn(valX[math.floor(valX.shape[0]/2):valX.shape[0],:,:,:], valY[math.floor(valY.shape[0]/2):valX.shape[0],:,:,:])
+		test_cost = test_cost1+test_cost2
     		epoch_time_end = time.time()
     		print('Epoch %d/%d, train error: %f, val error: %f. Elapsed time: %.2f s' % (epoch+1, epochs, epoch_cost, test_cost, epoch_time_end-epoch_time_start))
 
