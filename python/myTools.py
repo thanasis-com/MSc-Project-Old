@@ -21,6 +21,7 @@ from sklearn.metrics import confusion_matrix
 from skimage import exposure
 import skimage
 from skimage.transform import rotate
+from scipy import ndimage
 
 #import matplotlib
 #import matplotlib.pyplot as plt
@@ -115,10 +116,38 @@ def cropCenter(images, cropPercentage):
  
 
 
+def dt(masks, threshold):
+	
+	for x in numpy.nditer(masks, op_flags=['readwrite']):
+     		if x>0:
+             		x[...]=1
+
+	for x in numpy.nditer(masks, op_flags=['readwrite']):
+     		if x==1:
+             		x[...]=0
+    		else:
+	     		x[...]=1
+
+	masks=masks.astype(numpy.float32)
+	
+	for i in xrange(masks.shape[0]):
+		masks[i][0]=ndimage.distance_transform_edt(masks[i][0])
+	
+	for x in numpy.nditer(masks, op_flags=['readwrite']):
+     		if x>threshold:
+             		x[...]=threshold
+
+	masks=masks/numpy.amax(masks).astype(numpy.float32)
+	masks=masks.astype(numpy.float32)
+
+	return masks
+
+
+
 def augmentImage(img, numOfTiles=4, overlap=False):
 
 	#rotation angles
-	angles=[90, 180, 270]
+	angles=[0, 90]
 	
 	#get the size of the image
 	imgXsize=img.shape[0]
@@ -131,13 +160,25 @@ def augmentImage(img, numOfTiles=4, overlap=False):
 		tileWidth=math.floor((imgXsize/numOfTiles)*2)
 		tileHeight=math.floor((imgXsize/numOfTiles)*2)
 
-		#preallocate space for the tiles (2 refers to the two different types of mirroring)
-		tiles=numpy.empty([numOfTiles*len(angles)*2, tileHeight, tileWidth])
+		#preallocate space for the tiles (3 refers to the two different types of mirroring + the normal version)
+		tiles=numpy.empty([numOfTiles*len(angles)*3, tileHeight, tileWidth])
+
+
+		bufferIndex=0
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(img, i) 
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
+
 
 		#apply mirroring (left-right)
 		flipedImg=numpy.fliplr(img)
 
-		bufferIndex=0
 		for i in angles:
 			#rotate the image
 			tempImg=skimage.transform.rotate(flipedImg, i) 
@@ -284,8 +325,8 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileWidth=imageWidth
 		tileHeight=imageHeight
 
-	#preallocate space for the dataset (3 refers to the number of the rotation angles, 2 refers to the types of mirroring)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*2, tileWidth, tileHeight])
+	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*2*3, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
@@ -381,10 +422,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
-	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
-	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0'], num_filters=25, filter_size=5))
+	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
+	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
+	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=25, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
@@ -426,7 +467,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#define the cost function
 	#loss = lasagne.objectives.squared_error(prediction, target_var)
 	#loss = loss.mean()
-	loss = myCrossEntropy(prediction, target_var)
+	loss = squared_error(prediction, target_var)
 	loss = loss.mean()
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
@@ -444,7 +485,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
  	#defining same things for testing
 	##"deterministic=True" disables stochastic behaviour, such as dropout
 	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
-	test_loss = myCrossEntropy(test_prediction, target_var)
+	test_loss = squared_error(test_prediction, target_var)
 	test_loss = test_loss.mean()
 	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
