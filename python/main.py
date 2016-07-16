@@ -66,9 +66,6 @@ masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, im
 
 masks=masks.astype(numpy.float32)
 
-plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
-
-
 
 ### DATASET SPLIT
 splitPoint=math.floor(dataSet.shape[0]*0.7)
