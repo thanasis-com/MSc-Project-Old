@@ -68,12 +68,7 @@ masks=masks.astype(numpy.float32)
 
 plt.show(plt.imshow(masks[0][0], cmap=cm.binary))
 
-print(masks[0][0])
 
-print(masks.shape[0])
-print(dataSet.shape[0])
-
-sys.exit()
 
 ### DATASET SPLIT
 splitPoint=math.floor(dataSet.shape[0]*0.7)
@@ -88,7 +83,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=8
+numOfBatches=17
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
