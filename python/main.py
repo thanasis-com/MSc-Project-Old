@@ -54,11 +54,11 @@ dataSet=dataSet.astype(numpy.float32)
 ### MASKS
 masks=myTools.loadImages('../../masks', 819, 819, 1)
 
-#masks[masks>0]=1
+masks[masks>0]=1
 
 masks=masks.astype(numpy.float32)
 
-masks=myTools.dt(masks, 20)
+#masks=myTools.dt(masks, 20)
 
 masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
 
@@ -78,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=57
+numOfBatches=98
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 

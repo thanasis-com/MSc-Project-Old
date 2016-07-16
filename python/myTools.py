@@ -143,7 +143,7 @@ def dt(masks, threshold):
 def augmentImage(img, numOfTiles=4, overlap=False):
 
 	#rotation angles
-	angles=[0]
+	angles=[0, 90]
 	
 	#get the size of the image
 	imgXsize=img.shape[0]
@@ -322,7 +322,7 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileHeight=imageHeight
 
 	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, tileWidth, tileHeight])
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*2*3, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
@@ -451,6 +451,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 
 	#print the total number of trainable parameters of the network
 	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
+	print('\nTraining on %d images' % (X.shape[0]))
 
 	myNet=net['output']
 	
@@ -463,7 +464,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#define the cost function
 	#loss = lasagne.objectives.squared_error(prediction, target_var)
 	#loss = loss.mean()
-	loss = lasagne.objectives.squared_error(prediction, target_var)
+	loss = myCrossEntropy(prediction, target_var)
 	loss = loss.mean()
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
@@ -481,7 +482,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
  	#defining same things for testing
 	##"deterministic=True" disables stochastic behaviour, such as dropout
 	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
-	test_loss = lasagne.objectives.squared_error(test_prediction, target_var)
+	test_loss = myCrossEntropy(test_prediction, target_var)
 	test_loss = test_loss.mean()
 	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
