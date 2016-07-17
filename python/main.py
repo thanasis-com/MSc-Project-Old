@@ -44,9 +44,9 @@ dataSet=myTools.oneDimension(dataSet)
 
 dataSet=dataSet.astype(numpy.uint8)
 
-dataSet=myTools.cropCenter(dataSet, 80)#81.2
+dataSet=myTools.cropCenter(dataSet, 81.2)#81.2
 
-dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)#830
+dataSet=myTools.augmentData(dataSet, numOfTiles=1, overlap=False, imageWidth=830, imageHeight=830)#830
 	
 dataSet=dataSet.astype(numpy.float32)
 
@@ -60,7 +60,7 @@ masks=masks.astype(numpy.float32)
 
 #masks=myTools.dt(masks, 20)
 
-masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+masks=myTools.augmentData(masks, numOfTiles=1, overlap=False, imageWidth=819, imageHeight=819)
 
 masks=masks.astype(numpy.float32)
 
@@ -78,20 +78,20 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=57
+numOfBatches=43
 batchSize=math.floor(train.shape[0]/numOfBatches)
 
 
 myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], valX=test, valY=masks[splitPoint+1:masks.shape[0], :, :, :], epochs=argEpochs, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
 
-res=myNet(test)
+res=myNet(np.reshape(test[0,:,:,:], (1,1,test.shape[2],test.shape[3])))
 
 #print('Total cost on test set: %f' % (myTools.myTestCrossEntropy(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
 
 numpy.save("outfile1.npy", res[0][0])
-numpy.save("outfile2.npy", res[1][0])
+#numpy.save("outfile2.npy", res[1][0])
 
 
 
