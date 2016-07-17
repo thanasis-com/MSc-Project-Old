@@ -281,6 +281,16 @@ def augmentImage1(img, numOfTiles=1):
 	flipedImg=numpy.fliplr(img)
 
 	bufferIndex=0
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(img, i) 
+			for x in range(numOfTiles/2):
+				for y in range(numOfTiles/2):
+					tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+					#plt.show(plt.imshow(tile, cmap=cm.binary))
+					tiles[bufferIndex]=tile
+					bufferIndex+=1
+
 	for i in angles:
 		#rotate the image
 		tempImg=skimage.transform.rotate(flipedImg, i) 
