@@ -418,10 +418,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
-	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
-	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=5))
+	net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
+	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
+	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0'], num_filters=25, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=25, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
@@ -517,9 +517,13 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
     		epoch_cost = np.mean(batch_cost_history)
     		cost_history.append(epoch_cost)
 		#spliting the calculation of the test loss to half, so that it does not waste much memory
-		test_cost1 = val_fn(valX[0:math.floor(valX.shape[0]/2),:,:,:], valY[0:math.floor(valY.shape[0]/2),:,:,:])
-		test_cost2 = val_fn(valX[math.floor(valX.shape[0]/2):valX.shape[0],:,:,:], valY[math.floor(valY.shape[0]/2):valX.shape[0],:,:,:])
-		test_cost = (test_cost1+test_cost2)/2.0
+		np.reshape(valX[i,:,:,:],(1,1,valX.shape[2],valX.shape[3]))
+		for i in xrange(valX.shape[0]):
+			total_test+=val_fn(np.reshape(valX[i,:,:,:],(1,1,valX.shape[2],valX.shape[3])),np.reshape(valY[i,:,:,:],(1,1,valY.shape[2],valY.shape[3])))
+		#test_cost1 = val_fn(valX[0:math.floor(valX.shape[0]/2),:,:,:], valY[0:math.floor(valY.shape[0]/2),:,:,:])
+		#test_cost2 = val_fn(valX[math.floor(valX.shape[0]/2):valX.shape[0],:,:,:], valY[math.floor(valY.shape[0]/2):valX.shape[0],:,:,:])
+		#test_cost = (test_cost1+test_cost2)/2.0
+		test_cost=total_test/np.float32(valX.shape[0])
     		epoch_time_end = time.time()
     		print('Epoch %d/%d, train error: %f, val error: %f. Elapsed time: %.2f s' % (epoch+1, epochs, epoch_cost, test_cost, epoch_time_end-epoch_time_start))
 
