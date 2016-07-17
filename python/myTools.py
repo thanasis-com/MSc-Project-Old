@@ -143,7 +143,7 @@ def dt(masks, threshold):
 def augmentImage(img, numOfTiles=4, overlap=False):
 
 	#rotation angles
-	angles=[0, 90]
+	angles=[0]
 	
 	#get the size of the image
 	imgXsize=img.shape[0]
@@ -322,7 +322,7 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileHeight=imageHeight
 
 	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*2*3, tileWidth, tileHeight])
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, tileWidth, tileHeight])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
