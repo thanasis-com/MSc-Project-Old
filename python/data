@@ -1,0 +1,9 @@
+whole images, 41 , 0.02 0.00001 100 epochs mostly stable, trainerror: 0.065 testerror: 0.064
+whole images, 41 , 0.02 0.00001 150 epochs unstable after 85, train:0.058 test:0.056
+whole images, 41 , 0.02 0.00001 100 epochs wider input (839), very unstable from 50, train: 0.063 test: 0.077 <------terrible output
+whole images, 41 , 0.02 0.0001	150 epochs lower momentum (0.7), absolutely stable, train: 0.11 test 0.067
+
+!!!AFTER FIXING TRAINING ERROR
+whole images, 41 , 0.02 0.0001  200 epochs lower momentum (0.7), stable until saturation (around 180), train: 0.10 test: 0.66 <------- probably reset weight decay to 0.00001
+
+
