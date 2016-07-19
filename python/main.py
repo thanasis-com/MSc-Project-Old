@@ -44,7 +44,7 @@ dataSet=myTools.oneDimension(dataSet)
 
 dataSet=dataSet.astype(numpy.uint8)
 
-dataSet=myTools.cropCenter(dataSet, 81.2)#81.2
+dataSet=myTools.cropCenter(dataSet, 82)#81.2
 
 #dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)#830
 	
@@ -80,7 +80,7 @@ data_size=(None,1,imgsWidth,imgsHeight)
 
 numOfBatches=14
 batchSize=math.floor(train.shape[0]/numOfBatches)
-
+sys.exit()
 
 myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], valX=test, valY=masks[splitPoint+1:masks.shape[0], :, :, :], epochs=argEpochs, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
