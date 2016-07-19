@@ -80,7 +80,7 @@ data_size=(None,1,imgsWidth,imgsHeight)
 
 numOfBatches=14
 batchSize=math.floor(train.shape[0]/numOfBatches)
-sys.exit()
+
 
 myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], valX=test, valY=masks[splitPoint+1:masks.shape[0], :, :, :], epochs=argEpochs, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
