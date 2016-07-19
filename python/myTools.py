@@ -500,11 +500,11 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	start_time = time.time()
 
 	cost_history=[]
-	batch_cost_history=[]
 
 	#for each epoch train for all the batches
 	for epoch in xrange(epochs):
 		epoch_time_start=time.time()
+		batch_cost_history=[]
 		#for each batch train and update the weights
     		for batch in xrange(n_batches):
         		x_batch = X[batch*batch_size: (batch+1) * batch_size]
