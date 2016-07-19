@@ -418,9 +418,9 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=7))
-	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=8))
-	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=8))
+	net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
+	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
+	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
 	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0'], num_filters=25, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=25, filter_size=5))
@@ -474,7 +474,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	params = lasagne.layers.get_all_params(myNet, trainable=True)
 
 	#define the update function for each training step
-	updates = lasagne.updates.momentum(loss, params, learning_rate=lr,momentum=0.9)
+	updates = lasagne.updates.momentum(loss, params, learning_rate=lr,momentum=0.7)
 
 	#compile a train function
 	train_fn = theano.function([input_var, target_var], loss, updates=updates)
