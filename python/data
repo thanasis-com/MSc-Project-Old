@@ -4,6 +4,6 @@ whole images, 41 , 0.02 0.00001 100 epochs wider input (839), very unstable from
 whole images, 41 , 0.02 0.0001	150 epochs lower momentum (0.7), absolutely stable, train: 0.11 test 0.067
 
 !!!AFTER FIXING TRAINING ERROR
-whole images, 41 , 0.02 0.0001  200 epochs lower momentum (0.7), stable until saturation (around 180), train: 0.10 test: 0.66 <------- probably reset weight decay to 0.00001
-whole images, 41 , 0.01 0.00001 200 epochs lower momentum (0.7), absolutely stable, train: 0.70 test: 0.76 <-----bad output cause it needed much more time
-
+whole images, 41 , 0.02 0.0001  200 epochs lower momentum (0.7), stable until saturation (around 180), train: 0.10 test: 0.066 <------- probably reset weight decay to 0.00001
+whole images, 41 , 0.01 0.00001 200 epochs lower momentum (0.7), absolutely stable, train: 0.070 test: 0.076 <-----bad output cause it needed much more time
+whole images, 41 , 0.05 0.00001 100 epochs lower momentum (0.7), unstable after 60, train: 0.052, test: 0.070 <------bad result, both errors have to be low
