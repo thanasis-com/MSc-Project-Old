@@ -517,9 +517,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
     		epoch_cost = np.mean(batch_cost_history)
     		cost_history.append(epoch_cost)
 		#spliting the calculation of the test loss to half, so that it does not waste much memory
-		test_cost1 = val_fn(valX[0:math.floor(valX.shape[0]/2),:,:,:], valY[0:math.floor(valY.shape[0]/2),:,:,:])
-		test_cost2 = val_fn(valX[math.floor(valX.shape[0]/2):valX.shape[0],:,:,:], valY[math.floor(valY.shape[0]/2):valX.shape[0],:,:,:])
-		test_cost = (test_cost1+test_cost2)/2.0
+		test_cost=0
+		for i in xrange(valX.shape[0]):
+			test_cost+=val_fn(np.reshape(valX[i,:,:,:], (1,1,valX.shape[2],valX.shape[3])),np.reshape(valY[i,:,:,:],(1,1,valY.shape[2],valY.shape[3])))
+		test_cost = np.float32(test_cost/valX.shape[0])
     		epoch_time_end = time.time()
     		print('Epoch %d/%d, train error: %f, val error: %f. Elapsed time: %.2f s' % (epoch+1, epochs, epoch_cost, test_cost, epoch_time_end-epoch_time_start))
 
