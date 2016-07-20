@@ -8,3 +8,4 @@ whole images, 41 , 0.02 0.0001  200 epochs lower momentum (0.7), stable until sa
 whole images, 41 , 0.01 0.00001 200 epochs lower momentum (0.7), absolutely stable, train: 0.070 test: 0.076 <-----bad output cause it needed much more time
 whole images, 41 , 0.05 0.00001 100 epochs lower momentum (0.7), unstable after 60, train: 0.052, test: 0.070 <------bad result, both errors have to be low
 whole images, 41 , 0.02 0.000001 100 epochs lower momentum (0.7), mostly stable but did not converge, train: 0.066, test: 0.76 <----bad output (needed more time)
+whole images, 41 , 0.01 0.00001 500 epochs lower momentum (0.7), very stable, train 0.53, test 0.64 <----- fairly good result, have to train even more
