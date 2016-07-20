@@ -85,13 +85,15 @@ batchSize=int(math.floor(train.shape[0]/numOfBatches))
 myNet=myTools.createNN(data_size, X=train, Y=masks[0:splitPoint, :, :, :], valX=test, valY=masks[splitPoint+1:masks.shape[0], :, :, :], epochs=argEpochs, n_batches=numOfBatches, batch_size=batchSize, learning_rate=argLR, w_decay=argWD)
 
 
-res=myNet(test[0:2, :, :, :])
+#res=myNet(test[0:2, :, :, :])
+res1=myNet(np.reshape(test[0,:,:,:], (1,1,test.shape[2],test.shape[3])))
+res2=myNet(np.reshape(test[1,:,:,:], (1,1,test.shape[2],test.shape[3])))
 
 #print('Total cost on test set: %f' % (myTools.myTestCrossEntropy(res,masks[splitPoint+1:masks.shape[0], :, :, :])))
 
 
-numpy.save("outfile1.npy", res[0][0])
-numpy.save("outfile2.npy", res[1][0])
+numpy.save("outfile1.npy", res1[0][0])
+numpy.save("outfile2.npy", res2[0][0])
 
 
 
