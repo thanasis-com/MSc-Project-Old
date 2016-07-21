@@ -21,6 +21,7 @@ import math
 one = np.load("outfile1.npy")
 two = np.load("outfile2.npy")
 
+
 plt.show(plt.imshow(one, cmap=cm.binary))
 #pylab.savefig('out7.png', bbox_inches='tight')
 plt.show(plt.imshow(two, cmap=cm.binary))
