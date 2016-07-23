@@ -46,7 +46,7 @@ dataSet=dataSet.astype(numpy.uint8)
 
 dataSet=myTools.cropCenter(dataSet, 81.2)#81.2
 
-#dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)#830
+dataSet=myTools.augmentData(dataSet, numOfTiles=1, overlap=False, imageWidth=830, imageHeight=830)#830
 	
 dataSet=dataSet.astype(numpy.float32)
 
@@ -60,7 +60,7 @@ masks=masks.astype(numpy.float32)
 
 #masks=myTools.dt(masks, 20)
 
-#masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+masks=myTools.augmentData(masks, numOfTiles=1, overlap=False, imageWidth=819, imageHeight=819)
 
 masks=masks.astype(numpy.float32)
 
@@ -78,7 +78,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=14
+numOfBatches=28
 batchSize=int(math.floor(train.shape[0]/numOfBatches))
 
 
