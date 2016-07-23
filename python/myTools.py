@@ -275,12 +275,23 @@ def augmentImage1(img, numOfTiles=1):
 	tileHeight=imgYsize
 
 	#preallocate space for the tiles (2 refers to the two different types of mirroring)
-	tiles=numpy.empty([numOfTiles*len(angles)*2, tileHeight, tileWidth])
+	tiles=numpy.empty([numOfTiles*len(angles)*3, tileHeight, tileWidth])
+
+	bufferIndex=0
+	for i in angles:
+		#rotate the image
+		tempImg=skimage.transform.rotate(img, i) 
+		for x in range(numOfTiles/2):
+			for y in range(numOfTiles/2):
+				tile=tempImg[x*tileWidth:(x+1)*tileWidth, y*tileHeight:(y+1)*tileHeight]
+				#plt.show(plt.imshow(tile, cmap=cm.binary))
+				tiles[bufferIndex]=tile
+				bufferIndex+=1
+
 
 	#apply mirroring (left-right)
 	flipedImg=numpy.fliplr(img)
 
-	bufferIndex=0
 	for i in angles:
 		#rotate the image
 		tempImg=skimage.transform.rotate(flipedImg, i) 
