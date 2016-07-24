@@ -52,7 +52,7 @@ dataSet=dataSet.astype(numpy.float32)
 
 
 ### MASKS
-masks=myTools.loadImages('../../masks', 819, 819, 1)
+masks=myTools.loadImages('../../masksExpert', 819, 819, 1)
 
 masks[masks>0]=1
 
