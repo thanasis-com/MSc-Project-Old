@@ -10,5 +10,6 @@ whole images, 41 , 0.05 0.00001 100 epochs lower momentum (0.7), unstable after 
 whole images, 41 , 0.02 0.000001 100 epochs lower momentum (0.7), mostly stable but did not converge, train: 0.066, test: 0.76 <----bad output (needed more time)
 whole images, 41 , 0.01 0.00001 500 epochs lower momentum (0.7), very stable, train: 0.053, test: 0.064 <----- fairly good result, have to train even more
 whole images, 41 , 0.01 0.00001 800 epochs lower momentum (0.7), very stable, train: 0.048, test: 0.064 <-----can be trained even more
+whole images, 41 , 0.01 0.00001 1000 epochs lower momentum (0.7), saturated at 0.070 train: 0.041, test: 0.078<----seems like this network can't go over 0.064
 
-whole images, 41, 0.01 0.00001 200 epochs lower momentum (0.7), saturated from epoch 60, train: 0.062, test: 0.084 <------this was trained without the initial conv layers
+whole images, 41 , 0.01 0.00001 200 epochs lower momentum (0.7), saturated from epoch 60, train: 0.062, test: 0.084 <------this was trained without the initial conv layers
