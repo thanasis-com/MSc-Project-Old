@@ -13,3 +13,7 @@ whole images, 41 , 0.01 0.00001 800 epochs lower momentum (0.7), very stable, tr
 whole images, 41 , 0.01 0.00001 1000 epochs lower momentum (0.7), saturated at 0.070 train: 0.041, test: 0.078<----seems like this network can't go over 0.064
 
 whole images, 41 , 0.01 0.00001 200 epochs lower momentum (0.7), saturated from epoch 60, train: 0.062, test: 0.084 <------this was trained without the initial conv layers
+
+!!!AUGMENTING DATASET X 3 (lower momentum applies to all)
+whole images, 123, 0.01 0.00001 200 epochs, very stable, train: 0.056, test: 0.064 <-----train more
+whole images, 123, 0.01 0.00001 500 epochs, unstable after 280 but reached even 0.060, train: 0.040, test: 0.075
