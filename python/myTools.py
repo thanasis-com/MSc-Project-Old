@@ -475,7 +475,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#define the cost function
 	#loss = lasagne.objectives.squared_error(prediction, target_var)
 	#loss = loss.mean()
-	loss = lasagne.objectives.binary_crossentropy(prediction, target_var)
+	loss = myCrossEntropy(prediction, target_var)
 	loss = loss.mean()
 	#also add weight decay to the cost function
 	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
@@ -493,7 +493,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
  	#defining same things for testing
 	##"deterministic=True" disables stochastic behaviour, such as dropout
 	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
-	test_loss = lasagne.objectives.binary_crossentropy(test_prediction, target_var)
+	test_loss = myCrossEntropy(test_prediction, target_var)
 	test_loss = test_loss.mean()
 	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
 
@@ -629,7 +629,7 @@ def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 def myCostFunction(a, b):
   
 
-    r=np.float32(0.12)
+    r=np.float32(0.06)
 
     sensitivity=(1-r)*T.sum(((b - a)**2)*b)/T.sum(b)
     
@@ -641,7 +641,7 @@ def myCostFunction(a, b):
 def myTestCostFunction(a, b):
   
 
-    r=np.float32(0.12)
+    r=np.float32(0.06)
 
     sensitivity=(1-r)*numpy.sum(((b - a)**2)*b)/numpy.sum(b)
     
@@ -652,14 +652,14 @@ def myTestCostFunction(a, b):
 
 def myCrossEntropy(predictions, targets):
 
-	r=np.float32(0.12)
+	r=np.float32(0.03)
 	
 	return -1*targets*T.log(predictions)*(1-r)+(-1)*(1-targets)*T.log(1-predictions)*r
 	
 
 def myTestCrossEntropy(predictions, targets):
 
-	r=np.float32(0.12)
+	r=np.float32(0.03)
 	
 	return numpy.average(-1*targets*numpy.log(predictions)*(1-r)+(-1)*(1-targets)*numpy.log(1-predictions)*r)
 
