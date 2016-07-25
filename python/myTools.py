@@ -652,14 +652,14 @@ def myTestCostFunction(a, b):
 
 def myCrossEntropy(predictions, targets):
 
-	r=np.float32(0.03)
+	r=np.float32(0.06)
 	
 	return -1*targets*T.log(predictions)*(1-r)+(-1)*(1-targets)*T.log(1-predictions)*r
 	
 
 def myTestCrossEntropy(predictions, targets):
 
-	r=np.float32(0.03)
+	r=np.float32(0.06)
 	
 	return numpy.average(-1*targets*numpy.log(predictions)*(1-r)+(-1)*(1-targets)*numpy.log(1-predictions)*r)
 
