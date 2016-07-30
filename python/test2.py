@@ -23,9 +23,12 @@ two = np.load("outfile2.npy")
 
 
 #plt.show(plt.imshow(one, cmap=cm.binary))
-pylab.savefig('out7.png', bbox_inches='tight')
+#pylab.savefig('out7.png', bbox_inches='tight')
 #plt.show(plt.imshow(two, cmap=cm.binary))
-pylab.savefig('out8.png', bbox_inches='tight')
+#pylab.savefig('out8.png', bbox_inches='tight')
+
+print(one)
+print(numpy.mean(one))
 
 
 
