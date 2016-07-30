@@ -15,7 +15,7 @@ import myTools
 import pylab
 import sys
 from PIL import Image
-import png
+#import png
 import math
 
 one = np.load("outfile1.npy")
