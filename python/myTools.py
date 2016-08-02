@@ -138,7 +138,88 @@ def dt(masks, threshold):
 
 	return masks
 
+def augmentImageStatic(img, numOfTiles=4, overlap=False):
 
+	#rotation angles
+	angles=[0]
+	
+	#get the size of the image
+	imgXsize=img.shape[0]
+	imgYsize=img.shape[1]	
+	
+	
+	if overlap==False:
+
+		#compute the size of the tiles
+		tileWidth=math.floor((imgXsize/numOfTiles)*2)
+		tileHeight=math.floor((imgXsize/numOfTiles)*2)
+
+		#preallocate space for the tiles (3 refers to the two different types of mirroring + the normal version)
+		tiles=numpy.empty([numOfTiles*len(angles)*3, 434, 434])
+
+
+		bufferIndex=0
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(img, i) 
+			
+			tile1=tempImg[0:434, 0:434]
+			tile2=tempImg[410:844, 0:434]
+			tile3=tempImg[0:434, 410:844]
+			tile4=tempImg[410:844, 410:844]
+			#plt.show(plt.imshow(tile, cmap=cm.binary))
+			tiles[bufferIndex]=tile1
+			bufferIndex+=1
+			tiles[bufferIndex]=tile2
+			bufferIndex+=1
+			tiles[bufferIndex]=tile3
+			bufferIndex+=1
+			tiles[bufferIndex]=tile4
+			bufferIndex+=1
+
+
+		#apply mirroring (left-right)
+		flipedImg=numpy.fliplr(img)
+
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(flipedImg, i) 
+			tile1=tempImg[0:434, 0:434]
+			tile2=tempImg[410:844, 0:434]
+			tile3=tempImg[0:434, 410:844]
+			tile4=tempImg[410:844, 410:844]
+			#plt.show(plt.imshow(tile, cmap=cm.binary))
+			tiles[bufferIndex]=tile1
+			bufferIndex+=1
+			tiles[bufferIndex]=tile2
+			bufferIndex+=1
+			tiles[bufferIndex]=tile3
+			bufferIndex+=1
+			tiles[bufferIndex]=tile4
+			bufferIndex+=1
+		
+		#apply mirroring (up-down)
+		flipedImg=numpy.flipud(img)
+		
+		for i in angles:
+			#rotate the image
+			tempImg=skimage.transform.rotate(flipedImg, i) 
+			tile1=tempImg[0:434, 0:434]
+			tile2=tempImg[410:844, 0:434]
+			tile3=tempImg[0:434, 410:844]
+			tile4=tempImg[410:844, 410:844]
+			#plt.show(plt.imshow(tile, cmap=cm.binary))
+			tiles[bufferIndex]=tile1
+			bufferIndex+=1
+			tiles[bufferIndex]=tile2
+			bufferIndex+=1
+			tiles[bufferIndex]=tile3
+			bufferIndex+=1
+			tiles[bufferIndex]=tile4
+			bufferIndex+=1
+
+
+	return tiles
 
 def augmentImage(img, numOfTiles=4, overlap=False):
 
@@ -333,6 +414,48 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileHeight=imageHeight
 
 	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, 434, 434])
+
+	bufferIndex=0
+	for i in range(dataset.shape[0]):
+		#if we want tiling, then use the augmentImage function
+		if numOfTiles!=1:
+			newImgs=augmentImageStatic(dataset[i][0], numOfTiles, overlap)
+		else:
+			newImgs=augmentImage1(dataset[i][0])
+		
+		for j in range(newImgs.shape[0]):
+			augmented[bufferIndex]=newImgs[j]
+			bufferIndex+=1
+
+	end_time = time.time()
+	print('Augmented %d images in %.2f seconds' % (dataset.shape[0], end_time-start_time))	
+
+	return augmented.reshape(augmented.shape[0], 1, augmented.shape[1], augmented.shape[2])	
+
+	
+def augmentMasks(dataset, numOfTiles, overlap, imageWidth, imageHeight):
+
+	print('--------------------')
+	print('Augmenting the dataset...')
+	start_time = time.time()
+
+
+	if overlap==True:
+		#compute the size of the tiles
+		tileWidth=math.floor((imageWidth/numOfTiles)*3)
+		tileHeight=math.floor((imageHeight/numOfTiles)*3)
+	else:
+		#compute the size of the tiles
+		tileWidth=math.floor((imageWidth/numOfTiles)*2)
+		tileHeight=math.floor((imageHeight/numOfTiles)*2)
+
+	#if we do not want tiling
+	if numOfTiles==1:
+		tileWidth=imageWidth
+		tileHeight=imageHeight
+
+	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
 	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, tileWidth, tileHeight])
 
 	bufferIndex=0
@@ -351,9 +474,6 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 	print('Augmented %d images in %.2f seconds' % (dataset.shape[0], end_time-start_time))	
 
 	return augmented.reshape(augmented.shape[0], 1, augmented.shape[1], augmented.shape[2])	
-
-	
-
 
 
 #applies histogram equalisation to images
@@ -429,10 +549,13 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
 	#the rest of the network structure
-	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=25, filter_size=4))
-	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=25, filter_size=5))
-	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=25, filter_size=5))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=30, filter_size=5))
+	#the rest of the network structure
+	net['conv00000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=30, filter_size=7))
+	net['conv0000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00000'], num_filters=30, filter_size=6))
+	net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0000'], num_filters=30, filter_size=6))
+	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv000'], num_filters=30, filter_size=6))
+	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=30, filter_size=6))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0'], num_filters=30, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=30, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
