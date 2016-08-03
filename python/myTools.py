@@ -668,6 +668,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#		visualize.plot_conv_weights(allLayers[l])
 	
 
+	numpy.savez('model.npz', *lasagne.layers.get_all_param_values(net['output']))
 	return get_preds	
 
 
