@@ -178,7 +178,7 @@ def augmentImageStatic(img, numOfTiles=4, overlap=False):
 		tileHeight=math.floor((imgXsize/numOfTiles)*2)
 
 		#preallocate space for the tiles (3 refers to the two different types of mirroring + the normal version)
-		tiles=numpy.empty([numOfTiles*len(angles)*3, 418, 418])
+		tiles=numpy.empty([numOfTiles*len(angles)*3, 440, 440])
 
 
 		bufferIndex=0
@@ -186,10 +186,10 @@ def augmentImageStatic(img, numOfTiles=4, overlap=False):
 			#rotate the image
 			tempImg=skimage.transform.rotate(img, i) 
 			
-			tile1=tempImg[0:418, 0:418]
-			tile2=tempImg[408:826, 0:418]
-			tile3=tempImg[0:418, 408:826]
-			tile4=tempImg[408:826, 408:826]
+			tile1=tempImg[0:440, 0:440]
+			tile2=tempImg[410:850, 0:440]
+			tile3=tempImg[0:440, 410:850]
+			tile4=tempImg[410:850, 410:850]
 			#plt.show(plt.imshow(tile, cmap=cm.binary))
 			tiles[bufferIndex]=tile1
 			bufferIndex+=1
@@ -207,10 +207,10 @@ def augmentImageStatic(img, numOfTiles=4, overlap=False):
 		for i in angles:
 			#rotate the image
 			tempImg=skimage.transform.rotate(flipedImg, i) 
-			tile1=tempImg[0:418, 0:418]
-			tile2=tempImg[408:826, 0:418]
-			tile3=tempImg[0:418, 408:826]
-			tile4=tempImg[408:826, 408:826]
+			tile1=tempImg[0:440, 0:440]
+			tile2=tempImg[410:850, 0:440]
+			tile3=tempImg[0:440, 410:850]
+			tile4=tempImg[410:850, 410:850]
 			#plt.show(plt.imshow(tile, cmap=cm.binary))
 			tiles[bufferIndex]=tile1
 			bufferIndex+=1
@@ -227,10 +227,10 @@ def augmentImageStatic(img, numOfTiles=4, overlap=False):
 		for i in angles:
 			#rotate the image
 			tempImg=skimage.transform.rotate(flipedImg, i) 
-			tile1=tempImg[0:418, 0:418]
-			tile2=tempImg[408:826, 0:418]
-			tile3=tempImg[0:418, 408:826]
-			tile4=tempImg[408:826, 408:826]
+			tile1=tempImg[0:440, 0:440]
+			tile2=tempImg[410:850, 0:440]
+			tile3=tempImg[0:440, 410:850]
+			tile4=tempImg[410:850, 410:850]
 			#plt.show(plt.imshow(tile, cmap=cm.binary))
 			tiles[bufferIndex]=tile1
 			bufferIndex+=1
@@ -437,7 +437,7 @@ def augmentData(dataset, numOfTiles, overlap, imageWidth, imageHeight):
 		tileHeight=imageHeight
 
 	#preallocate space for the dataset (4 refers to the number of the rotation angles, 3 refers to the types of mirroring + the normal version)
-	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, 418, 418])
+	augmented=numpy.empty([dataset.shape[0]*numOfTiles*1*3, 440, 440])
 
 	bufferIndex=0
 	for i in range(dataset.shape[0]):
@@ -575,9 +575,9 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#net['conv00000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=30, filter_size=7))
 	#net['conv0000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00000'], num_filters=30, filter_size=6))
 	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0000'], num_filters=30, filter_size=6))
-	net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=6))
-	net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=35, filter_size=6))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0'], num_filters=35, filter_size=5))
+	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=6))
+	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=35, filter_size=6))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
 	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=35, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)

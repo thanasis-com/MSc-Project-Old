@@ -44,15 +44,15 @@ dataSet=myTools.oneDimension(dataSet)
 
 dataSet=dataSet.astype(numpy.uint8)
 
-dataSet=myTools.cropCenter(dataSet, 80.7)#81.2
+dataSet=myTools.cropCenter(dataSet, 83)#81.2
 
-dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=826, imageHeight=826)#830
-	
+dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=850, imageHeight=850)#830
+
 dataSet=dataSet.astype(numpy.float32)
 
 
 ### MASKS
-masks=myTools.loadImages('../../masksExpert', 819, 819, 1)
+masks=myTools.loadImages('../../masksExpertBig', 850, 850, 1)
 
 masks[masks>0]=1
 
@@ -60,7 +60,7 @@ masks=masks.astype(numpy.float32)
 
 #masks=myTools.dt(masks, 20)
 
-masks=myTools.augmentMasks(masks, numOfTiles=4, overlap=False, imageWidth=819, imageHeight=819)
+masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=850, imageHeight=850)
 
 masks=masks.astype(numpy.float32)
 

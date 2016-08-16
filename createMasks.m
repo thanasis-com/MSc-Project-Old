@@ -18,7 +18,7 @@ for k=1:length(images)
     xmlFile=cat(2, 'DataSet/', xmls(k).name);
 
     % forbidden lines
-    r = 0.8;
+    r = 0.83;
     forbidWid = round(r*cols);
     forbidHei = round(r*rows);
     forbiddenLines.forbidWidS = floor((cols-forbidWid)/2)+1;
@@ -53,7 +53,7 @@ for k=1:length(images)
 
     %imshow(bluredMask);
     %save each mask to a file
-    imwrite(bluredMask, cat(2, 'masks/mask', imageID, '.png'));
+    imwrite(bluredMask, cat(2, '../masksExpertBig/mask', imageID, '.png'));
     %saveas(gcf,cat(2, 'masks/mask', imageID, '.png'));
 end
 
