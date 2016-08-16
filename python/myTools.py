@@ -114,7 +114,30 @@ def cropCenter(images, cropPercentage):
 
 	return croppedImages
  
+def cropCenter1(image, cropPercentage):
+	#get the original dimensions of the images
+	originalXdim=image.shape[0]
+	originalYdim=image.shape[1]
 
+	#compute the new dimensions based on the cropPercentage
+	newXdim=originalXdim*cropPercentage/100
+	newYdim=originalYdim*cropPercentage/100
+
+	#compute how many pixels from each side should be cropped 
+	cropx=(originalXdim-newXdim)/2
+	cropy=(originalYdim-newYdim)/2
+	
+	#crop images
+	croppedImage=image[cropx:originalXdim-cropx-1, cropy:originalYdim-cropy-1]
+	
+	#get actual new image dimensions
+	actualNewXdim=croppedImage.shape[0]
+	actualNewYdim=croppedImage.shape[1]
+
+	print('--------------------')
+	print('Cropped image from %d x %d to %d x %d' % (originalXdim, originalYdim, actualNewXdim, actualNewYdim))	
+
+	return croppedImage
 
 def dt(masks, threshold):
 	
@@ -671,6 +694,52 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	return get_preds	
 
 
+def createPretrainedNN(data_size):
+
+	#creating symbolic variables for input and output
+	input_var = T.tensor4('input')
+	target_var = T.tensor4('targets')	
+	#initialising an empty network
+	net = {}
+	
+	#Input layer:
+	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
+
+	#the rest of the network structure
+	#net['conv00000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=30, filter_size=7))
+	#net['conv0000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00000'], num_filters=30, filter_size=6))
+	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0000'], num_filters=30, filter_size=6))
+	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=6))
+	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=35, filter_size=6))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=5))
+	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
+	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=35, filter_size=5))
+	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
+	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=35, filter_size=5))
+	net['pool3'] = lasagne.layers.Pool2DLayer(net['conv3'], pool_size=2)
+	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=35, filter_size=5))
+	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=35, filter_size=5))
+	net['unpool3']= lasagne.layers.InverseLayer(net['deconv4'], net['pool3'])
+	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=35, filter_size=5))
+	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
+	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=35, filter_size=5))
+	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
+	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=35, filter_size=5))
+	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
+
+	with np.load('modelbest.npz') as f:
+		param_values = [f['arr_%d' % i] for i in range(len(f.files))]
+	
+	lasagne.layers.set_all_param_values(net['output'], param_values)
+
+	myNet=net['output']
+
+	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
+
+	#compile a theano function to make predictions with the network
+	get_preds = theano.function([input_var], test_prediction)
+
+	return get_preds
 
 def trainNN(myNet, X, Y, epochs, n_batches, batch_size):
 
