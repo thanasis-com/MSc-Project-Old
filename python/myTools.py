@@ -609,10 +609,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
 	print('\nTraining on %d images' % (X.shape[0]))
 
-	#with np.load('modelbestBig.npz') as f:
-	#	param_values = [f['arr_%d' % i] for i in range(len(f.files))]
+	with np.load('modelbestBig.npz') as f:
+		param_values = [f['arr_%d' % i] for i in range(len(f.files))]
 	
-	#lasagne.layers.set_all_param_values(net['output'], param_values)
+	lasagne.layers.set_all_param_values(net['output'], param_values)
 
 	myNet=net['output']
 	
