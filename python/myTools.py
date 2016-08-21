@@ -577,20 +577,20 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0000'], num_filters=30, filter_size=6))
 	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=6))
 	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=35, filter_size=6))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=40, filter_size=5))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=46, filter_size=5))
 	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
-	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=40, filter_size=5))
+	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=46, filter_size=5))
 	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
-	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=40, filter_size=5))
+	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=46, filter_size=5))
 	net['pool3'] = lasagne.layers.Pool2DLayer(net['conv3'], pool_size=2)
-	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=40, filter_size=5))
-	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=40, filter_size=5))
+	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=46, filter_size=5))
+	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=46, filter_size=5))
 	net['unpool3']= lasagne.layers.InverseLayer(net['deconv4'], net['pool3'])
-	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=40, filter_size=5))
+	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=46, filter_size=5))
 	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
-	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=40, filter_size=5))
+	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=46, filter_size=5))
 	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=40, filter_size=5))
+	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=46, filter_size=5))
 	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
 
 
@@ -609,10 +609,10 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
 	print('\nTraining on %d images' % (X.shape[0]))
 
-	with np.load('modelbestBig.npz') as f:
-		param_values = [f['arr_%d' % i] for i in range(len(f.files))]
+	#with np.load('modelbestBig.npz') as f:
+	#	param_values = [f['arr_%d' % i] for i in range(len(f.files))]
 	
-	lasagne.layers.set_all_param_values(net['output'], param_values)
+	#lasagne.layers.set_all_param_values(net['output'], param_values)
 
 	myNet=net['output']
 	
