@@ -41,6 +41,9 @@ top=np.concatenate((res[0][0],res[1][0]),axis=1)
 bot=np.concatenate((res[2][0],res[3][0]),axis=1)
 #concatenate the two halves to get the full image
 res=np.concatenate((top,bot),axis=0)
+
+plt.show(plt.imshow(res, cmap=cm.binary))
+scipy.misc.imsave('imgeee.png', res)
 #threshold
 res[res>=thresh]=1
 res[res<thresh]=0

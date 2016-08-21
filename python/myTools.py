@@ -567,7 +567,7 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	target_var = T.tensor4('targets')	
 	#initialising an empty network
 	net = {}
-	
+
 	#Input layer:
 	net['data'] = lasagne.layers.InputLayer(data_size, input_var=input_var)
 
