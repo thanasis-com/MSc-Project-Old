@@ -10,10 +10,8 @@ import scipy
 
 #get the image path
 imagePath=sys.argv[1]
-#get the threshold level
-#thresh=float(sys.argv[2])
-#get the erosion shape
-#er=int(sys.argv[3])
+#set output filename
+outName=sys.argv[2]
 #open the image
 image=Image.open(imagePath)
 #image as numpy array
@@ -45,4 +43,4 @@ bot=np.concatenate((res[1][0],res[3][0]),axis=1)
 res=np.concatenate((top,bot),axis=0)
 
 plt.show(plt.imshow(res, cmap=cm.binary))
-scipy.misc.imsave('imgBig46.png', res)
+scipy.misc.imsave(outName, res)
