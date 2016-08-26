@@ -33,7 +33,6 @@ data_size=(None,1,splits[0][0].shape[0],splits[0][0].shape[1])
 #load the pretrained network
 myNet=myTools.createPretrainedNN(data_size)
 #make predictions for the 4 tiles
-print(splits.dtype)
 res=myNet(splits)
 #crop the center of the predictions
 res=myTools.cropCenter(res, 93)
