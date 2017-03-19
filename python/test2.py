@@ -30,8 +30,3 @@ plt.show(plt.imshow(two, cmap=cm.binary))
 
 print(one)
 print(numpy.mean(one))
-
-
-
-
-

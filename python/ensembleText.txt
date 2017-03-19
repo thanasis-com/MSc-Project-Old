@@ -1,0 +1,2398 @@
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 400
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 27.80 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.37 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.59 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.34 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/400, train error: 0.203184, val error: 0.224489. Elapsed time: 35.50 s
+Epoch 2/400, train error: 0.178742, val error: 0.221267. Elapsed time: 37.25 s
+Epoch 3/400, train error: 0.170341, val error: 0.216277. Elapsed time: 38.16 s
+Epoch 4/400, train error: 0.165283, val error: 0.218605. Elapsed time: 35.81 s
+Epoch 5/400, train error: 0.161366, val error: 0.226048. Elapsed time: 34.67 s
+Epoch 6/400, train error: 0.158249, val error: 0.231731. Elapsed time: 35.59 s
+Epoch 7/400, train error: 0.155585, val error: 0.236834. Elapsed time: 36.26 s
+Epoch 8/400, train error: 0.153110, val error: 0.243054. Elapsed time: 36.25 s
+Epoch 9/400, train error: 0.150615, val error: 0.249773. Elapsed time: 36.82 s
+Epoch 10/400, train error: 0.147824, val error: 0.256122. Elapsed time: 34.77 s
+Epoch 11/400, train error: 0.144523, val error: 0.259563. Elapsed time: 34.18 s
+Epoch 12/400, train error: 0.140813, val error: 0.257003. Elapsed time: 35.31 s
+Epoch 13/400, train error: 0.137055, val error: 0.252419. Elapsed time: 34.25 s
+Epoch 14/400, train error: 0.133666, val error: 0.247014. Elapsed time: 35.79 s
+Epoch 15/400, train error: 0.130732, val error: 0.243570. Elapsed time: 32.84 s
+Epoch 16/400, train error: 0.128176, val error: 0.240279. Elapsed time: 32.85 s
+Epoch 17/400, train error: 0.125869, val error: 0.237158. Elapsed time: 32.75 s
+Epoch 18/400, train error: 0.123762, val error: 0.234901. Elapsed time: 32.83 s
+Epoch 19/400, train error: 0.121821, val error: 0.233824. Elapsed time: 32.84 s
+Epoch 20/400, train error: 0.120011, val error: 0.233738. Elapsed time: 32.78 s
+Epoch 21/400, train error: 0.118304, val error: 0.234316. Elapsed time: 32.84 s
+Epoch 22/400, train error: 0.116693, val error: 0.235245. Elapsed time: 32.72 s
+Epoch 23/400, train error: 0.115173, val error: 0.234634. Elapsed time: 32.71 s
+Epoch 24/400, train error: 0.113738, val error: 0.235381. Elapsed time: 32.71 s
+Epoch 25/400, train error: 0.112384, val error: 0.236144. Elapsed time: 32.71 s
+Epoch 26/400, train error: 0.111104, val error: 0.237005. Elapsed time: 32.71 s
+Epoch 27/400, train error: 0.109911, val error: 0.238694. Elapsed time: 32.70 s
+Epoch 28/400, train error: 0.108783, val error: 0.239931. Elapsed time: 32.71 s
+Epoch 29/400, train error: 0.107733, val error: 0.241390. Elapsed time: 32.70 s
+Epoch 30/400, train error: 0.106732, val error: 0.243307. Elapsed time: 32.70 s
+Epoch 31/400, train error: 0.105803, val error: 0.244418. Elapsed time: 32.70 s
+Epoch 32/400, train error: 0.104913, val error: 0.245449. Elapsed time: 32.68 s
+Epoch 33/400, train error: 0.104074, val error: 0.246949. Elapsed time: 32.70 s
+Epoch 34/400, train error: 0.103287, val error: 0.247685. Elapsed time: 32.68 s
+Epoch 35/400, train error: 0.102553, val error: 0.249042. Elapsed time: 32.69 s
+Epoch 36/400, train error: 0.101860, val error: 0.249692. Elapsed time: 32.69 s
+Epoch 37/400, train error: 0.101192, val error: 0.250719. Elapsed time: 32.70 s
+Epoch 38/400, train error: 0.100560, val error: 0.252018. Elapsed time: 32.69 s
+Epoch 39/400, train error: 0.099949, val error: 0.253452. Elapsed time: 32.69 s
+Epoch 40/400, train error: 0.099363, val error: 0.254539. Elapsed time: 32.69 s
+Epoch 41/400, train error: 0.098804, val error: 0.254848. Elapsed time: 32.69 s
+Epoch 42/400, train error: 0.098268, val error: 0.255711. Elapsed time: 32.69 s
+Epoch 43/400, train error: 0.097740, val error: 0.256487. Elapsed time: 32.69 s
+Epoch 44/400, train error: 0.097248, val error: 0.257850. Elapsed time: 32.70 s
+Epoch 45/400, train error: 0.096778, val error: 0.258459. Elapsed time: 32.70 s
+Epoch 46/400, train error: 0.096310, val error: 0.259698. Elapsed time: 32.70 s
+Epoch 47/400, train error: 0.095860, val error: 0.260553. Elapsed time: 32.69 s
+Epoch 48/400, train error: 0.095430, val error: 0.261928. Elapsed time: 32.69 s
+Epoch 49/400, train error: 0.095016, val error: 0.263049. Elapsed time: 32.69 s
+Epoch 50/400, train error: 0.094607, val error: 0.263657. Elapsed time: 32.69 s
+Epoch 51/400, train error: 0.094209, val error: 0.264177. Elapsed time: 32.69 s
+Epoch 52/400, train error: 0.093826, val error: 0.265224. Elapsed time: 32.69 s
+Epoch 53/400, train error: 0.093449, val error: 0.266170. Elapsed time: 32.69 s
+Epoch 54/400, train error: 0.093081, val error: 0.266970. Elapsed time: 32.69 s
+Epoch 55/400, train error: 0.092736, val error: 0.267166. Elapsed time: 32.69 s
+Epoch 56/400, train error: 0.092396, val error: 0.268020. Elapsed time: 32.69 s
+Epoch 57/400, train error: 0.092056, val error: 0.268748. Elapsed time: 32.69 s
+Epoch 58/400, train error: 0.091731, val error: 0.269740. Elapsed time: 32.69 s
+Epoch 59/400, train error: 0.091414, val error: 0.269967. Elapsed time: 32.69 s
+Epoch 60/400, train error: 0.091102, val error: 0.271307. Elapsed time: 32.69 s
+Epoch 61/400, train error: 0.090793, val error: 0.272415. Elapsed time: 32.69 s
+Epoch 62/400, train error: 0.090495, val error: 0.273318. Elapsed time: 32.69 s
+Epoch 63/400, train error: 0.090201, val error: 0.274559. Elapsed time: 32.69 s
+Epoch 64/400, train error: 0.089915, val error: 0.275301. Elapsed time: 32.70 s
+Epoch 65/400, train error: 0.089638, val error: 0.276124. Elapsed time: 32.68 s
+Epoch 66/400, train error: 0.089363, val error: 0.276619. Elapsed time: 32.69 s
+Epoch 67/400, train error: 0.089094, val error: 0.277554. Elapsed time: 32.69 s
+Epoch 68/400, train error: 0.088829, val error: 0.277674. Elapsed time: 32.70 s
+Epoch 69/400, train error: 0.088570, val error: 0.278370. Elapsed time: 32.68 s
+Epoch 70/400, train error: 0.088311, val error: 0.278859. Elapsed time: 32.69 s
+Epoch 71/400, train error: 0.088053, val error: 0.279747. Elapsed time: 32.68 s
+Epoch 72/400, train error: 0.087801, val error: 0.279895. Elapsed time: 32.70 s
+Epoch 73/400, train error: 0.087557, val error: 0.280474. Elapsed time: 32.68 s
+Epoch 74/400, train error: 0.087311, val error: 0.280998. Elapsed time: 32.69 s
+Epoch 75/400, train error: 0.087071, val error: 0.281724. Elapsed time: 32.69 s
+Epoch 76/400, train error: 0.086835, val error: 0.282377. Elapsed time: 32.69 s
+Epoch 77/400, train error: 0.086596, val error: 0.282866. Elapsed time: 32.69 s
+Epoch 78/400, train error: 0.086368, val error: 0.283608. Elapsed time: 32.69 s
+Epoch 79/400, train error: 0.086136, val error: 0.284174. Elapsed time: 32.70 s
+Epoch 80/400, train error: 0.085910, val error: 0.284686. Elapsed time: 32.69 s
+Epoch 81/400, train error: 0.085693, val error: 0.285511. Elapsed time: 32.70 s
+Epoch 82/400, train error: 0.085476, val error: 0.286342. Elapsed time: 32.70 s
+Epoch 83/400, train error: 0.085256, val error: 0.286771. Elapsed time: 32.70 s
+Epoch 84/400, train error: 0.085047, val error: 0.287166. Elapsed time: 32.70 s
+Epoch 85/400, train error: 0.084837, val error: 0.287314. Elapsed time: 32.70 s
+Epoch 86/400, train error: 0.084635, val error: 0.288276. Elapsed time: 32.70 s
+Epoch 87/400, train error: 0.084434, val error: 0.288884. Elapsed time: 32.70 s
+Epoch 88/400, train error: 0.084233, val error: 0.289580. Elapsed time: 32.70 s
+Epoch 89/400, train error: 0.084031, val error: 0.290358. Elapsed time: 32.69 s
+Epoch 90/400, train error: 0.083834, val error: 0.291127. Elapsed time: 32.70 s
+Epoch 91/400, train error: 0.083642, val error: 0.292559. Elapsed time: 32.70 s
+Epoch 92/400, train error: 0.083455, val error: 0.293492. Elapsed time: 32.69 s
+Epoch 93/400, train error: 0.083275, val error: 0.293122. Elapsed time: 32.70 s
+Epoch 94/400, train error: 0.083092, val error: 0.293567. Elapsed time: 32.71 s
+Epoch 95/400, train error: 0.082900, val error: 0.294730. Elapsed time: 32.69 s
+Epoch 96/400, train error: 0.082719, val error: 0.295123. Elapsed time: 32.70 s
+Epoch 97/400, train error: 0.082537, val error: 0.295764. Elapsed time: 32.69 s
+Epoch 98/400, train error: 0.082346, val error: 0.295758. Elapsed time: 32.69 s
+Epoch 99/400, train error: 0.082162, val error: 0.296486. Elapsed time: 32.69 s
+Epoch 100/400, train error: 0.081984, val error: 0.296841. Elapsed time: 32.69 s
+Epoch 101/400, train error: 0.081804, val error: 0.296911. Elapsed time: 32.69 s
+Epoch 102/400, train error: 0.081625, val error: 0.297160. Elapsed time: 32.69 s
+Epoch 103/400, train error: 0.081450, val error: 0.297051. Elapsed time: 32.70 s
+Epoch 104/400, train error: 0.081272, val error: 0.298416. Elapsed time: 32.69 s
+Epoch 105/400, train error: 0.081100, val error: 0.298758. Elapsed time: 32.70 s
+Epoch 106/400, train error: 0.080927, val error: 0.299396. Elapsed time: 32.70 s
+Epoch 107/400, train error: 0.080752, val error: 0.299612. Elapsed time: 32.70 s
+Epoch 108/400, train error: 0.080584, val error: 0.299829. Elapsed time: 32.69 s
+Epoch 109/400, train error: 0.080413, val error: 0.299651. Elapsed time: 32.68 s
+Epoch 110/400, train error: 0.080249, val error: 0.300226. Elapsed time: 32.71 s
+Epoch 111/400, train error: 0.080077, val error: 0.301359. Elapsed time: 32.69 s
+Epoch 112/400, train error: 0.079914, val error: 0.301654. Elapsed time: 32.69 s
+Epoch 113/400, train error: 0.079751, val error: 0.301871. Elapsed time: 32.70 s
+Epoch 114/400, train error: 0.079591, val error: 0.301965. Elapsed time: 32.70 s
+Epoch 115/400, train error: 0.079427, val error: 0.302390. Elapsed time: 32.69 s
+Epoch 116/400, train error: 0.079267, val error: 0.303614. Elapsed time: 32.70 s
+Epoch 117/400, train error: 0.079107, val error: 0.303289. Elapsed time: 32.70 s
+Epoch 118/400, train error: 0.078953, val error: 0.303600. Elapsed time: 32.69 s
+Epoch 119/400, train error: 0.078789, val error: 0.304287. Elapsed time: 32.69 s
+Epoch 120/400, train error: 0.078634, val error: 0.304420. Elapsed time: 32.69 s
+Epoch 121/400, train error: 0.078471, val error: 0.304157. Elapsed time: 32.70 s
+Epoch 122/400, train error: 0.078319, val error: 0.304483. Elapsed time: 32.70 s
+Epoch 123/400, train error: 0.078165, val error: 0.304987. Elapsed time: 32.69 s
+Epoch 124/400, train error: 0.078013, val error: 0.306158. Elapsed time: 32.69 s
+Epoch 125/400, train error: 0.077861, val error: 0.306587. Elapsed time: 32.70 s
+Epoch 126/400, train error: 0.077705, val error: 0.307830. Elapsed time: 32.69 s
+Epoch 127/400, train error: 0.077547, val error: 0.307878. Elapsed time: 32.70 s
+Epoch 128/400, train error: 0.077401, val error: 0.308551. Elapsed time: 32.69 s
+Epoch 129/400, train error: 0.077250, val error: 0.309446. Elapsed time: 32.69 s
+Epoch 130/400, train error: 0.077102, val error: 0.309428. Elapsed time: 32.70 s
+Epoch 131/400, train error: 0.076955, val error: 0.309729. Elapsed time: 32.70 s
+Epoch 132/400, train error: 0.076813, val error: 0.309833. Elapsed time: 32.70 s
+Epoch 133/400, train error: 0.076667, val error: 0.310416. Elapsed time: 32.69 s
+Epoch 134/400, train error: 0.076523, val error: 0.311195. Elapsed time: 32.70 s
+Epoch 135/400, train error: 0.076374, val error: 0.311691. Elapsed time: 32.69 s
+Epoch 136/400, train error: 0.076233, val error: 0.312424. Elapsed time: 32.69 s
+Epoch 137/400, train error: 0.076094, val error: 0.312464. Elapsed time: 32.70 s
+Epoch 138/400, train error: 0.075948, val error: 0.312407. Elapsed time: 32.69 s
+Epoch 139/400, train error: 0.075810, val error: 0.311884. Elapsed time: 32.70 s
+Epoch 140/400, train error: 0.075662, val error: 0.312257. Elapsed time: 32.69 s
+Epoch 141/400, train error: 0.075528, val error: 0.313309. Elapsed time: 32.70 s
+Epoch 142/400, train error: 0.075389, val error: 0.312485. Elapsed time: 32.69 s
+Epoch 143/400, train error: 0.075248, val error: 0.313482. Elapsed time: 32.69 s
+Epoch 144/400, train error: 0.075115, val error: 0.314775. Elapsed time: 32.69 s
+Epoch 145/400, train error: 0.074980, val error: 0.315494. Elapsed time: 32.69 s
+Epoch 146/400, train error: 0.074844, val error: 0.315914. Elapsed time: 32.70 s
+Epoch 147/400, train error: 0.074706, val error: 0.316841. Elapsed time: 32.69 s
+Epoch 148/400, train error: 0.074569, val error: 0.316858. Elapsed time: 32.69 s
+Epoch 149/400, train error: 0.074434, val error: 0.317585. Elapsed time: 32.70 s
+Epoch 150/400, train error: 0.074303, val error: 0.317217. Elapsed time: 32.69 s
+Epoch 151/400, train error: 0.074173, val error: 0.317487. Elapsed time: 32.70 s
+Epoch 152/400, train error: 0.074039, val error: 0.318183. Elapsed time: 32.70 s
+Epoch 153/400, train error: 0.073902, val error: 0.319027. Elapsed time: 32.70 s
+Epoch 154/400, train error: 0.073763, val error: 0.319013. Elapsed time: 32.71 s
+Epoch 155/400, train error: 0.073635, val error: 0.319335. Elapsed time: 32.70 s
+Epoch 156/400, train error: 0.073505, val error: 0.319800. Elapsed time: 32.75 s
+Epoch 157/400, train error: 0.073376, val error: 0.319509. Elapsed time: 32.79 s
+Epoch 158/400, train error: 0.073245, val error: 0.319784. Elapsed time: 32.82 s
+Epoch 159/400, train error: 0.073122, val error: 0.320828. Elapsed time: 32.83 s
+Epoch 160/400, train error: 0.072997, val error: 0.320716. Elapsed time: 32.87 s
+Epoch 161/400, train error: 0.072875, val error: 0.321157. Elapsed time: 32.85 s
+Epoch 162/400, train error: 0.072744, val error: 0.321776. Elapsed time: 32.91 s
+Epoch 163/400, train error: 0.072619, val error: 0.321894. Elapsed time: 32.88 s
+Epoch 164/400, train error: 0.072495, val error: 0.321986. Elapsed time: 32.85 s
+Epoch 165/400, train error: 0.072373, val error: 0.322019. Elapsed time: 32.86 s
+Epoch 166/400, train error: 0.072250, val error: 0.322266. Elapsed time: 32.89 s
+Epoch 167/400, train error: 0.072134, val error: 0.322166. Elapsed time: 32.88 s
+Epoch 168/400, train error: 0.072012, val error: 0.322897. Elapsed time: 32.90 s
+Epoch 169/400, train error: 0.071890, val error: 0.322569. Elapsed time: 32.82 s
+Epoch 170/400, train error: 0.071772, val error: 0.322266. Elapsed time: 32.88 s
+Epoch 171/400, train error: 0.071654, val error: 0.322412. Elapsed time: 32.87 s
+Epoch 172/400, train error: 0.071535, val error: 0.323045. Elapsed time: 32.87 s
+Epoch 173/400, train error: 0.071414, val error: 0.323480. Elapsed time: 32.88 s
+Epoch 174/400, train error: 0.071299, val error: 0.323640. Elapsed time: 32.82 s
+Epoch 175/400, train error: 0.071174, val error: 0.324374. Elapsed time: 32.94 s
+Epoch 176/400, train error: 0.071057, val error: 0.324660. Elapsed time: 32.87 s
+Epoch 177/400, train error: 0.070946, val error: 0.325237. Elapsed time: 32.91 s
+Epoch 178/400, train error: 0.070831, val error: 0.326415. Elapsed time: 32.89 s
+Epoch 179/400, train error: 0.070718, val error: 0.326025. Elapsed time: 32.86 s
+Epoch 180/400, train error: 0.070603, val error: 0.325714. Elapsed time: 32.94 s
+Epoch 181/400, train error: 0.070489, val error: 0.325858. Elapsed time: 32.85 s
+Epoch 182/400, train error: 0.070377, val error: 0.326477. Elapsed time: 32.89 s
+Epoch 183/400, train error: 0.070263, val error: 0.326771. Elapsed time: 32.90 s
+Epoch 184/400, train error: 0.070150, val error: 0.327191. Elapsed time: 32.90 s
+Epoch 185/400, train error: 0.070039, val error: 0.328088. Elapsed time: 32.90 s
+Epoch 186/400, train error: 0.069924, val error: 0.328653. Elapsed time: 32.87 s
+Epoch 187/400, train error: 0.069814, val error: 0.329766. Elapsed time: 32.91 s
+Epoch 188/400, train error: 0.069697, val error: 0.330478. Elapsed time: 32.89 s
+Epoch 189/400, train error: 0.069589, val error: 0.330292. Elapsed time: 32.89 s
+Epoch 190/400, train error: 0.069483, val error: 0.330358. Elapsed time: 32.86 s
+Epoch 191/400, train error: 0.069376, val error: 0.330072. Elapsed time: 32.92 s
+Epoch 192/400, train error: 0.069267, val error: 0.329495. Elapsed time: 32.90 s
+Epoch 193/400, train error: 0.069156, val error: 0.329810. Elapsed time: 32.88 s
+Epoch 194/400, train error: 0.069050, val error: 0.330059. Elapsed time: 32.92 s
+Epoch 195/400, train error: 0.068943, val error: 0.330412. Elapsed time: 32.92 s
+Epoch 196/400, train error: 0.068838, val error: 0.330930. Elapsed time: 32.83 s
+Epoch 197/400, train error: 0.068738, val error: 0.331603. Elapsed time: 32.88 s
+Epoch 198/400, train error: 0.068633, val error: 0.331975. Elapsed time: 32.85 s
+Epoch 199/400, train error: 0.068529, val error: 0.331600. Elapsed time: 32.88 s
+Epoch 200/400, train error: 0.068424, val error: 0.331893. Elapsed time: 32.90 s
+Epoch 201/400, train error: 0.068320, val error: 0.332038. Elapsed time: 32.90 s
+Epoch 202/400, train error: 0.068219, val error: 0.331072. Elapsed time: 32.81 s
+Epoch 203/400, train error: 0.068116, val error: 0.331413. Elapsed time: 32.92 s
+Epoch 204/400, train error: 0.068020, val error: 0.331061. Elapsed time: 32.86 s
+Epoch 205/400, train error: 0.067919, val error: 0.330857. Elapsed time: 32.88 s
+Epoch 206/400, train error: 0.067814, val error: 0.331227. Elapsed time: 32.87 s
+Epoch 207/400, train error: 0.067715, val error: 0.330319. Elapsed time: 32.89 s
+Epoch 208/400, train error: 0.067613, val error: 0.330725. Elapsed time: 32.90 s
+Epoch 209/400, train error: 0.067511, val error: 0.330503. Elapsed time: 32.87 s
+Epoch 210/400, train error: 0.067416, val error: 0.331382. Elapsed time: 32.88 s
+Epoch 211/400, train error: 0.067318, val error: 0.331540. Elapsed time: 32.84 s
+Epoch 212/400, train error: 0.067217, val error: 0.331634. Elapsed time: 32.90 s
+Epoch 213/400, train error: 0.067121, val error: 0.332516. Elapsed time: 32.88 s
+Epoch 214/400, train error: 0.067029, val error: 0.332650. Elapsed time: 32.89 s
+Epoch 215/400, train error: 0.066932, val error: 0.333353. Elapsed time: 32.89 s
+Epoch 216/400, train error: 0.066835, val error: 0.334002. Elapsed time: 32.87 s
+Epoch 217/400, train error: 0.066735, val error: 0.333312. Elapsed time: 32.93 s
+Epoch 218/400, train error: 0.066639, val error: 0.333687. Elapsed time: 32.90 s
+Epoch 219/400, train error: 0.066534, val error: 0.332898. Elapsed time: 32.85 s
+Epoch 220/400, train error: 0.066439, val error: 0.333591. Elapsed time: 32.98 s
+Epoch 221/400, train error: 0.066346, val error: 0.332462. Elapsed time: 32.88 s
+Epoch 222/400, train error: 0.066254, val error: 0.333022. Elapsed time: 32.91 s
+Epoch 223/400, train error: 0.066162, val error: 0.333296. Elapsed time: 32.94 s
+Epoch 224/400, train error: 0.066067, val error: 0.333752. Elapsed time: 32.95 s
+Epoch 225/400, train error: 0.065974, val error: 0.332981. Elapsed time: 32.83 s
+Epoch 226/400, train error: 0.065880, val error: 0.332206. Elapsed time: 32.89 s
+Epoch 227/400, train error: 0.065789, val error: 0.332288. Elapsed time: 32.92 s
+Epoch 228/400, train error: 0.065695, val error: 0.332484. Elapsed time: 32.89 s
+Epoch 229/400, train error: 0.065605, val error: 0.331953. Elapsed time: 32.91 s
+Epoch 230/400, train error: 0.065514, val error: 0.331894. Elapsed time: 32.86 s
+Epoch 231/400, train error: 0.065424, val error: 0.333051. Elapsed time: 32.89 s
+Epoch 232/400, train error: 0.065332, val error: 0.331557. Elapsed time: 32.95 s
+Epoch 233/400, train error: 0.065244, val error: 0.331968. Elapsed time: 32.84 s
+Epoch 234/400, train error: 0.065153, val error: 0.333112. Elapsed time: 32.90 s
+Epoch 235/400, train error: 0.065063, val error: 0.332308. Elapsed time: 32.87 s
+Epoch 236/400, train error: 0.064975, val error: 0.332239. Elapsed time: 32.86 s
+Epoch 237/400, train error: 0.064885, val error: 0.333785. Elapsed time: 32.88 s
+Epoch 238/400, train error: 0.064799, val error: 0.333838. Elapsed time: 32.93 s
+Epoch 239/400, train error: 0.064718, val error: 0.333916. Elapsed time: 32.87 s
+Epoch 240/400, train error: 0.064628, val error: 0.333452. Elapsed time: 32.89 s
+Epoch 241/400, train error: 0.064551, val error: 0.333610. Elapsed time: 32.88 s
+Epoch 242/400, train error: 0.064467, val error: 0.333263. Elapsed time: 32.91 s
+Epoch 243/400, train error: 0.064379, val error: 0.334012. Elapsed time: 32.85 s
+Epoch 244/400, train error: 0.064308, val error: 0.334451. Elapsed time: 32.86 s
+Epoch 245/400, train error: 0.064222, val error: 0.333245. Elapsed time: 32.84 s
+Epoch 246/400, train error: 0.064160, val error: 0.333707. Elapsed time: 32.78 s
+Epoch 247/400, train error: 0.064080, val error: 0.334238. Elapsed time: 32.96 s
+Epoch 248/400, train error: 0.064021, val error: 0.334482. Elapsed time: 32.91 s
+Epoch 249/400, train error: 0.063961, val error: 0.334875. Elapsed time: 32.87 s
+Epoch 250/400, train error: 0.063907, val error: 0.335911. Elapsed time: 32.86 s
+Epoch 251/400, train error: 0.063821, val error: 0.335609. Elapsed time: 32.86 s
+Epoch 252/400, train error: 0.063712, val error: 0.336024. Elapsed time: 32.91 s
+Epoch 253/400, train error: 0.063607, val error: 0.337400. Elapsed time: 32.87 s
+Epoch 254/400, train error: 0.063518, val error: 0.338088. Elapsed time: 32.87 s
+Epoch 255/400, train error: 0.063427, val error: 0.338553. Elapsed time: 32.87 s
+Epoch 256/400, train error: 0.063340, val error: 0.338793. Elapsed time: 32.92 s
+Epoch 257/400, train error: 0.063250, val error: 0.339109. Elapsed time: 32.88 s
+Epoch 258/400, train error: 0.063155, val error: 0.340038. Elapsed time: 32.89 s
+Epoch 259/400, train error: 0.063072, val error: 0.339979. Elapsed time: 32.86 s
+Epoch 260/400, train error: 0.062992, val error: 0.340379. Elapsed time: 32.96 s
+Epoch 261/400, train error: 0.062908, val error: 0.340946. Elapsed time: 32.84 s
+Epoch 262/400, train error: 0.062825, val error: 0.341010. Elapsed time: 32.88 s
+Epoch 263/400, train error: 0.062737, val error: 0.341575. Elapsed time: 32.92 s
+Epoch 264/400, train error: 0.062653, val error: 0.342012. Elapsed time: 32.90 s
+Epoch 265/400, train error: 0.062565, val error: 0.342839. Elapsed time: 32.85 s
+Epoch 266/400, train error: 0.062487, val error: 0.342778. Elapsed time: 32.92 s
+Epoch 267/400, train error: 0.062403, val error: 0.342070. Elapsed time: 32.86 s
+Epoch 268/400, train error: 0.062316, val error: 0.342999. Elapsed time: 32.86 s
+Epoch 269/400, train error: 0.062231, val error: 0.343304. Elapsed time: 32.87 s
+Epoch 270/400, train error: 0.062159, val error: 0.343687. Elapsed time: 32.92 s
+Epoch 271/400, train error: 0.062081, val error: 0.343653. Elapsed time: 32.84 s
+Epoch 272/400, train error: 0.061995, val error: 0.343642. Elapsed time: 32.91 s
+Epoch 273/400, train error: 0.061911, val error: 0.343581. Elapsed time: 32.87 s
+Epoch 274/400, train error: 0.061828, val error: 0.344192. Elapsed time: 32.89 s
+Epoch 275/400, train error: 0.061744, val error: 0.345307. Elapsed time: 32.91 s
+Epoch 276/400, train error: 0.061656, val error: 0.345866. Elapsed time: 32.87 s
+Epoch 277/400, train error: 0.061568, val error: 0.346873. Elapsed time: 32.89 s
+Epoch 278/400, train error: 0.061473, val error: 0.346503. Elapsed time: 32.86 s
+Epoch 279/400, train error: 0.061384, val error: 0.347108. Elapsed time: 32.82 s
+Epoch 280/400, train error: 0.061283, val error: 0.347842. Elapsed time: 32.94 s
+Epoch 281/400, train error: 0.061179, val error: 0.347809. Elapsed time: 32.86 s
+Epoch 282/400, train error: 0.061073, val error: 0.348873. Elapsed time: 32.87 s
+Epoch 283/400, train error: 0.060969, val error: 0.349745. Elapsed time: 32.88 s
+Epoch 284/400, train error: 0.060858, val error: 0.351832. Elapsed time: 32.87 s
+Epoch 285/400, train error: 0.060752, val error: 0.352182. Elapsed time: 32.85 s
+Epoch 286/400, train error: 0.060645, val error: 0.353405. Elapsed time: 32.87 s
+Epoch 287/400, train error: 0.060536, val error: 0.353579. Elapsed time: 32.84 s
+Epoch 288/400, train error: 0.060434, val error: 0.354801. Elapsed time: 32.91 s
+Epoch 289/400, train error: 0.060326, val error: 0.354980. Elapsed time: 33.79 s
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 400
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 28.29 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.36 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.59 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.30 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/400, train error: 0.211712, val error: 0.247796. Elapsed time: 29.24 s
+Epoch 2/400, train error: 0.204397, val error: 0.238583. Elapsed time: 29.52 s
+Epoch 3/400, train error: 0.198168, val error: 0.232952. Elapsed time: 29.66 s
+Epoch 4/400, train error: 0.191888, val error: 0.227458. Elapsed time: 29.74 s
+Epoch 5/400, train error: 0.185543, val error: 0.221789. Elapsed time: 29.82 s
+Epoch 6/400, train error: 0.179790, val error: 0.216121. Elapsed time: 29.76 s
+Epoch 7/400, train error: 0.175171, val error: 0.210673. Elapsed time: 29.83 s
+Epoch 8/400, train error: 0.171610, val error: 0.205964. Elapsed time: 29.77 s
+Epoch 9/400, train error: 0.168741, val error: 0.202242. Elapsed time: 29.82 s
+Epoch 10/400, train error: 0.166287, val error: 0.199645. Elapsed time: 29.77 s
+Epoch 11/400, train error: 0.164063, val error: 0.198270. Elapsed time: 29.81 s
+Epoch 12/400, train error: 0.161937, val error: 0.198025. Elapsed time: 29.77 s
+Epoch 13/400, train error: 0.159892, val error: 0.197849. Elapsed time: 29.82 s
+Epoch 14/400, train error: 0.157952, val error: 0.196905. Elapsed time: 29.77 s
+Epoch 15/400, train error: 0.156132, val error: 0.195886. Elapsed time: 29.81 s
+Epoch 16/400, train error: 0.154418, val error: 0.195491. Elapsed time: 29.78 s
+Epoch 17/400, train error: 0.152830, val error: 0.195391. Elapsed time: 29.81 s
+Epoch 18/400, train error: 0.151361, val error: 0.194971. Elapsed time: 29.76 s
+Epoch 19/400, train error: 0.149992, val error: 0.194307. Elapsed time: 29.81 s
+Epoch 20/400, train error: 0.148704, val error: 0.193523. Elapsed time: 29.77 s
+Epoch 21/400, train error: 0.147478, val error: 0.192598. Elapsed time: 29.82 s
+Epoch 22/400, train error: 0.146306, val error: 0.191613. Elapsed time: 29.78 s
+Epoch 23/400, train error: 0.145168, val error: 0.190389. Elapsed time: 29.80 s
+Epoch 24/400, train error: 0.144060, val error: 0.189184. Elapsed time: 29.76 s
+Epoch 25/400, train error: 0.142984, val error: 0.187968. Elapsed time: 29.80 s
+Epoch 26/400, train error: 0.141932, val error: 0.186642. Elapsed time: 29.77 s
+Epoch 27/400, train error: 0.140906, val error: 0.185328. Elapsed time: 29.81 s
+Epoch 28/400, train error: 0.139901, val error: 0.184043. Elapsed time: 29.76 s
+Epoch 29/400, train error: 0.138913, val error: 0.182739. Elapsed time: 29.82 s
+Epoch 30/400, train error: 0.137954, val error: 0.181526. Elapsed time: 29.76 s
+Epoch 31/400, train error: 0.137016, val error: 0.180275. Elapsed time: 29.81 s
+Epoch 32/400, train error: 0.136098, val error: 0.179051. Elapsed time: 29.76 s
+Epoch 33/400, train error: 0.135211, val error: 0.177883. Elapsed time: 29.81 s
+Epoch 34/400, train error: 0.134335, val error: 0.176730. Elapsed time: 29.79 s
+Epoch 35/400, train error: 0.133490, val error: 0.175586. Elapsed time: 29.80 s
+Epoch 36/400, train error: 0.132656, val error: 0.174511. Elapsed time: 29.76 s
+Epoch 37/400, train error: 0.131856, val error: 0.173491. Elapsed time: 29.83 s
+Epoch 38/400, train error: 0.131075, val error: 0.172529. Elapsed time: 29.76 s
+Epoch 39/400, train error: 0.130310, val error: 0.171591. Elapsed time: 29.81 s
+Epoch 40/400, train error: 0.129565, val error: 0.170649. Elapsed time: 29.76 s
+Epoch 41/400, train error: 0.128836, val error: 0.169702. Elapsed time: 29.81 s
+Epoch 42/400, train error: 0.128120, val error: 0.168887. Elapsed time: 29.75 s
+Epoch 43/400, train error: 0.127424, val error: 0.168037. Elapsed time: 29.83 s
+Epoch 44/400, train error: 0.126740, val error: 0.167225. Elapsed time: 29.76 s
+Epoch 45/400, train error: 0.126071, val error: 0.166442. Elapsed time: 29.81 s
+Epoch 46/400, train error: 0.125413, val error: 0.165688. Elapsed time: 29.76 s
+Epoch 47/400, train error: 0.124777, val error: 0.164973. Elapsed time: 29.81 s
+Epoch 48/400, train error: 0.124145, val error: 0.164267. Elapsed time: 29.77 s
+Epoch 49/400, train error: 0.123527, val error: 0.163598. Elapsed time: 29.81 s
+Epoch 50/400, train error: 0.122911, val error: 0.162822. Elapsed time: 29.76 s
+Epoch 51/400, train error: 0.122313, val error: 0.162104. Elapsed time: 29.81 s
+Epoch 52/400, train error: 0.121730, val error: 0.161465. Elapsed time: 29.77 s
+Epoch 53/400, train error: 0.121148, val error: 0.160850. Elapsed time: 29.80 s
+Epoch 54/400, train error: 0.120571, val error: 0.160243. Elapsed time: 29.79 s
+Epoch 55/400, train error: 0.120006, val error: 0.159654. Elapsed time: 29.81 s
+Epoch 56/400, train error: 0.119451, val error: 0.159070. Elapsed time: 29.76 s
+Epoch 57/400, train error: 0.118913, val error: 0.158548. Elapsed time: 29.81 s
+Epoch 58/400, train error: 0.118378, val error: 0.158017. Elapsed time: 29.77 s
+Epoch 59/400, train error: 0.117848, val error: 0.157425. Elapsed time: 29.81 s
+Epoch 60/400, train error: 0.117332, val error: 0.156941. Elapsed time: 29.77 s
+Epoch 61/400, train error: 0.116827, val error: 0.156401. Elapsed time: 29.81 s
+Epoch 62/400, train error: 0.116324, val error: 0.155911. Elapsed time: 29.77 s
+Epoch 63/400, train error: 0.115833, val error: 0.155386. Elapsed time: 29.81 s
+Epoch 64/400, train error: 0.115345, val error: 0.154937. Elapsed time: 29.77 s
+Epoch 65/400, train error: 0.114872, val error: 0.154460. Elapsed time: 29.82 s
+Epoch 66/400, train error: 0.114402, val error: 0.154019. Elapsed time: 29.77 s
+Epoch 67/400, train error: 0.113945, val error: 0.153626. Elapsed time: 29.82 s
+Epoch 68/400, train error: 0.113487, val error: 0.153220. Elapsed time: 29.76 s
+Epoch 69/400, train error: 0.113041, val error: 0.152854. Elapsed time: 29.80 s
+Epoch 70/400, train error: 0.112607, val error: 0.152500. Elapsed time: 29.78 s
+Epoch 71/400, train error: 0.112174, val error: 0.152102. Elapsed time: 29.80 s
+Epoch 72/400, train error: 0.111746, val error: 0.151777. Elapsed time: 29.77 s
+Epoch 73/400, train error: 0.111329, val error: 0.151565. Elapsed time: 29.81 s
+Epoch 74/400, train error: 0.110923, val error: 0.151221. Elapsed time: 29.78 s
+Epoch 75/400, train error: 0.110527, val error: 0.150908. Elapsed time: 29.84 s
+Epoch 76/400, train error: 0.110131, val error: 0.150559. Elapsed time: 29.76 s
+Epoch 77/400, train error: 0.109740, val error: 0.150328. Elapsed time: 29.80 s
+Epoch 78/400, train error: 0.109359, val error: 0.150023. Elapsed time: 29.75 s
+Epoch 79/400, train error: 0.108988, val error: 0.149675. Elapsed time: 29.80 s
+Epoch 80/400, train error: 0.108627, val error: 0.149320. Elapsed time: 29.77 s
+Epoch 81/400, train error: 0.108268, val error: 0.149135. Elapsed time: 29.76 s
+Epoch 82/400, train error: 0.107912, val error: 0.148921. Elapsed time: 29.80 s
+Epoch 83/400, train error: 0.107564, val error: 0.148691. Elapsed time: 29.76 s
+Epoch 84/400, train error: 0.107220, val error: 0.148452. Elapsed time: 29.79 s
+Epoch 85/400, train error: 0.106881, val error: 0.148275. Elapsed time: 29.74 s
+Epoch 86/400, train error: 0.106551, val error: 0.148077. Elapsed time: 29.80 s
+Epoch 87/400, train error: 0.106226, val error: 0.147771. Elapsed time: 29.77 s
+Epoch 88/400, train error: 0.105910, val error: 0.147496. Elapsed time: 29.82 s
+Epoch 89/400, train error: 0.105597, val error: 0.147262. Elapsed time: 29.75 s
+Epoch 90/400, train error: 0.105290, val error: 0.147160. Elapsed time: 29.79 s
+Epoch 91/400, train error: 0.104988, val error: 0.146946. Elapsed time: 29.77 s
+Epoch 92/400, train error: 0.104690, val error: 0.146699. Elapsed time: 29.72 s
+Epoch 93/400, train error: 0.104391, val error: 0.146503. Elapsed time: 29.81 s
+Epoch 94/400, train error: 0.104103, val error: 0.146267. Elapsed time: 29.74 s
+Epoch 95/400, train error: 0.103814, val error: 0.146087. Elapsed time: 29.81 s
+Epoch 96/400, train error: 0.103538, val error: 0.145791. Elapsed time: 29.76 s
+Epoch 97/400, train error: 0.103263, val error: 0.145649. Elapsed time: 29.80 s
+Epoch 98/400, train error: 0.102994, val error: 0.145488. Elapsed time: 29.77 s
+Epoch 99/400, train error: 0.102730, val error: 0.145320. Elapsed time: 29.79 s
+Epoch 100/400, train error: 0.102472, val error: 0.145208. Elapsed time: 29.78 s
+Epoch 101/400, train error: 0.102215, val error: 0.145069. Elapsed time: 29.74 s
+Epoch 102/400, train error: 0.101961, val error: 0.144916. Elapsed time: 29.79 s
+Epoch 103/400, train error: 0.101716, val error: 0.144755. Elapsed time: 29.76 s
+Epoch 104/400, train error: 0.101471, val error: 0.144611. Elapsed time: 29.80 s
+Epoch 105/400, train error: 0.101229, val error: 0.144381. Elapsed time: 29.77 s
+Epoch 106/400, train error: 0.100988, val error: 0.144294. Elapsed time: 29.78 s
+Epoch 107/400, train error: 0.100758, val error: 0.144169. Elapsed time: 29.76 s
+Epoch 108/400, train error: 0.100534, val error: 0.144068. Elapsed time: 29.74 s
+Epoch 109/400, train error: 0.100304, val error: 0.143920. Elapsed time: 29.80 s
+Epoch 110/400, train error: 0.100085, val error: 0.143789. Elapsed time: 29.76 s
+Epoch 111/400, train error: 0.099864, val error: 0.143673. Elapsed time: 29.81 s
+Epoch 112/400, train error: 0.099651, val error: 0.143514. Elapsed time: 29.76 s
+Epoch 113/400, train error: 0.099440, val error: 0.143382. Elapsed time: 29.80 s
+Epoch 114/400, train error: 0.099228, val error: 0.143304. Elapsed time: 29.77 s
+Epoch 115/400, train error: 0.099015, val error: 0.143213. Elapsed time: 29.81 s
+Epoch 116/400, train error: 0.098810, val error: 0.143096. Elapsed time: 29.76 s
+Epoch 117/400, train error: 0.098609, val error: 0.143016. Elapsed time: 29.76 s
+Epoch 118/400, train error: 0.098413, val error: 0.142901. Elapsed time: 29.78 s
+Epoch 119/400, train error: 0.098222, val error: 0.142878. Elapsed time: 29.74 s
+Epoch 120/400, train error: 0.098028, val error: 0.142741. Elapsed time: 29.79 s
+Epoch 121/400, train error: 0.097837, val error: 0.142645. Elapsed time: 29.76 s
+Epoch 122/400, train error: 0.097652, val error: 0.142536. Elapsed time: 29.80 s
+Epoch 123/400, train error: 0.097463, val error: 0.142470. Elapsed time: 29.75 s
+Epoch 124/400, train error: 0.097280, val error: 0.142379. Elapsed time: 29.74 s
+Epoch 125/400, train error: 0.097096, val error: 0.142363. Elapsed time: 29.80 s
+Epoch 126/400, train error: 0.096918, val error: 0.142295. Elapsed time: 29.76 s
+Epoch 127/400, train error: 0.096743, val error: 0.142193. Elapsed time: 29.79 s
+Epoch 128/400, train error: 0.096566, val error: 0.142103. Elapsed time: 29.76 s
+Epoch 129/400, train error: 0.096394, val error: 0.142073. Elapsed time: 29.82 s
+Epoch 130/400, train error: 0.096221, val error: 0.141934. Elapsed time: 29.74 s
+Epoch 131/400, train error: 0.096048, val error: 0.141864. Elapsed time: 29.73 s
+Epoch 132/400, train error: 0.095883, val error: 0.141875. Elapsed time: 29.78 s
+Epoch 133/400, train error: 0.095713, val error: 0.141820. Elapsed time: 29.75 s
+Epoch 134/400, train error: 0.095553, val error: 0.141829. Elapsed time: 29.81 s
+Epoch 135/400, train error: 0.095395, val error: 0.141710. Elapsed time: 29.76 s
+Epoch 136/400, train error: 0.095233, val error: 0.141552. Elapsed time: 29.79 s
+Epoch 137/400, train error: 0.095075, val error: 0.141492. Elapsed time: 29.76 s
+Epoch 138/400, train error: 0.094915, val error: 0.141378. Elapsed time: 29.74 s
+Epoch 139/400, train error: 0.094760, val error: 0.141350. Elapsed time: 29.80 s
+Epoch 140/400, train error: 0.094607, val error: 0.141333. Elapsed time: 29.75 s
+Epoch 141/400, train error: 0.094457, val error: 0.141302. Elapsed time: 29.81 s
+Epoch 142/400, train error: 0.094310, val error: 0.141279. Elapsed time: 29.76 s
+Epoch 143/400, train error: 0.094155, val error: 0.141291. Elapsed time: 29.80 s
+Epoch 144/400, train error: 0.094005, val error: 0.141222. Elapsed time: 29.76 s
+Epoch 145/400, train error: 0.093864, val error: 0.141251. Elapsed time: 29.81 s
+Epoch 146/400, train error: 0.093718, val error: 0.141204. Elapsed time: 29.75 s
+Epoch 147/400, train error: 0.093578, val error: 0.141079. Elapsed time: 29.73 s
+Epoch 148/400, train error: 0.093433, val error: 0.141164. Elapsed time: 29.80 s
+Epoch 149/400, train error: 0.093295, val error: 0.141152. Elapsed time: 29.74 s
+Epoch 150/400, train error: 0.093158, val error: 0.141235. Elapsed time: 29.83 s
+Epoch 151/400, train error: 0.093021, val error: 0.141220. Elapsed time: 29.76 s
+Epoch 152/400, train error: 0.092885, val error: 0.141225. Elapsed time: 29.79 s
+Epoch 153/400, train error: 0.092753, val error: 0.141058. Elapsed time: 29.77 s
+Epoch 154/400, train error: 0.092618, val error: 0.141016. Elapsed time: 29.75 s
+Epoch 155/400, train error: 0.092491, val error: 0.140969. Elapsed time: 29.77 s
+Epoch 156/400, train error: 0.092359, val error: 0.140933. Elapsed time: 29.75 s
+Epoch 157/400, train error: 0.092230, val error: 0.140883. Elapsed time: 29.78 s
+Epoch 158/400, train error: 0.092097, val error: 0.140862. Elapsed time: 29.77 s
+Epoch 159/400, train error: 0.091963, val error: 0.140875. Elapsed time: 29.76 s
+Epoch 160/400, train error: 0.091830, val error: 0.140887. Elapsed time: 29.78 s
+Epoch 161/400, train error: 0.091702, val error: 0.140958. Elapsed time: 29.75 s
+Epoch 162/400, train error: 0.091576, val error: 0.141025. Elapsed time: 29.79 s
+Epoch 163/400, train error: 0.091452, val error: 0.140878. Elapsed time: 29.76 s
+Epoch 164/400, train error: 0.091328, val error: 0.140869. Elapsed time: 29.81 s
+Epoch 165/400, train error: 0.091207, val error: 0.140924. Elapsed time: 29.76 s
+Epoch 166/400, train error: 0.091084, val error: 0.140960. Elapsed time: 29.75 s
+Epoch 167/400, train error: 0.090959, val error: 0.140983. Elapsed time: 29.78 s
+Epoch 168/400, train error: 0.090835, val error: 0.141003. Elapsed time: 29.75 s
+Epoch 169/400, train error: 0.090715, val error: 0.141050. Elapsed time: 29.80 s
+Epoch 170/400, train error: 0.090592, val error: 0.140989. Elapsed time: 29.76 s
+Epoch 171/400, train error: 0.090475, val error: 0.141010. Elapsed time: 29.77 s
+Epoch 172/400, train error: 0.090356, val error: 0.140988. Elapsed time: 29.78 s
+Epoch 173/400, train error: 0.090241, val error: 0.141124. Elapsed time: 29.73 s
+Epoch 174/400, train error: 0.090124, val error: 0.141067. Elapsed time: 29.80 s
+Epoch 175/400, train error: 0.090011, val error: 0.141039. Elapsed time: 29.75 s
+Epoch 176/400, train error: 0.089894, val error: 0.141033. Elapsed time: 29.80 s
+Epoch 177/400, train error: 0.089780, val error: 0.141090. Elapsed time: 29.79 s
+Epoch 178/400, train error: 0.089667, val error: 0.141144. Elapsed time: 29.79 s
+Epoch 179/400, train error: 0.089555, val error: 0.141037. Elapsed time: 29.76 s
+Epoch 180/400, train error: 0.089443, val error: 0.140930. Elapsed time: 29.75 s
+Epoch 181/400, train error: 0.089335, val error: 0.140872. Elapsed time: 29.79 s
+Epoch 182/400, train error: 0.089221, val error: 0.140868. Elapsed time: 29.75 s
+Epoch 183/400, train error: 0.089110, val error: 0.140882. Elapsed time: 29.79 s
+Epoch 184/400, train error: 0.088995, val error: 0.140831. Elapsed time: 29.76 s
+Epoch 185/400, train error: 0.088889, val error: 0.140720. Elapsed time: 29.72 s
+Epoch 186/400, train error: 0.088784, val error: 0.140751. Elapsed time: 29.80 s
+Epoch 187/400, train error: 0.088676, val error: 0.140794. Elapsed time: 29.75 s
+Epoch 188/400, train error: 0.088566, val error: 0.140877. Elapsed time: 29.79 s
+Epoch 189/400, train error: 0.088460, val error: 0.140927. Elapsed time: 29.76 s
+Epoch 190/400, train error: 0.088356, val error: 0.140935. Elapsed time: 29.75 s
+Epoch 191/400, train error: 0.088248, val error: 0.140995. Elapsed time: 29.78 s
+Epoch 192/400, train error: 0.088144, val error: 0.140953. Elapsed time: 29.74 s
+Epoch 193/400, train error: 0.088039, val error: 0.141127. Elapsed time: 29.80 s
+Epoch 194/400, train error: 0.087937, val error: 0.141114. Elapsed time: 29.77 s
+Epoch 195/400, train error: 0.087832, val error: 0.141034. Elapsed time: 29.79 s
+Epoch 196/400, train error: 0.087731, val error: 0.141016. Elapsed time: 29.75 s
+Epoch 197/400, train error: 0.087630, val error: 0.141126. Elapsed time: 29.72 s
+Epoch 198/400, train error: 0.087530, val error: 0.141245. Elapsed time: 29.79 s
+Epoch 199/400, train error: 0.087435, val error: 0.141261. Elapsed time: 29.75 s
+Epoch 200/400, train error: 0.087333, val error: 0.141172. Elapsed time: 29.77 s
+Epoch 201/400, train error: 0.087236, val error: 0.141127. Elapsed time: 29.77 s
+Epoch 202/400, train error: 0.087133, val error: 0.141196. Elapsed time: 29.74 s
+Epoch 203/400, train error: 0.087033, val error: 0.141210. Elapsed time: 29.79 s
+Epoch 204/400, train error: 0.086938, val error: 0.141186. Elapsed time: 29.77 s
+Epoch 205/400, train error: 0.086838, val error: 0.141178. Elapsed time: 29.79 s
+Epoch 206/400, train error: 0.086741, val error: 0.141145. Elapsed time: 29.76 s
+Epoch 207/400, train error: 0.086642, val error: 0.141042. Elapsed time: 29.74 s
+Epoch 208/400, train error: 0.086549, val error: 0.141187. Elapsed time: 29.81 s
+Epoch 209/400, train error: 0.086453, val error: 0.141117. Elapsed time: 29.72 s
+Epoch 210/400, train error: 0.086357, val error: 0.140985. Elapsed time: 29.81 s
+Epoch 211/400, train error: 0.086260, val error: 0.141008. Elapsed time: 29.76 s
+Epoch 212/400, train error: 0.086159, val error: 0.141103. Elapsed time: 29.78 s
+Epoch 213/400, train error: 0.086065, val error: 0.141130. Elapsed time: 29.78 s
+Epoch 214/400, train error: 0.085968, val error: 0.141079. Elapsed time: 29.73 s
+Epoch 215/400, train error: 0.085875, val error: 0.141142. Elapsed time: 29.80 s
+Epoch 216/400, train error: 0.085780, val error: 0.141037. Elapsed time: 29.75 s
+Epoch 217/400, train error: 0.085690, val error: 0.141111. Elapsed time: 29.77 s
+Epoch 218/400, train error: 0.085598, val error: 0.141112. Elapsed time: 29.79 s
+Epoch 219/400, train error: 0.085511, val error: 0.141141. Elapsed time: 29.73 s
+Epoch 220/400, train error: 0.085417, val error: 0.141126. Elapsed time: 29.81 s
+Epoch 221/400, train error: 0.085325, val error: 0.141270. Elapsed time: 29.73 s
+Epoch 222/400, train error: 0.085232, val error: 0.141260. Elapsed time: 29.75 s
+Epoch 223/400, train error: 0.085138, val error: 0.141246. Elapsed time: 29.77 s
+Epoch 224/400, train error: 0.085044, val error: 0.141281. Elapsed time: 29.74 s
+Epoch 225/400, train error: 0.084949, val error: 0.141153. Elapsed time: 29.80 s
+Epoch 226/400, train error: 0.084857, val error: 0.141092. Elapsed time: 29.75 s
+Epoch 227/400, train error: 0.084767, val error: 0.141144. Elapsed time: 29.79 s
+Epoch 228/400, train error: 0.084677, val error: 0.141269. Elapsed time: 29.77 s
+Epoch 229/400, train error: 0.084587, val error: 0.141200. Elapsed time: 29.74 s
+Epoch 230/400, train error: 0.084495, val error: 0.141176. Elapsed time: 29.78 s
+Epoch 231/400, train error: 0.084402, val error: 0.141324. Elapsed time: 29.78 s
+Epoch 232/400, train error: 0.084312, val error: 0.141233. Elapsed time: 29.79 s
+Epoch 233/400, train error: 0.084218, val error: 0.141352. Elapsed time: 29.76 s
+Epoch 234/400, train error: 0.084128, val error: 0.141298. Elapsed time: 29.74 s
+Epoch 235/400, train error: 0.084044, val error: 0.141340. Elapsed time: 29.80 s
+Epoch 236/400, train error: 0.083959, val error: 0.141173. Elapsed time: 29.74 s
+Epoch 237/400, train error: 0.083872, val error: 0.141276. Elapsed time: 29.80 s
+Epoch 238/400, train error: 0.083784, val error: 0.141202. Elapsed time: 29.75 s
+Epoch 239/400, train error: 0.083701, val error: 0.141341. Elapsed time: 29.73 s
+Epoch 240/400, train error: 0.083611, val error: 0.141111. Elapsed time: 29.80 s
+Epoch 241/400, train error: 0.083522, val error: 0.141242. Elapsed time: 29.73 s
+Epoch 242/400, train error: 0.083433, val error: 0.141113. Elapsed time: 29.77 s
+Epoch 243/400, train error: 0.083348, val error: 0.141074. Elapsed time: 29.76 s
+Epoch 244/400, train error: 0.083264, val error: 0.141073. Elapsed time: 29.74 s
+Epoch 245/400, train error: 0.083178, val error: 0.141247. Elapsed time: 29.79 s
+Epoch 246/400, train error: 0.083093, val error: 0.141167. Elapsed time: 29.75 s
+Epoch 247/400, train error: 0.083012, val error: 0.141107. Elapsed time: 29.79 s
+Epoch 248/400, train error: 0.082927, val error: 0.141227. Elapsed time: 29.75 s
+Epoch 249/400, train error: 0.082843, val error: 0.141188. Elapsed time: 29.73 s
+Epoch 250/400, train error: 0.082759, val error: 0.141499. Elapsed time: 29.80 s
+Epoch 251/400, train error: 0.082675, val error: 0.141490. Elapsed time: 29.76 s
+Epoch 252/400, train error: 0.082592, val error: 0.141495. Elapsed time: 29.79 s
+Epoch 253/400, train error: 0.082512, val error: 0.141555. Elapsed time: 29.76 s
+Epoch 254/400, train error: 0.082429, val error: 0.141464. Elapsed time: 29.76 s
+Epoch 255/400, train error: 0.082340, val error: 0.141356. Elapsed time: 29.78 s
+Epoch 256/400, train error: 0.082258, val error: 0.141139. Elapsed time: 29.74 s
+Epoch 257/400, train error: 0.082175, val error: 0.141242. Elapsed time: 29.80 s
+Epoch 258/400, train error: 0.082095, val error: 0.141144. Elapsed time: 29.76 s
+Epoch 259/400, train error: 0.082013, val error: 0.141220. Elapsed time: 29.77 s
+Epoch 260/400, train error: 0.081938, val error: 0.141239. Elapsed time: 29.76 s
+Epoch 261/400, train error: 0.081858, val error: 0.141142. Elapsed time: 29.74 s
+Epoch 262/400, train error: 0.081779, val error: 0.141247. Elapsed time: 29.79 s
+Epoch 263/400, train error: 0.081695, val error: 0.141252. Elapsed time: 29.76 s
+Epoch 264/400, train error: 0.081616, val error: 0.141203. Elapsed time: 29.74 s
+Epoch 265/400, train error: 0.081535, val error: 0.141224. Elapsed time: 29.79 s
+Epoch 266/400, train error: 0.081462, val error: 0.141228. Elapsed time: 29.75 s
+Epoch 267/400, train error: 0.081385, val error: 0.141342. Elapsed time: 29.79 s
+Epoch 268/400, train error: 0.081304, val error: 0.141299. Elapsed time: 29.75 s
+Epoch 269/400, train error: 0.081225, val error: 0.141414. Elapsed time: 29.75 s
+Epoch 270/400, train error: 0.081148, val error: 0.141373. Elapsed time: 29.78 s
+Epoch 271/400, train error: 0.081066, val error: 0.141371. Elapsed time: 29.75 s
+Epoch 272/400, train error: 0.080985, val error: 0.141506. Elapsed time: 29.79 s
+Epoch 273/400, train error: 0.080908, val error: 0.141489. Elapsed time: 29.75 s
+Epoch 274/400, train error: 0.080829, val error: 0.141600. Elapsed time: 29.73 s
+Epoch 275/400, train error: 0.080752, val error: 0.141618. Elapsed time: 29.78 s
+Epoch 276/400, train error: 0.080676, val error: 0.141517. Elapsed time: 29.76 s
+Epoch 277/400, train error: 0.080593, val error: 0.141321. Elapsed time: 29.80 s
+Epoch 278/400, train error: 0.080514, val error: 0.141237. Elapsed time: 29.74 s
+Epoch 279/400, train error: 0.080436, val error: 0.141323. Elapsed time: 29.73 s
+Epoch 280/400, train error: 0.080361, val error: 0.141434. Elapsed time: 29.81 s
+Epoch 281/400, train error: 0.080282, val error: 0.141430. Elapsed time: 29.74 s
+Epoch 282/400, train error: 0.080203, val error: 0.141466. Elapsed time: 29.79 s
+Epoch 283/400, train error: 0.080129, val error: 0.141437. Elapsed time: 29.78 s
+Epoch 284/400, train error: 0.080051, val error: 0.141490. Elapsed time: 29.74 s
+Epoch 285/400, train error: 0.079979, val error: 0.141678. Elapsed time: 29.79 s
+Epoch 286/400, train error: 0.079901, val error: 0.141696. Elapsed time: 29.74 s
+Epoch 287/400, train error: 0.079826, val error: 0.141607. Elapsed time: 29.80 s
+Epoch 288/400, train error: 0.079753, val error: 0.141436. Elapsed time: 29.76 s
+Epoch 289/400, train error: 0.079674, val error: 0.141321. Elapsed time: 29.73 s
+Epoch 290/400, train error: 0.079601, val error: 0.141380. Elapsed time: 29.79 s
+Epoch 291/400, train error: 0.079525, val error: 0.141323. Elapsed time: 29.75 s
+Epoch 292/400, train error: 0.079454, val error: 0.141317. Elapsed time: 29.77 s
+Epoch 293/400, train error: 0.079376, val error: 0.141408. Elapsed time: 29.76 s
+Epoch 294/400, train error: 0.079304, val error: 0.141367. Elapsed time: 29.73 s
+Epoch 295/400, train error: 0.079228, val error: 0.141250. Elapsed time: 29.78 s
+Epoch 296/400, train error: 0.079157, val error: 0.141260. Elapsed time: 29.76 s
+Epoch 297/400, train error: 0.079081, val error: 0.141155. Elapsed time: 29.72 s
+Epoch 298/400, train error: 0.079002, val error: 0.141031. Elapsed time: 29.78 s
+Epoch 299/400, train error: 0.078924, val error: 0.141162. Elapsed time: 29.74 s
+Epoch 300/400, train error: 0.078847, val error: 0.141242. Elapsed time: 29.72 s
+Epoch 301/400, train error: 0.078769, val error: 0.141440. Elapsed time: 29.79 s
+Epoch 302/400, train error: 0.078697, val error: 0.141396. Elapsed time: 29.73 s
+Epoch 303/400, train error: 0.078625, val error: 0.141551. Elapsed time: 29.74 s
+Epoch 304/400, train error: 0.078548, val error: 0.141384. Elapsed time: 29.81 s
+Epoch 305/400, train error: 0.078473, val error: 0.141535. Elapsed time: 29.73 s
+Epoch 306/400, train error: 0.078399, val error: 0.141523. Elapsed time: 29.80 s
+Epoch 307/400, train error: 0.078325, val error: 0.141425. Elapsed time: 29.75 s
+Epoch 308/400, train error: 0.078252, val error: 0.141516. Elapsed time: 29.73 s
+Epoch 309/400, train error: 0.078174, val error: 0.141785. Elapsed time: 29.80 s
+Epoch 310/400, train error: 0.078096, val error: 0.141764. Elapsed time: 29.74 s
+Epoch 311/400, train error: 0.078024, val error: 0.141902. Elapsed time: 29.80 s
+Epoch 312/400, train error: 0.077950, val error: 0.141921. Elapsed time: 29.74 s
+Epoch 313/400, train error: 0.077879, val error: 0.142057. Elapsed time: 29.73 s
+Epoch 314/400, train error: 0.077809, val error: 0.142082. Elapsed time: 29.78 s
+Epoch 315/400, train error: 0.077732, val error: 0.142144. Elapsed time: 29.75 s
+Epoch 316/400, train error: 0.077666, val error: 0.142041. Elapsed time: 29.79 s
+Epoch 317/400, train error: 0.077598, val error: 0.141995. Elapsed time: 29.76 s
+Epoch 318/400, train error: 0.077527, val error: 0.142103. Elapsed time: 29.72 s
+Epoch 319/400, train error: 0.077451, val error: 0.142172. Elapsed time: 29.80 s
+Epoch 320/400, train error: 0.077377, val error: 0.142152. Elapsed time: 29.74 s
+Epoch 321/400, train error: 0.077309, val error: 0.142448. Elapsed time: 29.73 s
+Epoch 322/400, train error: 0.077239, val error: 0.142535. Elapsed time: 29.78 s
+Epoch 323/400, train error: 0.077163, val error: 0.142553. Elapsed time: 29.75 s
+Epoch 324/400, train error: 0.077091, val error: 0.142552. Elapsed time: 29.75 s
+Epoch 325/400, train error: 0.077019, val error: 0.142495. Elapsed time: 29.77 s
+Epoch 326/400, train error: 0.076951, val error: 0.142596. Elapsed time: 29.73 s
+Epoch 327/400, train error: 0.076884, val error: 0.142815. Elapsed time: 29.78 s
+Epoch 328/400, train error: 0.076815, val error: 0.142819. Elapsed time: 29.75 s
+Epoch 329/400, train error: 0.076739, val error: 0.142988. Elapsed time: 29.72 s
+Epoch 330/400, train error: 0.076672, val error: 0.143162. Elapsed time: 29.78 s
+Epoch 331/400, train error: 0.076599, val error: 0.143308. Elapsed time: 29.77 s
+Epoch 332/400, train error: 0.076528, val error: 0.143669. Elapsed time: 29.77 s
+Epoch 333/400, train error: 0.076458, val error: 0.143628. Elapsed time: 29.76 s
+Epoch 334/400, train error: 0.076387, val error: 0.143554. Elapsed time: 29.74 s
+Epoch 335/400, train error: 0.076319, val error: 0.143729. Elapsed time: 29.79 s
+Epoch 336/400, train error: 0.076248, val error: 0.143591. Elapsed time: 29.74 s
+Epoch 337/400, train error: 0.076177, val error: 0.143634. Elapsed time: 29.77 s
+Epoch 338/400, train error: 0.076106, val error: 0.143676. Elapsed time: 29.76 s
+Epoch 339/400, train error: 0.076036, val error: 0.144028. Elapsed time: 29.74 s
+Epoch 340/400, train error: 0.075969, val error: 0.144234. Elapsed time: 29.78 s
+Epoch 341/400, train error: 0.075902, val error: 0.144324. Elapsed time: 29.77 s
+Epoch 342/400, train error: 0.075833, val error: 0.144240. Elapsed time: 29.77 s
+Epoch 343/400, train error: 0.075763, val error: 0.144284. Elapsed time: 29.77 s
+Epoch 344/400, train error: 0.075696, val error: 0.144317. Elapsed time: 29.73 s
+Epoch 345/400, train error: 0.075629, val error: 0.144488. Elapsed time: 29.79 s
+Epoch 346/400, train error: 0.075560, val error: 0.144581. Elapsed time: 29.75 s
+Epoch 347/400, train error: 0.075490, val error: 0.144321. Elapsed time: 29.74 s
+Epoch 348/400, train error: 0.075426, val error: 0.144358. Elapsed time: 29.77 s
+Epoch 349/400, train error: 0.075363, val error: 0.144368. Elapsed time: 29.74 s
+Epoch 350/400, train error: 0.075294, val error: 0.144609. Elapsed time: 29.76 s
+Epoch 351/400, train error: 0.075226, val error: 0.144815. Elapsed time: 29.76 s
+Epoch 352/400, train error: 0.075161, val error: 0.145023. Elapsed time: 29.74 s
+Epoch 353/400, train error: 0.075096, val error: 0.145372. Elapsed time: 29.77 s
+Epoch 354/400, train error: 0.075030, val error: 0.145454. Elapsed time: 29.76 s
+Epoch 355/400, train error: 0.074963, val error: 0.145412. Elapsed time: 29.72 s
+Epoch 356/400, train error: 0.074897, val error: 0.145546. Elapsed time: 29.80 s
+Epoch 357/400, train error: 0.074831, val error: 0.145381. Elapsed time: 29.76 s
+Epoch 358/400, train error: 0.074762, val error: 0.145576. Elapsed time: 29.74 s
+Epoch 359/400, train error: 0.074696, val error: 0.145651. Elapsed time: 29.77 s
+Epoch 360/400, train error: 0.074630, val error: 0.145954. Elapsed time: 29.76 s
+Epoch 361/400, train error: 0.074567, val error: 0.146041. Elapsed time: 29.77 s
+Epoch 362/400, train error: 0.074503, val error: 0.145675. Elapsed time: 29.76 s
+Epoch 363/400, train error: 0.074437, val error: 0.145863. Elapsed time: 29.72 s
+Epoch 364/400, train error: 0.074370, val error: 0.145900. Elapsed time: 29.78 s
+Epoch 365/400, train error: 0.074307, val error: 0.146007. Elapsed time: 29.75 s
+Epoch 366/400, train error: 0.074243, val error: 0.146248. Elapsed time: 29.75 s
+Epoch 367/400, train error: 0.074178, val error: 0.146241. Elapsed time: 29.77 s
+Epoch 368/400, train error: 0.074116, val error: 0.146146. Elapsed time: 29.74 s
+Epoch 369/400, train error: 0.074053, val error: 0.146346. Elapsed time: 29.78 s
+Epoch 370/400, train error: 0.073989, val error: 0.146527. Elapsed time: 29.76 s
+Epoch 371/400, train error: 0.073921, val error: 0.146774. Elapsed time: 29.73 s
+Epoch 372/400, train error: 0.073861, val error: 0.146877. Elapsed time: 29.79 s
+Epoch 373/400, train error: 0.073800, val error: 0.146991. Elapsed time: 29.74 s
+Epoch 374/400, train error: 0.073736, val error: 0.147041. Elapsed time: 29.74 s
+Epoch 375/400, train error: 0.073668, val error: 0.147445. Elapsed time: 29.79 s
+Epoch 376/400, train error: 0.073606, val error: 0.147329. Elapsed time: 29.73 s
+Epoch 377/400, train error: 0.073538, val error: 0.147424. Elapsed time: 29.79 s
+Epoch 378/400, train error: 0.073475, val error: 0.147471. Elapsed time: 29.75 s
+Epoch 379/400, train error: 0.073413, val error: 0.147501. Elapsed time: 29.74 s
+Epoch 380/400, train error: 0.073352, val error: 0.147578. Elapsed time: 29.78 s
+Epoch 381/400, train error: 0.073285, val error: 0.147837. Elapsed time: 29.74 s
+Epoch 382/400, train error: 0.073222, val error: 0.148109. Elapsed time: 29.72 s
+Epoch 383/400, train error: 0.073161, val error: 0.148269. Elapsed time: 29.79 s
+Epoch 384/400, train error: 0.073098, val error: 0.148479. Elapsed time: 29.74 s
+Epoch 385/400, train error: 0.073032, val error: 0.148583. Elapsed time: 29.73 s
+Epoch 386/400, train error: 0.072971, val error: 0.148843. Elapsed time: 29.80 s
+Epoch 387/400, train error: 0.072907, val error: 0.148831. Elapsed time: 29.73 s
+Epoch 388/400, train error: 0.072848, val error: 0.148747. Elapsed time: 29.79 s
+Epoch 389/400, train error: 0.072787, val error: 0.149130. Elapsed time: 29.75 s
+Epoch 390/400, train error: 0.072726, val error: 0.149503. Elapsed time: 29.73 s
+Epoch 391/400, train error: 0.072663, val error: 0.149768. Elapsed time: 29.79 s
+Epoch 392/400, train error: 0.072609, val error: 0.149744. Elapsed time: 29.76 s
+Epoch 393/400, train error: 0.072548, val error: 0.149890. Elapsed time: 29.74 s
+Epoch 394/400, train error: 0.072490, val error: 0.150163. Elapsed time: 29.78 s
+Epoch 395/400, train error: 0.072431, val error: 0.150273. Elapsed time: 29.73 s
+Epoch 396/400, train error: 0.072373, val error: 0.150356. Elapsed time: 29.79 s
+Epoch 397/400, train error: 0.072311, val error: 0.150309. Elapsed time: 29.76 s
+Epoch 398/400, train error: 0.072251, val error: 0.150340. Elapsed time: 29.72 s
+Epoch 399/400, train error: 0.072193, val error: 0.150183. Elapsed time: 29.78 s
+Epoch 400/400, train error: 0.072134, val error: 0.149815. Elapsed time: 29.76 s
+Training completed in 11907.09 seconds.
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 150
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 28.45 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.39 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.66 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.36 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/150, train error: 0.210342, val error: 0.234753. Elapsed time: 29.22 s
+Epoch 2/150, train error: 0.201249, val error: 0.224010. Elapsed time: 29.50 s
+Epoch 3/150, train error: 0.191913, val error: 0.214006. Elapsed time: 29.74 s
+Epoch 4/150, train error: 0.184314, val error: 0.206728. Elapsed time: 29.80 s
+Epoch 5/150, train error: 0.179111, val error: 0.202090. Elapsed time: 29.90 s
+Epoch 6/150, train error: 0.175402, val error: 0.198972. Elapsed time: 29.94 s
+Epoch 7/150, train error: 0.172512, val error: 0.196732. Elapsed time: 29.99 s
+Epoch 8/150, train error: 0.170090, val error: 0.195025. Elapsed time: 30.01 s
+Epoch 9/150, train error: 0.167947, val error: 0.193731. Elapsed time: 30.02 s
+Epoch 10/150, train error: 0.165973, val error: 0.192817. Elapsed time: 30.05 s
+Epoch 11/150, train error: 0.164134, val error: 0.192245. Elapsed time: 30.06 s
+Epoch 12/150, train error: 0.162422, val error: 0.191900. Elapsed time: 30.04 s
+Epoch 13/150, train error: 0.160873, val error: 0.191664. Elapsed time: 30.08 s
+Epoch 14/150, train error: 0.159493, val error: 0.191456. Elapsed time: 30.09 s
+Epoch 15/150, train error: 0.158242, val error: 0.191251. Elapsed time: 30.09 s
+Epoch 16/150, train error: 0.157105, val error: 0.191071. Elapsed time: 30.08 s
+Epoch 17/150, train error: 0.156069, val error: 0.190886. Elapsed time: 30.09 s
+Epoch 18/150, train error: 0.155102, val error: 0.190723. Elapsed time: 30.09 s
+Epoch 19/150, train error: 0.154187, val error: 0.190573. Elapsed time: 30.09 s
+Epoch 20/150, train error: 0.153305, val error: 0.190384. Elapsed time: 30.09 s
+Epoch 21/150, train error: 0.152444, val error: 0.190279. Elapsed time: 30.07 s
+Epoch 22/150, train error: 0.151591, val error: 0.190145. Elapsed time: 30.08 s
+Epoch 23/150, train error: 0.150735, val error: 0.190035. Elapsed time: 30.10 s
+Epoch 24/150, train error: 0.149863, val error: 0.189909. Elapsed time: 30.08 s
+Epoch 25/150, train error: 0.148975, val error: 0.189946. Elapsed time: 30.08 s
+Epoch 26/150, train error: 0.148067, val error: 0.189806. Elapsed time: 30.08 s
+Epoch 27/150, train error: 0.147145, val error: 0.189723. Elapsed time: 30.06 s
+Epoch 28/150, train error: 0.146211, val error: 0.189828. Elapsed time: 30.08 s
+Epoch 29/150, train error: 0.145254, val error: 0.189941. Elapsed time: 30.07 s
+Epoch 30/150, train error: 0.144289, val error: 0.190026. Elapsed time: 30.08 s
+Epoch 31/150, train error: 0.143314, val error: 0.190146. Elapsed time: 30.08 s
+Epoch 32/150, train error: 0.142324, val error: 0.190128. Elapsed time: 30.08 s
+Epoch 33/150, train error: 0.141326, val error: 0.189947. Elapsed time: 30.10 s
+Epoch 34/150, train error: 0.140315, val error: 0.189601. Elapsed time: 30.08 s
+Epoch 35/150, train error: 0.139293, val error: 0.189155. Elapsed time: 30.09 s
+Epoch 36/150, train error: 0.138266, val error: 0.188325. Elapsed time: 30.09 s
+Epoch 37/150, train error: 0.137238, val error: 0.187246. Elapsed time: 30.10 s
+Epoch 38/150, train error: 0.136222, val error: 0.186122. Elapsed time: 30.07 s
+Epoch 39/150, train error: 0.135218, val error: 0.184751. Elapsed time: 30.08 s
+Epoch 40/150, train error: 0.134220, val error: 0.183343. Elapsed time: 30.08 s
+Epoch 41/150, train error: 0.133248, val error: 0.182013. Elapsed time: 30.08 s
+Epoch 42/150, train error: 0.132294, val error: 0.180628. Elapsed time: 30.08 s
+Epoch 43/150, train error: 0.131374, val error: 0.179320. Elapsed time: 30.08 s
+Epoch 44/150, train error: 0.130472, val error: 0.178115. Elapsed time: 30.08 s
+Epoch 45/150, train error: 0.129592, val error: 0.176839. Elapsed time: 30.06 s
+Epoch 46/150, train error: 0.128747, val error: 0.175673. Elapsed time: 30.08 s
+Epoch 47/150, train error: 0.127921, val error: 0.174644. Elapsed time: 30.08 s
+Epoch 48/150, train error: 0.127120, val error: 0.173652. Elapsed time: 30.06 s
+Epoch 49/150, train error: 0.126340, val error: 0.172666. Elapsed time: 30.08 s
+Epoch 50/150, train error: 0.125577, val error: 0.171744. Elapsed time: 30.08 s
+Epoch 51/150, train error: 0.124831, val error: 0.170841. Elapsed time: 30.07 s
+Epoch 52/150, train error: 0.124102, val error: 0.169976. Elapsed time: 30.08 s
+Epoch 53/150, train error: 0.123394, val error: 0.169097. Elapsed time: 30.08 s
+Epoch 54/150, train error: 0.122695, val error: 0.168281. Elapsed time: 30.09 s
+Epoch 55/150, train error: 0.122015, val error: 0.167462. Elapsed time: 30.08 s
+Epoch 56/150, train error: 0.121348, val error: 0.166714. Elapsed time: 30.08 s
+Epoch 57/150, train error: 0.120696, val error: 0.165941. Elapsed time: 30.09 s
+Epoch 58/150, train error: 0.120057, val error: 0.165197. Elapsed time: 30.09 s
+Epoch 59/150, train error: 0.119440, val error: 0.164542. Elapsed time: 30.08 s
+Epoch 60/150, train error: 0.118829, val error: 0.163832. Elapsed time: 30.07 s
+Epoch 61/150, train error: 0.118228, val error: 0.163186. Elapsed time: 30.07 s
+Epoch 62/150, train error: 0.117643, val error: 0.162525. Elapsed time: 30.07 s
+Epoch 63/150, train error: 0.117071, val error: 0.161822. Elapsed time: 30.07 s
+Epoch 64/150, train error: 0.116510, val error: 0.161158. Elapsed time: 30.08 s
+Epoch 65/150, train error: 0.115963, val error: 0.160498. Elapsed time: 30.08 s
+Epoch 66/150, train error: 0.115427, val error: 0.159801. Elapsed time: 30.09 s
+Epoch 67/150, train error: 0.114897, val error: 0.159228. Elapsed time: 30.08 s
+Epoch 68/150, train error: 0.114382, val error: 0.158649. Elapsed time: 30.07 s
+Epoch 69/150, train error: 0.113877, val error: 0.158066. Elapsed time: 30.06 s
+Epoch 70/150, train error: 0.113391, val error: 0.157563. Elapsed time: 30.09 s
+Epoch 71/150, train error: 0.112911, val error: 0.157108. Elapsed time: 30.08 s
+Epoch 72/150, train error: 0.112440, val error: 0.156637. Elapsed time: 30.07 s
+Epoch 73/150, train error: 0.111975, val error: 0.156207. Elapsed time: 30.08 s
+Epoch 74/150, train error: 0.111529, val error: 0.155752. Elapsed time: 30.07 s
+Epoch 75/150, train error: 0.111086, val error: 0.155271. Elapsed time: 30.07 s
+Epoch 76/150, train error: 0.110650, val error: 0.154855. Elapsed time: 30.05 s
+Epoch 77/150, train error: 0.110234, val error: 0.154471. Elapsed time: 30.09 s
+Epoch 78/150, train error: 0.109826, val error: 0.154115. Elapsed time: 30.09 s
+Epoch 79/150, train error: 0.109415, val error: 0.153765. Elapsed time: 30.08 s
+Epoch 80/150, train error: 0.109014, val error: 0.153386. Elapsed time: 30.07 s
+Epoch 81/150, train error: 0.108625, val error: 0.153001. Elapsed time: 30.09 s
+Epoch 82/150, train error: 0.108243, val error: 0.152641. Elapsed time: 30.07 s
+Epoch 83/150, train error: 0.107865, val error: 0.152210. Elapsed time: 30.07 s
+Epoch 84/150, train error: 0.107493, val error: 0.151917. Elapsed time: 30.07 s
+Epoch 85/150, train error: 0.107137, val error: 0.151566. Elapsed time: 30.08 s
+Epoch 86/150, train error: 0.106791, val error: 0.151211. Elapsed time: 30.08 s
+Epoch 87/150, train error: 0.106451, val error: 0.150867. Elapsed time: 30.08 s
+Epoch 88/150, train error: 0.106113, val error: 0.150608. Elapsed time: 30.07 s
+Epoch 89/150, train error: 0.105792, val error: 0.150315. Elapsed time: 30.09 s
+Epoch 90/150, train error: 0.105470, val error: 0.150046. Elapsed time: 30.08 s
+Epoch 91/150, train error: 0.105147, val error: 0.149781. Elapsed time: 30.07 s
+Epoch 92/150, train error: 0.104836, val error: 0.149576. Elapsed time: 30.09 s
+Epoch 93/150, train error: 0.104533, val error: 0.149291. Elapsed time: 30.06 s
+Epoch 94/150, train error: 0.104231, val error: 0.149035. Elapsed time: 30.07 s
+Epoch 95/150, train error: 0.103936, val error: 0.148816. Elapsed time: 30.08 s
+Epoch 96/150, train error: 0.103650, val error: 0.148587. Elapsed time: 30.07 s
+Epoch 97/150, train error: 0.103368, val error: 0.148346. Elapsed time: 30.08 s
+Epoch 98/150, train error: 0.103092, val error: 0.148200. Elapsed time: 30.07 s
+Epoch 99/150, train error: 0.102821, val error: 0.147971. Elapsed time: 30.08 s
+Epoch 100/150, train error: 0.102549, val error: 0.147790. Elapsed time: 30.06 s
+Epoch 101/150, train error: 0.102284, val error: 0.147657. Elapsed time: 30.06 s
+Epoch 102/150, train error: 0.102026, val error: 0.147419. Elapsed time: 30.09 s
+Epoch 103/150, train error: 0.101771, val error: 0.147311. Elapsed time: 30.07 s
+Epoch 104/150, train error: 0.101524, val error: 0.147079. Elapsed time: 30.08 s
+Epoch 105/150, train error: 0.101278, val error: 0.146894. Elapsed time: 30.08 s
+Epoch 106/150, train error: 0.101036, val error: 0.146724. Elapsed time: 30.09 s
+Epoch 107/150, train error: 0.100799, val error: 0.146443. Elapsed time: 30.09 s
+Epoch 108/150, train error: 0.100567, val error: 0.146249. Elapsed time: 30.08 s
+Epoch 109/150, train error: 0.100341, val error: 0.146131. Elapsed time: 30.08 s
+Epoch 110/150, train error: 0.100112, val error: 0.145935. Elapsed time: 30.09 s
+Epoch 111/150, train error: 0.099895, val error: 0.145805. Elapsed time: 30.05 s
+Epoch 112/150, train error: 0.099680, val error: 0.145610. Elapsed time: 30.08 s
+Epoch 113/150, train error: 0.099460, val error: 0.145488. Elapsed time: 30.08 s
+Epoch 114/150, train error: 0.099247, val error: 0.145376. Elapsed time: 30.07 s
+Epoch 115/150, train error: 0.099031, val error: 0.145294. Elapsed time: 30.08 s
+Epoch 116/150, train error: 0.098823, val error: 0.145103. Elapsed time: 30.08 s
+Epoch 117/150, train error: 0.098617, val error: 0.144960. Elapsed time: 30.09 s
+Epoch 118/150, train error: 0.098413, val error: 0.144790. Elapsed time: 30.06 s
+Epoch 119/150, train error: 0.098214, val error: 0.144719. Elapsed time: 30.08 s
+Epoch 120/150, train error: 0.098018, val error: 0.144572. Elapsed time: 30.06 s
+Epoch 121/150, train error: 0.097827, val error: 0.144364. Elapsed time: 30.09 s
+Epoch 122/150, train error: 0.097637, val error: 0.144249. Elapsed time: 30.07 s
+Epoch 123/150, train error: 0.097452, val error: 0.144150. Elapsed time: 30.09 s
+Epoch 124/150, train error: 0.097267, val error: 0.144124. Elapsed time: 30.09 s
+Epoch 125/150, train error: 0.097081, val error: 0.143992. Elapsed time: 30.06 s
+Epoch 126/150, train error: 0.096897, val error: 0.143845. Elapsed time: 30.07 s
+Epoch 127/150, train error: 0.096724, val error: 0.143712. Elapsed time: 30.07 s
+Epoch 128/150, train error: 0.096549, val error: 0.143591. Elapsed time: 30.06 s
+Epoch 129/150, train error: 0.096374, val error: 0.143407. Elapsed time: 30.08 s
+Epoch 130/150, train error: 0.096198, val error: 0.143279. Elapsed time: 30.08 s
+Epoch 131/150, train error: 0.096030, val error: 0.143208. Elapsed time: 30.08 s
+Epoch 132/150, train error: 0.095858, val error: 0.143206. Elapsed time: 30.07 s
+Epoch 133/150, train error: 0.095689, val error: 0.143025. Elapsed time: 30.07 s
+Epoch 134/150, train error: 0.095525, val error: 0.142976. Elapsed time: 30.08 s
+Epoch 135/150, train error: 0.095362, val error: 0.142864. Elapsed time: 30.07 s
+Epoch 136/150, train error: 0.095204, val error: 0.142768. Elapsed time: 30.07 s
+Epoch 137/150, train error: 0.095047, val error: 0.142705. Elapsed time: 30.08 s
+Epoch 138/150, train error: 0.094891, val error: 0.142645. Elapsed time: 30.08 s
+Epoch 139/150, train error: 0.094733, val error: 0.142637. Elapsed time: 30.10 s
+Epoch 140/150, train error: 0.094578, val error: 0.142658. Elapsed time: 30.08 s
+Epoch 141/150, train error: 0.094422, val error: 0.142582. Elapsed time: 30.07 s
+Epoch 142/150, train error: 0.094273, val error: 0.142454. Elapsed time: 30.07 s
+Epoch 143/150, train error: 0.094123, val error: 0.142367. Elapsed time: 30.06 s
+Epoch 144/150, train error: 0.093971, val error: 0.142155. Elapsed time: 30.09 s
+Epoch 145/150, train error: 0.093827, val error: 0.142143. Elapsed time: 30.07 s
+Epoch 146/150, train error: 0.093682, val error: 0.142119. Elapsed time: 30.07 s
+Epoch 147/150, train error: 0.093539, val error: 0.142034. Elapsed time: 30.07 s
+Epoch 148/150, train error: 0.093395, val error: 0.141945. Elapsed time: 30.07 s
+Epoch 149/150, train error: 0.093250, val error: 0.141875. Elapsed time: 30.08 s
+Epoch 150/150, train error: 0.093111, val error: 0.141938. Elapsed time: 30.08 s
+Training completed in 4509.01 seconds.
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 400
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 27.82 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.38 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.61 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.30 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/400, train error: 0.209066, val error: 0.226932. Elapsed time: 28.84 s
+Epoch 2/400, train error: 0.196863, val error: 0.213796. Elapsed time: 29.18 s
+Epoch 3/400, train error: 0.187658, val error: 0.206987. Elapsed time: 29.33 s
+Epoch 4/400, train error: 0.181917, val error: 0.202724. Elapsed time: 29.47 s
+Epoch 5/400, train error: 0.178001, val error: 0.199707. Elapsed time: 29.58 s
+Epoch 6/400, train error: 0.174990, val error: 0.197355. Elapsed time: 29.63 s
+Epoch 7/400, train error: 0.172496, val error: 0.195441. Elapsed time: 29.65 s
+Epoch 8/400, train error: 0.170336, val error: 0.193847. Elapsed time: 29.67 s
+Epoch 9/400, train error: 0.168395, val error: 0.192480. Elapsed time: 29.68 s
+Epoch 10/400, train error: 0.166622, val error: 0.191346. Elapsed time: 29.69 s
+Epoch 11/400, train error: 0.164978, val error: 0.190423. Elapsed time: 29.69 s
+Epoch 12/400, train error: 0.163440, val error: 0.189753. Elapsed time: 29.74 s
+Epoch 13/400, train error: 0.162011, val error: 0.189367. Elapsed time: 29.74 s
+Epoch 14/400, train error: 0.160702, val error: 0.189250. Elapsed time: 29.71 s
+Epoch 15/400, train error: 0.159519, val error: 0.189308. Elapsed time: 29.72 s
+Epoch 16/400, train error: 0.158459, val error: 0.189437. Elapsed time: 29.76 s
+Epoch 17/400, train error: 0.157508, val error: 0.189635. Elapsed time: 29.74 s
+Epoch 18/400, train error: 0.156653, val error: 0.189901. Elapsed time: 29.73 s
+Epoch 19/400, train error: 0.155874, val error: 0.190185. Elapsed time: 29.75 s
+Epoch 20/400, train error: 0.155158, val error: 0.190478. Elapsed time: 29.76 s
+Epoch 21/400, train error: 0.154486, val error: 0.190759. Elapsed time: 29.72 s
+Epoch 22/400, train error: 0.153856, val error: 0.191050. Elapsed time: 29.73 s
+Epoch 23/400, train error: 0.153258, val error: 0.191373. Elapsed time: 29.75 s
+Epoch 24/400, train error: 0.152683, val error: 0.191655. Elapsed time: 29.73 s
+Epoch 25/400, train error: 0.152121, val error: 0.191951. Elapsed time: 29.71 s
+Epoch 26/400, train error: 0.151575, val error: 0.192255. Elapsed time: 29.75 s
+Epoch 27/400, train error: 0.151040, val error: 0.192535. Elapsed time: 29.75 s
+Epoch 28/400, train error: 0.150513, val error: 0.192739. Elapsed time: 29.72 s
+Epoch 29/400, train error: 0.149998, val error: 0.192915. Elapsed time: 29.71 s
+Epoch 30/400, train error: 0.149491, val error: 0.193088. Elapsed time: 29.77 s
+Epoch 31/400, train error: 0.148991, val error: 0.193186. Elapsed time: 29.72 s
+Epoch 32/400, train error: 0.148503, val error: 0.193289. Elapsed time: 29.71 s
+Epoch 33/400, train error: 0.148025, val error: 0.193299. Elapsed time: 29.73 s
+Epoch 34/400, train error: 0.147552, val error: 0.193358. Elapsed time: 29.77 s
+Epoch 35/400, train error: 0.147089, val error: 0.193309. Elapsed time: 29.72 s
+Epoch 36/400, train error: 0.146624, val error: 0.193227. Elapsed time: 29.74 s
+Epoch 37/400, train error: 0.146160, val error: 0.193163. Elapsed time: 29.76 s
+Epoch 38/400, train error: 0.145697, val error: 0.192922. Elapsed time: 29.73 s
+Epoch 39/400, train error: 0.145232, val error: 0.192612. Elapsed time: 29.71 s
+Epoch 40/400, train error: 0.144756, val error: 0.192296. Elapsed time: 29.78 s
+Epoch 41/400, train error: 0.144274, val error: 0.191848. Elapsed time: 29.74 s
+Epoch 42/400, train error: 0.143780, val error: 0.191367. Elapsed time: 29.71 s
+Epoch 43/400, train error: 0.143271, val error: 0.190946. Elapsed time: 29.74 s
+Epoch 44/400, train error: 0.142745, val error: 0.190600. Elapsed time: 29.76 s
+Epoch 45/400, train error: 0.142199, val error: 0.190021. Elapsed time: 29.73 s
+Epoch 46/400, train error: 0.141631, val error: 0.189689. Elapsed time: 29.73 s
+Epoch 47/400, train error: 0.141037, val error: 0.189443. Elapsed time: 29.77 s
+Epoch 48/400, train error: 0.140412, val error: 0.189283. Elapsed time: 29.73 s
+Epoch 49/400, train error: 0.139757, val error: 0.189003. Elapsed time: 29.72 s
+Epoch 50/400, train error: 0.139071, val error: 0.188728. Elapsed time: 29.76 s
+Epoch 51/400, train error: 0.138353, val error: 0.188616. Elapsed time: 29.73 s
+Epoch 52/400, train error: 0.137610, val error: 0.188543. Elapsed time: 29.72 s
+Epoch 53/400, train error: 0.136829, val error: 0.188471. Elapsed time: 29.77 s
+Epoch 54/400, train error: 0.136022, val error: 0.188164. Elapsed time: 29.74 s
+Epoch 55/400, train error: 0.135196, val error: 0.187895. Elapsed time: 29.72 s
+Epoch 56/400, train error: 0.134344, val error: 0.187393. Elapsed time: 29.75 s
+Epoch 57/400, train error: 0.133478, val error: 0.186757. Elapsed time: 29.75 s
+Epoch 58/400, train error: 0.132602, val error: 0.186056. Elapsed time: 29.73 s
+Epoch 59/400, train error: 0.131728, val error: 0.185319. Elapsed time: 29.71 s
+Epoch 60/400, train error: 0.130857, val error: 0.184485. Elapsed time: 29.77 s
+Epoch 61/400, train error: 0.129999, val error: 0.183482. Elapsed time: 29.74 s
+Epoch 62/400, train error: 0.129149, val error: 0.182220. Elapsed time: 29.73 s
+Epoch 63/400, train error: 0.128313, val error: 0.181150. Elapsed time: 29.76 s
+Epoch 64/400, train error: 0.127498, val error: 0.179893. Elapsed time: 29.74 s
+Epoch 65/400, train error: 0.126703, val error: 0.178539. Elapsed time: 29.72 s
+Epoch 66/400, train error: 0.125925, val error: 0.177284. Elapsed time: 29.74 s
+Epoch 67/400, train error: 0.125175, val error: 0.176155. Elapsed time: 29.76 s
+Epoch 68/400, train error: 0.124442, val error: 0.174988. Elapsed time: 29.72 s
+Epoch 69/400, train error: 0.123732, val error: 0.173921. Elapsed time: 29.72 s
+Epoch 70/400, train error: 0.123046, val error: 0.172943. Elapsed time: 29.77 s
+Epoch 71/400, train error: 0.122381, val error: 0.171992. Elapsed time: 29.73 s
+Epoch 72/400, train error: 0.121728, val error: 0.171124. Elapsed time: 29.71 s
+Epoch 73/400, train error: 0.121102, val error: 0.170281. Elapsed time: 29.75 s
+Epoch 74/400, train error: 0.120490, val error: 0.169405. Elapsed time: 29.75 s
+Epoch 75/400, train error: 0.119903, val error: 0.168661. Elapsed time: 29.73 s
+Epoch 76/400, train error: 0.119322, val error: 0.167893. Elapsed time: 29.74 s
+Epoch 77/400, train error: 0.118763, val error: 0.167121. Elapsed time: 29.76 s
+Epoch 78/400, train error: 0.118218, val error: 0.166478. Elapsed time: 29.73 s
+Epoch 79/400, train error: 0.117683, val error: 0.165770. Elapsed time: 29.73 s
+Epoch 80/400, train error: 0.117172, val error: 0.165108. Elapsed time: 29.76 s
+Epoch 81/400, train error: 0.116661, val error: 0.164510. Elapsed time: 29.73 s
+Epoch 82/400, train error: 0.116169, val error: 0.163938. Elapsed time: 29.72 s
+Epoch 83/400, train error: 0.115683, val error: 0.163381. Elapsed time: 29.75 s
+Epoch 84/400, train error: 0.115206, val error: 0.162883. Elapsed time: 29.74 s
+Epoch 85/400, train error: 0.114743, val error: 0.162389. Elapsed time: 29.72 s
+Epoch 86/400, train error: 0.114287, val error: 0.161881. Elapsed time: 29.75 s
+Epoch 87/400, train error: 0.113846, val error: 0.161355. Elapsed time: 29.75 s
+Epoch 88/400, train error: 0.113410, val error: 0.160929. Elapsed time: 29.72 s
+Epoch 89/400, train error: 0.112985, val error: 0.160437. Elapsed time: 29.71 s
+Epoch 90/400, train error: 0.112564, val error: 0.160016. Elapsed time: 29.76 s
+Epoch 91/400, train error: 0.112149, val error: 0.159579. Elapsed time: 29.79 s
+Epoch 92/400, train error: 0.111743, val error: 0.159151. Elapsed time: 29.83 s
+Epoch 93/400, train error: 0.111337, val error: 0.158772. Elapsed time: 29.76 s
+Epoch 94/400, train error: 0.110943, val error: 0.158343. Elapsed time: 29.82 s
+Epoch 95/400, train error: 0.110560, val error: 0.157963. Elapsed time: 29.77 s
+Epoch 96/400, train error: 0.110179, val error: 0.157554. Elapsed time: 29.82 s
+Epoch 97/400, train error: 0.109803, val error: 0.157197. Elapsed time: 29.76 s
+Epoch 98/400, train error: 0.109434, val error: 0.156748. Elapsed time: 29.82 s
+Epoch 99/400, train error: 0.109070, val error: 0.156433. Elapsed time: 29.77 s
+Epoch 100/400, train error: 0.108707, val error: 0.156087. Elapsed time: 29.82 s
+Epoch 101/400, train error: 0.108353, val error: 0.155788. Elapsed time: 29.76 s
+Epoch 102/400, train error: 0.108006, val error: 0.155441. Elapsed time: 29.84 s
+Epoch 103/400, train error: 0.107659, val error: 0.155143. Elapsed time: 29.76 s
+Epoch 104/400, train error: 0.107316, val error: 0.154829. Elapsed time: 29.82 s
+Epoch 105/400, train error: 0.106987, val error: 0.154550. Elapsed time: 29.77 s
+Epoch 106/400, train error: 0.106650, val error: 0.154195. Elapsed time: 29.82 s
+Epoch 107/400, train error: 0.106331, val error: 0.153834. Elapsed time: 29.76 s
+Epoch 108/400, train error: 0.106016, val error: 0.153538. Elapsed time: 29.81 s
+Epoch 109/400, train error: 0.105704, val error: 0.153214. Elapsed time: 29.78 s
+Epoch 110/400, train error: 0.105393, val error: 0.152895. Elapsed time: 29.81 s
+Epoch 111/400, train error: 0.105091, val error: 0.152662. Elapsed time: 29.76 s
+Epoch 112/400, train error: 0.104790, val error: 0.152304. Elapsed time: 29.81 s
+Epoch 113/400, train error: 0.104498, val error: 0.151951. Elapsed time: 29.77 s
+Epoch 114/400, train error: 0.104203, val error: 0.151657. Elapsed time: 29.82 s
+Epoch 115/400, train error: 0.103910, val error: 0.151301. Elapsed time: 29.76 s
+Epoch 116/400, train error: 0.103628, val error: 0.150946. Elapsed time: 29.81 s
+Epoch 117/400, train error: 0.103350, val error: 0.150724. Elapsed time: 29.76 s
+Epoch 118/400, train error: 0.103081, val error: 0.150503. Elapsed time: 29.82 s
+Epoch 119/400, train error: 0.102807, val error: 0.150251. Elapsed time: 29.76 s
+Epoch 120/400, train error: 0.102547, val error: 0.149912. Elapsed time: 29.82 s
+Epoch 121/400, train error: 0.102281, val error: 0.149605. Elapsed time: 29.76 s
+Epoch 122/400, train error: 0.102020, val error: 0.149309. Elapsed time: 29.82 s
+Epoch 123/400, train error: 0.101763, val error: 0.148968. Elapsed time: 29.77 s
+Epoch 124/400, train error: 0.101511, val error: 0.148767. Elapsed time: 29.81 s
+Epoch 125/400, train error: 0.101260, val error: 0.148561. Elapsed time: 29.76 s
+Epoch 126/400, train error: 0.101019, val error: 0.148314. Elapsed time: 29.82 s
+Epoch 127/400, train error: 0.100778, val error: 0.148119. Elapsed time: 29.77 s
+Epoch 128/400, train error: 0.100539, val error: 0.147878. Elapsed time: 29.83 s
+Epoch 129/400, train error: 0.100308, val error: 0.147803. Elapsed time: 29.78 s
+Epoch 130/400, train error: 0.100079, val error: 0.147627. Elapsed time: 29.80 s
+Epoch 131/400, train error: 0.099852, val error: 0.147401. Elapsed time: 29.77 s
+Epoch 132/400, train error: 0.099629, val error: 0.147148. Elapsed time: 29.80 s
+Epoch 133/400, train error: 0.099408, val error: 0.147048. Elapsed time: 29.76 s
+Epoch 134/400, train error: 0.099190, val error: 0.146717. Elapsed time: 29.81 s
+Epoch 135/400, train error: 0.098975, val error: 0.146472. Elapsed time: 29.76 s
+Epoch 136/400, train error: 0.098763, val error: 0.146302. Elapsed time: 29.82 s
+Epoch 137/400, train error: 0.098556, val error: 0.146152. Elapsed time: 29.76 s
+Epoch 138/400, train error: 0.098347, val error: 0.145918. Elapsed time: 29.82 s
+Epoch 139/400, train error: 0.098145, val error: 0.145754. Elapsed time: 29.76 s
+Epoch 140/400, train error: 0.097946, val error: 0.145626. Elapsed time: 29.82 s
+Epoch 141/400, train error: 0.097753, val error: 0.145471. Elapsed time: 29.75 s
+Epoch 142/400, train error: 0.097555, val error: 0.145326. Elapsed time: 29.83 s
+Epoch 143/400, train error: 0.097359, val error: 0.145247. Elapsed time: 29.77 s
+Epoch 144/400, train error: 0.097167, val error: 0.145239. Elapsed time: 29.82 s
+Epoch 145/400, train error: 0.096978, val error: 0.145188. Elapsed time: 29.76 s
+Epoch 146/400, train error: 0.096789, val error: 0.145125. Elapsed time: 29.82 s
+Epoch 147/400, train error: 0.096605, val error: 0.145090. Elapsed time: 29.76 s
+Epoch 148/400, train error: 0.096428, val error: 0.145085. Elapsed time: 29.80 s
+Epoch 149/400, train error: 0.096246, val error: 0.145025. Elapsed time: 29.76 s
+Epoch 150/400, train error: 0.096070, val error: 0.145029. Elapsed time: 29.81 s
+Epoch 151/400, train error: 0.095890, val error: 0.144932. Elapsed time: 29.76 s
+Epoch 152/400, train error: 0.095715, val error: 0.144822. Elapsed time: 29.82 s
+Epoch 153/400, train error: 0.095542, val error: 0.144729. Elapsed time: 29.76 s
+Epoch 154/400, train error: 0.095370, val error: 0.144576. Elapsed time: 29.82 s
+Epoch 155/400, train error: 0.095200, val error: 0.144546. Elapsed time: 29.76 s
+Epoch 156/400, train error: 0.095035, val error: 0.144493. Elapsed time: 29.82 s
+Epoch 157/400, train error: 0.094874, val error: 0.144561. Elapsed time: 29.76 s
+Epoch 158/400, train error: 0.094712, val error: 0.144381. Elapsed time: 29.82 s
+Epoch 159/400, train error: 0.094548, val error: 0.144323. Elapsed time: 29.75 s
+Epoch 160/400, train error: 0.094389, val error: 0.144201. Elapsed time: 29.82 s
+Epoch 161/400, train error: 0.094233, val error: 0.144112. Elapsed time: 29.76 s
+Epoch 162/400, train error: 0.094080, val error: 0.144014. Elapsed time: 29.81 s
+Epoch 163/400, train error: 0.093926, val error: 0.144054. Elapsed time: 29.78 s
+Epoch 164/400, train error: 0.093772, val error: 0.143939. Elapsed time: 29.81 s
+Epoch 165/400, train error: 0.093623, val error: 0.143900. Elapsed time: 29.78 s
+Epoch 166/400, train error: 0.093479, val error: 0.143872. Elapsed time: 29.82 s
+Epoch 167/400, train error: 0.093334, val error: 0.143918. Elapsed time: 29.78 s
+Epoch 168/400, train error: 0.093193, val error: 0.143833. Elapsed time: 29.79 s
+Epoch 169/400, train error: 0.093054, val error: 0.143782. Elapsed time: 29.76 s
+Epoch 170/400, train error: 0.092911, val error: 0.143815. Elapsed time: 29.83 s
+Epoch 171/400, train error: 0.092771, val error: 0.143801. Elapsed time: 29.78 s
+Epoch 172/400, train error: 0.092632, val error: 0.143903. Elapsed time: 29.80 s
+Epoch 173/400, train error: 0.092494, val error: 0.143868. Elapsed time: 29.76 s
+Epoch 174/400, train error: 0.092361, val error: 0.143854. Elapsed time: 29.81 s
+Epoch 175/400, train error: 0.092227, val error: 0.143739. Elapsed time: 29.78 s
+Epoch 176/400, train error: 0.092093, val error: 0.143770. Elapsed time: 29.82 s
+Epoch 177/400, train error: 0.091960, val error: 0.143716. Elapsed time: 29.76 s
+Epoch 178/400, train error: 0.091830, val error: 0.143700. Elapsed time: 29.81 s
+Epoch 179/400, train error: 0.091702, val error: 0.143656. Elapsed time: 29.78 s
+Epoch 180/400, train error: 0.091576, val error: 0.143745. Elapsed time: 29.82 s
+Epoch 181/400, train error: 0.091446, val error: 0.143700. Elapsed time: 29.77 s
+Epoch 182/400, train error: 0.091318, val error: 0.143647. Elapsed time: 29.81 s
+Epoch 183/400, train error: 0.091193, val error: 0.143586. Elapsed time: 29.82 s
+Epoch 184/400, train error: 0.091072, val error: 0.143577. Elapsed time: 29.79 s
+Epoch 185/400, train error: 0.090947, val error: 0.143560. Elapsed time: 29.82 s
+Epoch 186/400, train error: 0.090820, val error: 0.143552. Elapsed time: 29.78 s
+Epoch 187/400, train error: 0.090700, val error: 0.143455. Elapsed time: 29.82 s
+Epoch 188/400, train error: 0.090582, val error: 0.143606. Elapsed time: 29.77 s
+Epoch 189/400, train error: 0.090461, val error: 0.143692. Elapsed time: 29.83 s
+Epoch 190/400, train error: 0.090341, val error: 0.143682. Elapsed time: 29.77 s
+Epoch 191/400, train error: 0.090228, val error: 0.143636. Elapsed time: 29.81 s
+Epoch 192/400, train error: 0.090113, val error: 0.143637. Elapsed time: 29.76 s
+Epoch 193/400, train error: 0.089996, val error: 0.143651. Elapsed time: 29.82 s
+Epoch 194/400, train error: 0.089884, val error: 0.143673. Elapsed time: 29.77 s
+Epoch 195/400, train error: 0.089770, val error: 0.143632. Elapsed time: 29.82 s
+Epoch 196/400, train error: 0.089663, val error: 0.143738. Elapsed time: 29.77 s
+Epoch 197/400, train error: 0.089547, val error: 0.143739. Elapsed time: 29.82 s
+Epoch 198/400, train error: 0.089431, val error: 0.143698. Elapsed time: 29.78 s
+Epoch 199/400, train error: 0.089325, val error: 0.143738. Elapsed time: 29.80 s
+Epoch 200/400, train error: 0.089215, val error: 0.143762. Elapsed time: 29.77 s
+Epoch 201/400, train error: 0.089102, val error: 0.143704. Elapsed time: 29.82 s
+Epoch 202/400, train error: 0.088991, val error: 0.143671. Elapsed time: 29.82 s
+Epoch 203/400, train error: 0.088878, val error: 0.143788. Elapsed time: 29.79 s
+Epoch 204/400, train error: 0.088771, val error: 0.143816. Elapsed time: 29.83 s
+Epoch 205/400, train error: 0.088668, val error: 0.143854. Elapsed time: 29.78 s
+Epoch 206/400, train error: 0.088561, val error: 0.143857. Elapsed time: 29.82 s
+Epoch 207/400, train error: 0.088456, val error: 0.143873. Elapsed time: 29.78 s
+Epoch 208/400, train error: 0.088356, val error: 0.143876. Elapsed time: 29.81 s
+Epoch 209/400, train error: 0.088250, val error: 0.143935. Elapsed time: 29.83 s
+Epoch 210/400, train error: 0.088144, val error: 0.143954. Elapsed time: 29.80 s
+Epoch 211/400, train error: 0.088044, val error: 0.143984. Elapsed time: 29.83 s
+Epoch 212/400, train error: 0.087947, val error: 0.144068. Elapsed time: 29.77 s
+Epoch 213/400, train error: 0.087844, val error: 0.143982. Elapsed time: 29.83 s
+Epoch 214/400, train error: 0.087742, val error: 0.144015. Elapsed time: 29.78 s
+Epoch 215/400, train error: 0.087644, val error: 0.143939. Elapsed time: 29.82 s
+Epoch 216/400, train error: 0.087547, val error: 0.144039. Elapsed time: 29.77 s
+Epoch 217/400, train error: 0.087445, val error: 0.144094. Elapsed time: 29.81 s
+Epoch 218/400, train error: 0.087347, val error: 0.144150. Elapsed time: 29.79 s
+Epoch 219/400, train error: 0.087246, val error: 0.144027. Elapsed time: 29.81 s
+Epoch 220/400, train error: 0.087153, val error: 0.144151. Elapsed time: 29.82 s
+Epoch 221/400, train error: 0.087054, val error: 0.144198. Elapsed time: 29.79 s
+Epoch 222/400, train error: 0.086957, val error: 0.144273. Elapsed time: 29.84 s
+Epoch 223/400, train error: 0.086863, val error: 0.144358. Elapsed time: 29.78 s
+Epoch 224/400, train error: 0.086769, val error: 0.144447. Elapsed time: 29.81 s
+Epoch 225/400, train error: 0.086675, val error: 0.144475. Elapsed time: 29.78 s
+Epoch 226/400, train error: 0.086583, val error: 0.144568. Elapsed time: 29.81 s
+Epoch 227/400, train error: 0.086494, val error: 0.144633. Elapsed time: 29.79 s
+Epoch 228/400, train error: 0.086402, val error: 0.144652. Elapsed time: 29.81 s
+Epoch 229/400, train error: 0.086310, val error: 0.144631. Elapsed time: 29.83 s
+Epoch 230/400, train error: 0.086220, val error: 0.144718. Elapsed time: 29.78 s
+Epoch 231/400, train error: 0.086125, val error: 0.144824. Elapsed time: 29.82 s
+Epoch 232/400, train error: 0.086036, val error: 0.144865. Elapsed time: 29.77 s
+Epoch 233/400, train error: 0.085947, val error: 0.144960. Elapsed time: 29.82 s
+Epoch 234/400, train error: 0.085862, val error: 0.145066. Elapsed time: 29.77 s
+Epoch 235/400, train error: 0.085775, val error: 0.144972. Elapsed time: 29.82 s
+Epoch 236/400, train error: 0.085685, val error: 0.145192. Elapsed time: 29.76 s
+Epoch 237/400, train error: 0.085595, val error: 0.145342. Elapsed time: 29.83 s
+Epoch 238/400, train error: 0.085505, val error: 0.145525. Elapsed time: 29.78 s
+Epoch 239/400, train error: 0.085414, val error: 0.145596. Elapsed time: 29.81 s
+Epoch 240/400, train error: 0.085325, val error: 0.145717. Elapsed time: 29.77 s
+Epoch 241/400, train error: 0.085237, val error: 0.145710. Elapsed time: 29.82 s
+Epoch 242/400, train error: 0.085148, val error: 0.145854. Elapsed time: 29.78 s
+Epoch 243/400, train error: 0.085064, val error: 0.145805. Elapsed time: 29.81 s
+Epoch 244/400, train error: 0.084980, val error: 0.145946. Elapsed time: 29.77 s
+Epoch 245/400, train error: 0.084892, val error: 0.145997. Elapsed time: 29.81 s
+Epoch 246/400, train error: 0.084805, val error: 0.145917. Elapsed time: 29.79 s
+Epoch 247/400, train error: 0.084721, val error: 0.145952. Elapsed time: 29.82 s
+Epoch 248/400, train error: 0.084633, val error: 0.146072. Elapsed time: 29.84 s
+Epoch 249/400, train error: 0.084551, val error: 0.146078. Elapsed time: 29.77 s
+Epoch 250/400, train error: 0.084469, val error: 0.146085. Elapsed time: 29.83 s
+Epoch 251/400, train error: 0.084390, val error: 0.146363. Elapsed time: 29.77 s
+Epoch 252/400, train error: 0.084308, val error: 0.146443. Elapsed time: 29.83 s
+Epoch 253/400, train error: 0.084226, val error: 0.146522. Elapsed time: 29.76 s
+Epoch 254/400, train error: 0.084140, val error: 0.146581. Elapsed time: 29.82 s
+Epoch 255/400, train error: 0.084055, val error: 0.146581. Elapsed time: 29.77 s
+Epoch 256/400, train error: 0.083970, val error: 0.146674. Elapsed time: 29.82 s
+Epoch 257/400, train error: 0.083887, val error: 0.146664. Elapsed time: 29.78 s
+Epoch 258/400, train error: 0.083808, val error: 0.146863. Elapsed time: 29.81 s
+Epoch 259/400, train error: 0.083728, val error: 0.147073. Elapsed time: 29.77 s
+Epoch 260/400, train error: 0.083644, val error: 0.147218. Elapsed time: 29.80 s
+Epoch 261/400, train error: 0.083565, val error: 0.147303. Elapsed time: 29.77 s
+Epoch 262/400, train error: 0.083486, val error: 0.147347. Elapsed time: 29.81 s
+Epoch 263/400, train error: 0.083406, val error: 0.147476. Elapsed time: 29.78 s
+Epoch 264/400, train error: 0.083324, val error: 0.147456. Elapsed time: 29.81 s
+Epoch 265/400, train error: 0.083244, val error: 0.147552. Elapsed time: 29.78 s
+Epoch 266/400, train error: 0.083166, val error: 0.147859. Elapsed time: 29.79 s
+Epoch 267/400, train error: 0.083089, val error: 0.147984. Elapsed time: 29.78 s
+Epoch 268/400, train error: 0.083013, val error: 0.148060. Elapsed time: 29.81 s
+Epoch 269/400, train error: 0.082939, val error: 0.148253. Elapsed time: 29.78 s
+Epoch 270/400, train error: 0.082861, val error: 0.148522. Elapsed time: 29.80 s
+Epoch 271/400, train error: 0.082786, val error: 0.148729. Elapsed time: 29.77 s
+Epoch 272/400, train error: 0.082712, val error: 0.148765. Elapsed time: 29.81 s
+Epoch 273/400, train error: 0.082632, val error: 0.148936. Elapsed time: 29.76 s
+Epoch 274/400, train error: 0.082558, val error: 0.148972. Elapsed time: 29.82 s
+Epoch 275/400, train error: 0.082480, val error: 0.149125. Elapsed time: 29.77 s
+Epoch 276/400, train error: 0.082404, val error: 0.149302. Elapsed time: 29.81 s
+Epoch 277/400, train error: 0.082330, val error: 0.149322. Elapsed time: 29.76 s
+Epoch 278/400, train error: 0.082255, val error: 0.149561. Elapsed time: 29.82 s
+Epoch 279/400, train error: 0.082180, val error: 0.149717. Elapsed time: 29.78 s
+Epoch 280/400, train error: 0.082105, val error: 0.149962. Elapsed time: 29.81 s
+Epoch 281/400, train error: 0.082031, val error: 0.150170. Elapsed time: 29.77 s
+Epoch 282/400, train error: 0.081958, val error: 0.150194. Elapsed time: 29.80 s
+Epoch 283/400, train error: 0.081884, val error: 0.150377. Elapsed time: 29.78 s
+Epoch 284/400, train error: 0.081808, val error: 0.150659. Elapsed time: 29.81 s
+Epoch 285/400, train error: 0.081733, val error: 0.150599. Elapsed time: 29.78 s
+Epoch 286/400, train error: 0.081665, val error: 0.150649. Elapsed time: 29.81 s
+Epoch 287/400, train error: 0.081591, val error: 0.150599. Elapsed time: 29.82 s
+Epoch 288/400, train error: 0.081518, val error: 0.150774. Elapsed time: 29.79 s
+Epoch 289/400, train error: 0.081447, val error: 0.150981. Elapsed time: 29.83 s
+Epoch 290/400, train error: 0.081377, val error: 0.151264. Elapsed time: 29.78 s
+Epoch 291/400, train error: 0.081309, val error: 0.151239. Elapsed time: 29.82 s
+Epoch 292/400, train error: 0.081241, val error: 0.151264. Elapsed time: 29.76 s
+Epoch 293/400, train error: 0.081167, val error: 0.151561. Elapsed time: 29.83 s
+Epoch 294/400, train error: 0.081095, val error: 0.151795. Elapsed time: 29.77 s
+Epoch 295/400, train error: 0.081026, val error: 0.151916. Elapsed time: 29.82 s
+Epoch 296/400, train error: 0.080952, val error: 0.151974. Elapsed time: 29.77 s
+Epoch 297/400, train error: 0.080882, val error: 0.152108. Elapsed time: 29.82 s
+Epoch 298/400, train error: 0.080812, val error: 0.152204. Elapsed time: 29.77 s
+Epoch 299/400, train error: 0.080742, val error: 0.152404. Elapsed time: 29.82 s
+Epoch 300/400, train error: 0.080671, val error: 0.152224. Elapsed time: 29.78 s
+Epoch 301/400, train error: 0.080601, val error: 0.152257. Elapsed time: 29.81 s
+Epoch 302/400, train error: 0.080531, val error: 0.152375. Elapsed time: 29.77 s
+Epoch 303/400, train error: 0.080461, val error: 0.152568. Elapsed time: 29.81 s
+Epoch 304/400, train error: 0.080392, val error: 0.152910. Elapsed time: 29.76 s
+Epoch 305/400, train error: 0.080325, val error: 0.153141. Elapsed time: 29.82 s
+Epoch 306/400, train error: 0.080258, val error: 0.153155. Elapsed time: 29.79 s
+Epoch 307/400, train error: 0.080187, val error: 0.153319. Elapsed time: 29.81 s
+Epoch 308/400, train error: 0.080117, val error: 0.153418. Elapsed time: 29.82 s
+Epoch 309/400, train error: 0.080046, val error: 0.153571. Elapsed time: 29.80 s
+Epoch 310/400, train error: 0.079976, val error: 0.153827. Elapsed time: 29.83 s
+Epoch 311/400, train error: 0.079907, val error: 0.153565. Elapsed time: 29.77 s
+Epoch 312/400, train error: 0.079841, val error: 0.153507. Elapsed time: 29.83 s
+Epoch 313/400, train error: 0.079775, val error: 0.153487. Elapsed time: 29.77 s
+Epoch 314/400, train error: 0.079709, val error: 0.153496. Elapsed time: 29.83 s
+Epoch 315/400, train error: 0.079639, val error: 0.153476. Elapsed time: 29.76 s
+Epoch 316/400, train error: 0.079569, val error: 0.153751. Elapsed time: 29.82 s
+Epoch 317/400, train error: 0.079502, val error: 0.153907. Elapsed time: 29.78 s
+Epoch 318/400, train error: 0.079434, val error: 0.154001. Elapsed time: 29.80 s
+Epoch 319/400, train error: 0.079367, val error: 0.154211. Elapsed time: 29.77 s
+Epoch 320/400, train error: 0.079301, val error: 0.154383. Elapsed time: 29.81 s
+Epoch 321/400, train error: 0.079234, val error: 0.154572. Elapsed time: 29.77 s
+Epoch 322/400, train error: 0.079165, val error: 0.154856. Elapsed time: 29.81 s
+Epoch 323/400, train error: 0.079100, val error: 0.155182. Elapsed time: 29.77 s
+Epoch 324/400, train error: 0.079031, val error: 0.155273. Elapsed time: 29.82 s
+Epoch 325/400, train error: 0.078963, val error: 0.155440. Elapsed time: 29.77 s
+Epoch 326/400, train error: 0.078898, val error: 0.155536. Elapsed time: 29.80 s
+Epoch 327/400, train error: 0.078835, val error: 0.155865. Elapsed time: 29.77 s
+Epoch 328/400, train error: 0.078766, val error: 0.156195. Elapsed time: 29.81 s
+Epoch 329/400, train error: 0.078703, val error: 0.156266. Elapsed time: 29.78 s
+Epoch 330/400, train error: 0.078638, val error: 0.156508. Elapsed time: 29.80 s
+Epoch 331/400, train error: 0.078575, val error: 0.156359. Elapsed time: 29.77 s
+Epoch 332/400, train error: 0.078509, val error: 0.156686. Elapsed time: 29.81 s
+Epoch 333/400, train error: 0.078444, val error: 0.156860. Elapsed time: 29.76 s
+Epoch 334/400, train error: 0.078377, val error: 0.156906. Elapsed time: 29.81 s
+Epoch 335/400, train error: 0.078314, val error: 0.156820. Elapsed time: 29.78 s
+Epoch 336/400, train error: 0.078250, val error: 0.157091. Elapsed time: 29.81 s
+Epoch 337/400, train error: 0.078187, val error: 0.157093. Elapsed time: 29.77 s
+Epoch 338/400, train error: 0.078125, val error: 0.157350. Elapsed time: 29.81 s
+Epoch 339/400, train error: 0.078060, val error: 0.157641. Elapsed time: 29.78 s
+Epoch 340/400, train error: 0.077994, val error: 0.157576. Elapsed time: 29.80 s
+Epoch 341/400, train error: 0.077931, val error: 0.157943. Elapsed time: 29.77 s
+Epoch 342/400, train error: 0.077867, val error: 0.157938. Elapsed time: 29.81 s
+Epoch 343/400, train error: 0.077801, val error: 0.158236. Elapsed time: 29.76 s
+Epoch 344/400, train error: 0.077737, val error: 0.158493. Elapsed time: 29.82 s
+Epoch 345/400, train error: 0.077675, val error: 0.158518. Elapsed time: 29.77 s
+Epoch 346/400, train error: 0.077611, val error: 0.158457. Elapsed time: 29.80 s
+Epoch 347/400, train error: 0.077550, val error: 0.158368. Elapsed time: 29.76 s
+Epoch 348/400, train error: 0.077487, val error: 0.158543. Elapsed time: 29.82 s
+Epoch 349/400, train error: 0.077425, val error: 0.158955. Elapsed time: 29.76 s
+Epoch 350/400, train error: 0.077361, val error: 0.159177. Elapsed time: 29.81 s
+Epoch 351/400, train error: 0.077296, val error: 0.159334. Elapsed time: 29.76 s
+Epoch 352/400, train error: 0.077235, val error: 0.159332. Elapsed time: 29.84 s
+Epoch 353/400, train error: 0.077175, val error: 0.159460. Elapsed time: 29.78 s
+Epoch 354/400, train error: 0.077112, val error: 0.159652. Elapsed time: 29.81 s
+Epoch 355/400, train error: 0.077049, val error: 0.159827. Elapsed time: 29.77 s
+Epoch 356/400, train error: 0.076990, val error: 0.160147. Elapsed time: 29.81 s
+Epoch 357/400, train error: 0.076929, val error: 0.160054. Elapsed time: 29.76 s
+Epoch 358/400, train error: 0.076866, val error: 0.160288. Elapsed time: 29.82 s
+Epoch 359/400, train error: 0.076803, val error: 0.160461. Elapsed time: 29.77 s
+Epoch 360/400, train error: 0.076742, val error: 0.160631. Elapsed time: 29.81 s
+Epoch 361/400, train error: 0.076682, val error: 0.160652. Elapsed time: 29.77 s
+Epoch 362/400, train error: 0.076624, val error: 0.160733. Elapsed time: 29.81 s
+Epoch 363/400, train error: 0.076564, val error: 0.160934. Elapsed time: 29.77 s
+Epoch 364/400, train error: 0.076503, val error: 0.161196. Elapsed time: 29.81 s
+Epoch 365/400, train error: 0.076444, val error: 0.161001. Elapsed time: 29.75 s
+Epoch 366/400, train error: 0.076384, val error: 0.161064. Elapsed time: 29.82 s
+Epoch 367/400, train error: 0.076328, val error: 0.161122. Elapsed time: 29.76 s
+Epoch 368/400, train error: 0.076267, val error: 0.161202. Elapsed time: 29.81 s
+Epoch 369/400, train error: 0.076208, val error: 0.161540. Elapsed time: 29.77 s
+Epoch 370/400, train error: 0.076147, val error: 0.161473. Elapsed time: 29.82 s
+Epoch 371/400, train error: 0.076089, val error: 0.161375. Elapsed time: 29.76 s
+Epoch 372/400, train error: 0.076030, val error: 0.161613. Elapsed time: 29.82 s
+Epoch 373/400, train error: 0.075968, val error: 0.161772. Elapsed time: 29.76 s
+Epoch 374/400, train error: 0.075907, val error: 0.161643. Elapsed time: 29.82 s
+Epoch 375/400, train error: 0.075852, val error: 0.161578. Elapsed time: 29.78 s
+Epoch 376/400, train error: 0.075793, val error: 0.161596. Elapsed time: 29.81 s
+Epoch 377/400, train error: 0.075734, val error: 0.161774. Elapsed time: 29.78 s
+Epoch 378/400, train error: 0.075679, val error: 0.161702. Elapsed time: 29.81 s
+Epoch 379/400, train error: 0.075620, val error: 0.161527. Elapsed time: 29.77 s
+Epoch 380/400, train error: 0.075564, val error: 0.161399. Elapsed time: 29.81 s
+Epoch 381/400, train error: 0.075505, val error: 0.161490. Elapsed time: 29.77 s
+Epoch 382/400, train error: 0.075443, val error: 0.161119. Elapsed time: 29.82 s
+Epoch 383/400, train error: 0.075386, val error: 0.161255. Elapsed time: 29.77 s
+Epoch 384/400, train error: 0.075327, val error: 0.161272. Elapsed time: 29.81 s
+Epoch 385/400, train error: 0.075269, val error: 0.161288. Elapsed time: 29.76 s
+Epoch 386/400, train error: 0.075212, val error: 0.161217. Elapsed time: 29.82 s
+Epoch 387/400, train error: 0.075154, val error: 0.160994. Elapsed time: 29.75 s
+Epoch 388/400, train error: 0.075095, val error: 0.161068. Elapsed time: 29.82 s
+Epoch 389/400, train error: 0.075036, val error: 0.161369. Elapsed time: 29.75 s
+Epoch 390/400, train error: 0.074979, val error: 0.161542. Elapsed time: 29.82 s
+Epoch 391/400, train error: 0.074925, val error: 0.161469. Elapsed time: 29.76 s
+Epoch 392/400, train error: 0.074868, val error: 0.161568. Elapsed time: 29.83 s
+Epoch 393/400, train error: 0.074812, val error: 0.161706. Elapsed time: 29.77 s
+Epoch 394/400, train error: 0.074755, val error: 0.161613. Elapsed time: 29.81 s
+Epoch 395/400, train error: 0.074698, val error: 0.162109. Elapsed time: 29.77 s
+Epoch 396/400, train error: 0.074646, val error: 0.161938. Elapsed time: 29.83 s
+Epoch 397/400, train error: 0.074588, val error: 0.161834. Elapsed time: 29.76 s
+Epoch 398/400, train error: 0.074532, val error: 0.162095. Elapsed time: 29.82 s
+Epoch 399/400, train error: 0.074472, val error: 0.162448. Elapsed time: 29.76 s
+Epoch 400/400, train error: 0.074414, val error: 0.162322. Elapsed time: 29.82 s
+Training completed in 11909.71 seconds.
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 300
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 27.76 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.36 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.58 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.30 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/300, train error: 0.561439, val error: 0.533599. Elapsed time: 33.22 s
+Epoch 2/300, train error: 0.506910, val error: 0.489374. Elapsed time: 33.64 s
+Epoch 3/300, train error: 0.459239, val error: 0.448564. Elapsed time: 33.91 s
+Epoch 4/300, train error: 0.417985, val error: 0.413555. Elapsed time: 34.01 s
+Epoch 5/300, train error: 0.382557, val error: 0.382904. Elapsed time: 34.01 s
+Epoch 6/300, train error: 0.352282, val error: 0.355446. Elapsed time: 34.08 s
+Epoch 7/300, train error: 0.326402, val error: 0.330699. Elapsed time: 34.16 s
+Epoch 8/300, train error: 0.304150, val error: 0.308632. Elapsed time: 34.17 s
+Epoch 9/300, train error: 0.284858, val error: 0.288856. Elapsed time: 34.19 s
+Epoch 10/300, train error: 0.268020, val error: 0.271435. Elapsed time: 34.24 s
+Epoch 11/300, train error: 0.253224, val error: 0.256003. Elapsed time: 34.23 s
+Epoch 12/300, train error: 0.240169, val error: 0.242334. Elapsed time: 34.22 s
+Epoch 13/300, train error: 0.228601, val error: 0.230302. Elapsed time: 34.28 s
+Epoch 14/300, train error: 0.218319, val error: 0.219710. Elapsed time: 34.24 s
+Epoch 15/300, train error: 0.209158, val error: 0.210390. Elapsed time: 34.30 s
+Epoch 16/300, train error: 0.200972, val error: 0.202147. Elapsed time: 34.25 s
+Epoch 17/300, train error: 0.193636, val error: 0.194859. Elapsed time: 34.25 s
+Epoch 18/300, train error: 0.187045, val error: 0.188378. Elapsed time: 34.29 s
+Epoch 19/300, train error: 0.181105, val error: 0.182613. Elapsed time: 34.28 s
+Epoch 20/300, train error: 0.175742, val error: 0.177463. Elapsed time: 34.22 s
+Epoch 21/300, train error: 0.170879, val error: 0.172852. Elapsed time: 34.22 s
+Epoch 22/300, train error: 0.166463, val error: 0.168690. Elapsed time: 34.30 s
+Epoch 23/300, train error: 0.162440, val error: 0.164939. Elapsed time: 34.28 s
+Epoch 24/300, train error: 0.158767, val error: 0.161540. Elapsed time: 34.27 s
+Epoch 25/300, train error: 0.155403, val error: 0.158449. Elapsed time: 34.24 s
+Epoch 26/300, train error: 0.152313, val error: 0.155622. Elapsed time: 34.29 s
+Epoch 27/300, train error: 0.149470, val error: 0.153038. Elapsed time: 34.23 s
+Epoch 28/300, train error: 0.146848, val error: 0.150666. Elapsed time: 34.31 s
+Epoch 29/300, train error: 0.144421, val error: 0.148485. Elapsed time: 34.21 s
+Epoch 30/300, train error: 0.142173, val error: 0.146473. Elapsed time: 34.27 s
+Epoch 31/300, train error: 0.140085, val error: 0.144615. Elapsed time: 34.32 s
+Epoch 32/300, train error: 0.138142, val error: 0.142894. Elapsed time: 34.25 s
+Epoch 33/300, train error: 0.136330, val error: 0.141297. Elapsed time: 34.29 s
+Epoch 34/300, train error: 0.134639, val error: 0.139810. Elapsed time: 34.25 s
+Epoch 35/300, train error: 0.133055, val error: 0.138423. Elapsed time: 34.22 s
+Epoch 36/300, train error: 0.131571, val error: 0.137128. Elapsed time: 34.33 s
+Epoch 37/300, train error: 0.130178, val error: 0.135916. Elapsed time: 34.27 s
+Epoch 38/300, train error: 0.128868, val error: 0.134782. Elapsed time: 34.28 s
+Epoch 39/300, train error: 0.127636, val error: 0.133719. Elapsed time: 34.26 s
+Epoch 40/300, train error: 0.126474, val error: 0.132718. Elapsed time: 34.26 s
+Epoch 41/300, train error: 0.125377, val error: 0.131779. Elapsed time: 34.27 s
+Epoch 42/300, train error: 0.124341, val error: 0.130893. Elapsed time: 34.20 s
+Epoch 43/300, train error: 0.123359, val error: 0.130058. Elapsed time: 34.23 s
+Epoch 44/300, train error: 0.122430, val error: 0.129271. Elapsed time: 34.28 s
+Epoch 45/300, train error: 0.121548, val error: 0.128526. Elapsed time: 34.25 s
+Epoch 46/300, train error: 0.120710, val error: 0.127823. Elapsed time: 34.30 s
+Epoch 47/300, train error: 0.119915, val error: 0.127155. Elapsed time: 34.25 s
+Epoch 48/300, train error: 0.119157, val error: 0.126523. Elapsed time: 34.24 s
+Epoch 49/300, train error: 0.118436, val error: 0.125922. Elapsed time: 34.24 s
+Epoch 50/300, train error: 0.117748, val error: 0.125352. Elapsed time: 34.30 s
+Epoch 51/300, train error: 0.117093, val error: 0.124810. Elapsed time: 34.24 s
+Epoch 52/300, train error: 0.116466, val error: 0.124295. Elapsed time: 34.22 s
+Epoch 53/300, train error: 0.115867, val error: 0.123803. Elapsed time: 34.24 s
+Epoch 54/300, train error: 0.115294, val error: 0.123336. Elapsed time: 34.27 s
+Epoch 55/300, train error: 0.114746, val error: 0.122890. Elapsed time: 34.27 s
+Epoch 56/300, train error: 0.114220, val error: 0.122465. Elapsed time: 34.21 s
+Epoch 57/300, train error: 0.113715, val error: 0.122059. Elapsed time: 34.27 s
+Epoch 58/300, train error: 0.113231, val error: 0.121669. Elapsed time: 34.23 s
+Epoch 59/300, train error: 0.112767, val error: 0.121295. Elapsed time: 34.24 s
+Epoch 60/300, train error: 0.112320, val error: 0.120939. Elapsed time: 34.22 s
+Epoch 61/300, train error: 0.111889, val error: 0.120597. Elapsed time: 34.34 s
+Epoch 62/300, train error: 0.111475, val error: 0.120270. Elapsed time: 34.32 s
+Epoch 63/300, train error: 0.111076, val error: 0.119956. Elapsed time: 34.25 s
+Epoch 64/300, train error: 0.110692, val error: 0.119654. Elapsed time: 34.21 s
+Epoch 65/300, train error: 0.110320, val error: 0.119365. Elapsed time: 34.32 s
+Epoch 66/300, train error: 0.109962, val error: 0.119087. Elapsed time: 34.23 s
+Epoch 67/300, train error: 0.109616, val error: 0.118820. Elapsed time: 34.25 s
+Epoch 68/300, train error: 0.109282, val error: 0.118563. Elapsed time: 34.22 s
+Epoch 69/300, train error: 0.108958, val error: 0.118316. Elapsed time: 34.21 s
+Epoch 70/300, train error: 0.108646, val error: 0.118078. Elapsed time: 34.26 s
+Epoch 71/300, train error: 0.108343, val error: 0.117848. Elapsed time: 34.27 s
+Epoch 72/300, train error: 0.108050, val error: 0.117627. Elapsed time: 34.27 s
+Epoch 73/300, train error: 0.107766, val error: 0.117414. Elapsed time: 34.22 s
+Epoch 74/300, train error: 0.107489, val error: 0.117208. Elapsed time: 34.25 s
+Epoch 75/300, train error: 0.107221, val error: 0.117009. Elapsed time: 34.23 s
+Epoch 76/300, train error: 0.106960, val error: 0.116816. Elapsed time: 34.22 s
+Epoch 77/300, train error: 0.106707, val error: 0.116630. Elapsed time: 34.21 s
+Epoch 78/300, train error: 0.106461, val error: 0.116450. Elapsed time: 34.28 s
+Epoch 79/300, train error: 0.106221, val error: 0.116275. Elapsed time: 34.31 s
+Epoch 80/300, train error: 0.105988, val error: 0.116106. Elapsed time: 34.31 s
+Epoch 81/300, train error: 0.105761, val error: 0.115942. Elapsed time: 34.22 s
+Epoch 82/300, train error: 0.105540, val error: 0.115784. Elapsed time: 34.26 s
+Epoch 83/300, train error: 0.105324, val error: 0.115631. Elapsed time: 34.24 s
+Epoch 84/300, train error: 0.105113, val error: 0.115482. Elapsed time: 34.25 s
+Epoch 85/300, train error: 0.104907, val error: 0.115337. Elapsed time: 34.29 s
+Epoch 86/300, train error: 0.104706, val error: 0.115196. Elapsed time: 34.24 s
+Epoch 87/300, train error: 0.104510, val error: 0.115059. Elapsed time: 34.28 s
+Epoch 88/300, train error: 0.104319, val error: 0.114927. Elapsed time: 34.23 s
+Epoch 89/300, train error: 0.104131, val error: 0.114798. Elapsed time: 34.24 s
+Epoch 90/300, train error: 0.103948, val error: 0.114673. Elapsed time: 34.25 s
+Epoch 91/300, train error: 0.103768, val error: 0.114551. Elapsed time: 34.24 s
+Epoch 92/300, train error: 0.103591, val error: 0.114431. Elapsed time: 34.24 s
+Epoch 93/300, train error: 0.103419, val error: 0.114316. Elapsed time: 34.23 s
+Epoch 94/300, train error: 0.103250, val error: 0.114203. Elapsed time: 34.24 s
+Epoch 95/300, train error: 0.103083, val error: 0.114093. Elapsed time: 34.22 s
+Epoch 96/300, train error: 0.102920, val error: 0.113985. Elapsed time: 34.24 s
+Epoch 97/300, train error: 0.102760, val error: 0.113879. Elapsed time: 34.23 s
+Epoch 98/300, train error: 0.102603, val error: 0.113777. Elapsed time: 34.23 s
+Epoch 99/300, train error: 0.102449, val error: 0.113677. Elapsed time: 34.24 s
+Epoch 100/300, train error: 0.102297, val error: 0.113579. Elapsed time: 34.22 s
+Epoch 101/300, train error: 0.102148, val error: 0.113482. Elapsed time: 34.22 s
+Epoch 102/300, train error: 0.102001, val error: 0.113388. Elapsed time: 34.26 s
+Epoch 103/300, train error: 0.101856, val error: 0.113295. Elapsed time: 34.23 s
+Epoch 104/300, train error: 0.101713, val error: 0.113205. Elapsed time: 34.27 s
+Epoch 105/300, train error: 0.101573, val error: 0.113118. Elapsed time: 34.28 s
+Epoch 106/300, train error: 0.101435, val error: 0.113031. Elapsed time: 34.22 s
+Epoch 107/300, train error: 0.101299, val error: 0.112946. Elapsed time: 34.21 s
+Epoch 108/300, train error: 0.101164, val error: 0.112863. Elapsed time: 34.17 s
+Epoch 109/300, train error: 0.101032, val error: 0.112779. Elapsed time: 34.25 s
+Epoch 110/300, train error: 0.100900, val error: 0.112699. Elapsed time: 34.26 s
+Epoch 111/300, train error: 0.100771, val error: 0.112620. Elapsed time: 34.26 s
+Epoch 112/300, train error: 0.100644, val error: 0.112542. Elapsed time: 34.22 s
+Epoch 113/300, train error: 0.100517, val error: 0.112465. Elapsed time: 34.25 s
+Epoch 114/300, train error: 0.100392, val error: 0.112390. Elapsed time: 34.24 s
+Epoch 115/300, train error: 0.100269, val error: 0.112316. Elapsed time: 34.22 s
+Epoch 116/300, train error: 0.100147, val error: 0.112242. Elapsed time: 34.24 s
+Epoch 117/300, train error: 0.100026, val error: 0.112168. Elapsed time: 34.32 s
+Epoch 118/300, train error: 0.099907, val error: 0.112097. Elapsed time: 34.21 s
+Epoch 119/300, train error: 0.099788, val error: 0.112025. Elapsed time: 34.23 s
+Epoch 120/300, train error: 0.099670, val error: 0.111955. Elapsed time: 34.17 s
+Epoch 121/300, train error: 0.099553, val error: 0.111886. Elapsed time: 34.29 s
+Epoch 122/300, train error: 0.099438, val error: 0.111818. Elapsed time: 34.23 s
+Epoch 123/300, train error: 0.099324, val error: 0.111749. Elapsed time: 34.25 s
+Epoch 124/300, train error: 0.099210, val error: 0.111683. Elapsed time: 34.20 s
+Epoch 125/300, train error: 0.099097, val error: 0.111618. Elapsed time: 34.26 s
+Epoch 126/300, train error: 0.098984, val error: 0.111552. Elapsed time: 34.22 s
+Epoch 127/300, train error: 0.098873, val error: 0.111487. Elapsed time: 34.24 s
+Epoch 128/300, train error: 0.098763, val error: 0.111421. Elapsed time: 34.21 s
+Epoch 129/300, train error: 0.098652, val error: 0.111357. Elapsed time: 34.19 s
+Epoch 130/300, train error: 0.098543, val error: 0.111294. Elapsed time: 34.23 s
+Epoch 131/300, train error: 0.098434, val error: 0.111232. Elapsed time: 34.28 s
+Epoch 132/300, train error: 0.098326, val error: 0.111169. Elapsed time: 34.25 s
+Epoch 133/300, train error: 0.098220, val error: 0.111106. Elapsed time: 34.25 s
+Epoch 134/300, train error: 0.098113, val error: 0.111044. Elapsed time: 34.27 s
+Epoch 135/300, train error: 0.098006, val error: 0.110982. Elapsed time: 34.26 s
+Epoch 136/300, train error: 0.097901, val error: 0.110920. Elapsed time: 34.22 s
+Epoch 137/300, train error: 0.097797, val error: 0.110858. Elapsed time: 34.28 s
+Epoch 138/300, train error: 0.097692, val error: 0.110796. Elapsed time: 34.24 s
+Epoch 139/300, train error: 0.097587, val error: 0.110737. Elapsed time: 34.21 s
+Epoch 140/300, train error: 0.097482, val error: 0.110678. Elapsed time: 34.27 s
+Epoch 141/300, train error: 0.097379, val error: 0.110619. Elapsed time: 34.22 s
+Epoch 142/300, train error: 0.097275, val error: 0.110558. Elapsed time: 34.20 s
+Epoch 143/300, train error: 0.097172, val error: 0.110498. Elapsed time: 34.26 s
+Epoch 144/300, train error: 0.097068, val error: 0.110439. Elapsed time: 34.24 s
+Epoch 145/300, train error: 0.096965, val error: 0.110381. Elapsed time: 34.21 s
+Epoch 146/300, train error: 0.096864, val error: 0.110323. Elapsed time: 34.23 s
+Epoch 147/300, train error: 0.096761, val error: 0.110262. Elapsed time: 34.23 s
+Epoch 148/300, train error: 0.096659, val error: 0.110202. Elapsed time: 34.24 s
+Epoch 149/300, train error: 0.096557, val error: 0.110145. Elapsed time: 34.30 s
+Epoch 150/300, train error: 0.096456, val error: 0.110087. Elapsed time: 34.28 s
+Epoch 151/300, train error: 0.096355, val error: 0.110030. Elapsed time: 34.26 s
+Epoch 152/300, train error: 0.096254, val error: 0.109970. Elapsed time: 34.26 s
+Epoch 153/300, train error: 0.096153, val error: 0.109912. Elapsed time: 34.21 s
+Epoch 154/300, train error: 0.096052, val error: 0.109855. Elapsed time: 34.23 s
+Epoch 155/300, train error: 0.095951, val error: 0.109797. Elapsed time: 34.23 s
+Epoch 156/300, train error: 0.095850, val error: 0.109738. Elapsed time: 34.25 s
+Epoch 157/300, train error: 0.095749, val error: 0.109680. Elapsed time: 34.23 s
+Epoch 158/300, train error: 0.095648, val error: 0.109624. Elapsed time: 34.23 s
+Epoch 159/300, train error: 0.095547, val error: 0.109567. Elapsed time: 34.30 s
+Epoch 160/300, train error: 0.095446, val error: 0.109511. Elapsed time: 34.22 s
+Epoch 161/300, train error: 0.095345, val error: 0.109452. Elapsed time: 34.24 s
+Epoch 162/300, train error: 0.095244, val error: 0.109392. Elapsed time: 34.26 s
+Epoch 163/300, train error: 0.095144, val error: 0.109336. Elapsed time: 34.30 s
+Epoch 164/300, train error: 0.095043, val error: 0.109280. Elapsed time: 34.25 s
+Epoch 165/300, train error: 0.094942, val error: 0.109223. Elapsed time: 34.23 s
+Epoch 166/300, train error: 0.094841, val error: 0.109165. Elapsed time: 34.22 s
+Epoch 167/300, train error: 0.094740, val error: 0.109110. Elapsed time: 34.23 s
+Epoch 168/300, train error: 0.094640, val error: 0.109052. Elapsed time: 34.22 s
+Epoch 169/300, train error: 0.094540, val error: 0.108996. Elapsed time: 34.23 s
+Epoch 170/300, train error: 0.094441, val error: 0.108941. Elapsed time: 34.28 s
+Epoch 171/300, train error: 0.094341, val error: 0.108882. Elapsed time: 34.31 s
+Epoch 172/300, train error: 0.094240, val error: 0.108827. Elapsed time: 34.26 s
+Epoch 173/300, train error: 0.094139, val error: 0.108770. Elapsed time: 34.26 s
+Epoch 174/300, train error: 0.094039, val error: 0.108715. Elapsed time: 34.26 s
+Epoch 175/300, train error: 0.093939, val error: 0.108664. Elapsed time: 34.20 s
+Epoch 176/300, train error: 0.093839, val error: 0.108607. Elapsed time: 34.24 s
+Epoch 177/300, train error: 0.093738, val error: 0.108546. Elapsed time: 34.24 s
+Epoch 178/300, train error: 0.093640, val error: 0.108486. Elapsed time: 34.26 s
+Epoch 179/300, train error: 0.093542, val error: 0.108432. Elapsed time: 34.22 s
+Epoch 180/300, train error: 0.093443, val error: 0.108377. Elapsed time: 34.30 s
+Epoch 181/300, train error: 0.093344, val error: 0.108325. Elapsed time: 34.24 s
+Epoch 182/300, train error: 0.093246, val error: 0.108276. Elapsed time: 34.25 s
+Epoch 183/300, train error: 0.093147, val error: 0.108227. Elapsed time: 34.31 s
+Epoch 184/300, train error: 0.093049, val error: 0.108172. Elapsed time: 34.22 s
+Epoch 185/300, train error: 0.092950, val error: 0.108115. Elapsed time: 34.25 s
+Epoch 186/300, train error: 0.092853, val error: 0.108051. Elapsed time: 34.22 s
+Epoch 187/300, train error: 0.092755, val error: 0.107995. Elapsed time: 34.21 s
+Epoch 188/300, train error: 0.092659, val error: 0.107939. Elapsed time: 34.27 s
+Epoch 189/300, train error: 0.092562, val error: 0.107883. Elapsed time: 34.21 s
+Epoch 190/300, train error: 0.092465, val error: 0.107832. Elapsed time: 34.21 s
+Epoch 191/300, train error: 0.092368, val error: 0.107784. Elapsed time: 34.22 s
+Epoch 192/300, train error: 0.092270, val error: 0.107727. Elapsed time: 34.25 s
+Epoch 193/300, train error: 0.092174, val error: 0.107674. Elapsed time: 34.24 s
+Epoch 194/300, train error: 0.092077, val error: 0.107627. Elapsed time: 34.23 s
+Epoch 195/300, train error: 0.091984, val error: 0.107587. Elapsed time: 34.27 s
+Epoch 196/300, train error: 0.091888, val error: 0.107528. Elapsed time: 34.28 s
+Epoch 197/300, train error: 0.091794, val error: 0.107473. Elapsed time: 34.24 s
+Epoch 198/300, train error: 0.091698, val error: 0.107421. Elapsed time: 34.27 s
+Epoch 199/300, train error: 0.091604, val error: 0.107371. Elapsed time: 34.28 s
+Epoch 200/300, train error: 0.091510, val error: 0.107325. Elapsed time: 34.22 s
+Epoch 201/300, train error: 0.091418, val error: 0.107272. Elapsed time: 34.22 s
+Epoch 202/300, train error: 0.091325, val error: 0.107227. Elapsed time: 34.21 s
+Epoch 203/300, train error: 0.091232, val error: 0.107177. Elapsed time: 34.26 s
+Epoch 204/300, train error: 0.091139, val error: 0.107120. Elapsed time: 34.26 s
+Epoch 205/300, train error: 0.091046, val error: 0.107070. Elapsed time: 34.25 s
+Epoch 206/300, train error: 0.090954, val error: 0.107020. Elapsed time: 34.26 s
+Epoch 207/300, train error: 0.090862, val error: 0.106966. Elapsed time: 34.24 s
+Epoch 208/300, train error: 0.090771, val error: 0.106925. Elapsed time: 34.25 s
+Epoch 209/300, train error: 0.090680, val error: 0.106875. Elapsed time: 34.25 s
+Epoch 210/300, train error: 0.090590, val error: 0.106824. Elapsed time: 34.23 s
+Epoch 211/300, train error: 0.090501, val error: 0.106782. Elapsed time: 34.26 s
+Epoch 212/300, train error: 0.090412, val error: 0.106732. Elapsed time: 34.21 s
+Epoch 213/300, train error: 0.090322, val error: 0.106692. Elapsed time: 34.29 s
+Epoch 214/300, train error: 0.090232, val error: 0.106646. Elapsed time: 34.22 s
+Epoch 215/300, train error: 0.090144, val error: 0.106606. Elapsed time: 34.25 s
+Epoch 216/300, train error: 0.090057, val error: 0.106559. Elapsed time: 34.21 s
+Epoch 217/300, train error: 0.089972, val error: 0.106518. Elapsed time: 34.22 s
+Epoch 218/300, train error: 0.089887, val error: 0.106471. Elapsed time: 34.24 s
+Epoch 219/300, train error: 0.089800, val error: 0.106426. Elapsed time: 34.27 s
+Epoch 220/300, train error: 0.089714, val error: 0.106401. Elapsed time: 34.21 s
+Epoch 221/300, train error: 0.089629, val error: 0.106349. Elapsed time: 34.27 s
+Epoch 222/300, train error: 0.089543, val error: 0.106316. Elapsed time: 34.26 s
+Epoch 223/300, train error: 0.089459, val error: 0.106260. Elapsed time: 34.18 s
+Epoch 224/300, train error: 0.089375, val error: 0.106220. Elapsed time: 34.28 s
+Epoch 225/300, train error: 0.089291, val error: 0.106186. Elapsed time: 34.21 s
+Epoch 226/300, train error: 0.089206, val error: 0.106133. Elapsed time: 34.27 s
+Epoch 227/300, train error: 0.089124, val error: 0.106088. Elapsed time: 34.19 s
+Epoch 228/300, train error: 0.089042, val error: 0.106038. Elapsed time: 34.24 s
+Epoch 229/300, train error: 0.088962, val error: 0.105993. Elapsed time: 34.19 s
+Epoch 230/300, train error: 0.088882, val error: 0.105953. Elapsed time: 34.22 s
+Epoch 231/300, train error: 0.088801, val error: 0.105917. Elapsed time: 34.22 s
+Epoch 232/300, train error: 0.088720, val error: 0.105870. Elapsed time: 34.22 s
+Epoch 233/300, train error: 0.088641, val error: 0.105827. Elapsed time: 34.22 s
+Epoch 234/300, train error: 0.088562, val error: 0.105788. Elapsed time: 34.24 s
+Epoch 235/300, train error: 0.088483, val error: 0.105753. Elapsed time: 34.22 s
+Epoch 236/300, train error: 0.088404, val error: 0.105717. Elapsed time: 34.23 s
+Epoch 237/300, train error: 0.088326, val error: 0.105694. Elapsed time: 34.20 s
+Epoch 238/300, train error: 0.088248, val error: 0.105651. Elapsed time: 34.27 s
+Epoch 239/300, train error: 0.088172, val error: 0.105638. Elapsed time: 34.17 s
+Epoch 240/300, train error: 0.088096, val error: 0.105599. Elapsed time: 34.29 s
+Epoch 241/300, train error: 0.088020, val error: 0.105555. Elapsed time: 34.21 s
+Epoch 242/300, train error: 0.087944, val error: 0.105527. Elapsed time: 34.20 s
+Epoch 243/300, train error: 0.087869, val error: 0.105482. Elapsed time: 34.24 s
+Epoch 244/300, train error: 0.087794, val error: 0.105436. Elapsed time: 34.25 s
+Epoch 245/300, train error: 0.087718, val error: 0.105383. Elapsed time: 34.22 s
+Epoch 246/300, train error: 0.087643, val error: 0.105348. Elapsed time: 34.19 s
+Epoch 247/300, train error: 0.087569, val error: 0.105319. Elapsed time: 34.20 s
+Epoch 248/300, train error: 0.087494, val error: 0.105285. Elapsed time: 34.22 s
+Epoch 249/300, train error: 0.087422, val error: 0.105227. Elapsed time: 34.22 s
+Epoch 250/300, train error: 0.087349, val error: 0.105183. Elapsed time: 34.22 s
+Epoch 251/300, train error: 0.087276, val error: 0.105145. Elapsed time: 34.23 s
+Epoch 252/300, train error: 0.087204, val error: 0.105095. Elapsed time: 34.23 s
+Epoch 253/300, train error: 0.087132, val error: 0.105051. Elapsed time: 34.21 s
+Epoch 254/300, train error: 0.087059, val error: 0.105017. Elapsed time: 34.20 s
+Epoch 255/300, train error: 0.086989, val error: 0.104956. Elapsed time: 34.21 s
+Epoch 256/300, train error: 0.086917, val error: 0.104908. Elapsed time: 34.27 s
+Epoch 257/300, train error: 0.086848, val error: 0.104846. Elapsed time: 34.21 s
+Epoch 258/300, train error: 0.086777, val error: 0.104786. Elapsed time: 34.29 s
+Epoch 259/300, train error: 0.086707, val error: 0.104753. Elapsed time: 34.22 s
+Epoch 260/300, train error: 0.086637, val error: 0.104693. Elapsed time: 34.17 s
+Epoch 261/300, train error: 0.086569, val error: 0.104636. Elapsed time: 34.20 s
+Epoch 262/300, train error: 0.086499, val error: 0.104607. Elapsed time: 34.21 s
+Epoch 263/300, train error: 0.086430, val error: 0.104542. Elapsed time: 34.19 s
+Epoch 264/300, train error: 0.086361, val error: 0.104483. Elapsed time: 34.19 s
+Epoch 265/300, train error: 0.086292, val error: 0.104443. Elapsed time: 34.24 s
+Epoch 266/300, train error: 0.086223, val error: 0.104388. Elapsed time: 34.23 s
+Epoch 267/300, train error: 0.086156, val error: 0.104340. Elapsed time: 34.24 s
+Epoch 268/300, train error: 0.086087, val error: 0.104292. Elapsed time: 34.19 s
+Epoch 269/300, train error: 0.086021, val error: 0.104234. Elapsed time: 34.24 s
+Epoch 270/300, train error: 0.085954, val error: 0.104189. Elapsed time: 34.24 s
+Epoch 271/300, train error: 0.085887, val error: 0.104151. Elapsed time: 34.24 s
+Epoch 272/300, train error: 0.085821, val error: 0.104097. Elapsed time: 34.17 s
+Epoch 273/300, train error: 0.085756, val error: 0.104050. Elapsed time: 34.30 s
+Epoch 274/300, train error: 0.085689, val error: 0.104002. Elapsed time: 34.21 s
+Epoch 275/300, train error: 0.085623, val error: 0.103971. Elapsed time: 34.18 s
+Epoch 276/300, train error: 0.085557, val error: 0.103939. Elapsed time: 34.20 s
+Epoch 277/300, train error: 0.085492, val error: 0.103903. Elapsed time: 34.23 s
+Epoch 278/300, train error: 0.085428, val error: 0.103852. Elapsed time: 34.24 s
+Epoch 279/300, train error: 0.085364, val error: 0.103805. Elapsed time: 34.15 s
+Epoch 280/300, train error: 0.085302, val error: 0.103737. Elapsed time: 34.19 s
+Epoch 281/300, train error: 0.085237, val error: 0.103674. Elapsed time: 34.23 s
+Epoch 282/300, train error: 0.085176, val error: 0.103623. Elapsed time: 34.18 s
+Epoch 283/300, train error: 0.085112, val error: 0.103579. Elapsed time: 34.28 s
+Epoch 284/300, train error: 0.085051, val error: 0.103538. Elapsed time: 34.19 s
+Epoch 285/300, train error: 0.084987, val error: 0.103486. Elapsed time: 34.17 s
+Epoch 286/300, train error: 0.084924, val error: 0.103425. Elapsed time: 34.19 s
+Epoch 287/300, train error: 0.084861, val error: 0.103370. Elapsed time: 34.28 s
+Epoch 288/300, train error: 0.084799, val error: 0.103317. Elapsed time: 34.22 s
+Epoch 289/300, train error: 0.084738, val error: 0.103265. Elapsed time: 34.18 s
+Epoch 290/300, train error: 0.084677, val error: 0.103224. Elapsed time: 34.29 s
+Epoch 291/300, train error: 0.084617, val error: 0.103181. Elapsed time: 34.21 s
+Epoch 292/300, train error: 0.084556, val error: 0.103113. Elapsed time: 34.23 s
+Epoch 293/300, train error: 0.084497, val error: 0.103056. Elapsed time: 34.17 s
+Epoch 294/300, train error: 0.084437, val error: 0.103021. Elapsed time: 34.17 s
+Epoch 295/300, train error: 0.084377, val error: 0.102949. Elapsed time: 34.21 s
+Epoch 296/300, train error: 0.084317, val error: 0.102906. Elapsed time: 34.21 s
+Epoch 297/300, train error: 0.084258, val error: 0.102851. Elapsed time: 34.15 s
+Epoch 298/300, train error: 0.084200, val error: 0.102791. Elapsed time: 34.22 s
+Epoch 299/300, train error: 0.084141, val error: 0.102742. Elapsed time: 34.25 s
+Epoch 300/300, train error: 0.084083, val error: 0.102708. Elapsed time: 34.20 s
+Training completed in 10269.19 seconds.
+Learning rate: 0.003000
+Weight decay: 0.000001
+Number of epochs: 500
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 27.91 seconds
+--------------------
+Cropped images from 1024 x 1024 to 850 x 850
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.36 seconds
+--------------------
+Loading images...
+Loaded and reshaped 41 images in 2.59 seconds
+--------------------
+Augmenting the dataset...
+Augmented 41 images in 2.31 seconds
+--------------------
+Network architecture: 
+
+(None, 1, 425, 425)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 421, 421)
+(None, 64, 210, 210)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 206, 206)
+(None, 64, 103, 103)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 99, 99)
+(None, 64, 49, 49)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 45, 45)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 49, 49)
+(None, 64, 99, 99)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 103, 103)
+(None, 64, 206, 206)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 210, 210)
+(None, 64, 421, 421)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 64, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+(None, 1, 425, 425)
+
+The total number of trainable parameters is 720516
+
+Training on 344 images
+--------------------
+Epoch 1/500, train error: 0.559266, val error: 0.519219. Elapsed time: 33.00 s
+Epoch 2/500, train error: 0.505046, val error: 0.490003. Elapsed time: 33.57 s
+Epoch 3/500, train error: 0.457589, val error: 0.454516. Elapsed time: 33.87 s
+Epoch 4/500, train error: 0.416862, val error: 0.420322. Elapsed time: 33.99 s
+Epoch 5/500, train error: 0.382183, val error: 0.388276. Elapsed time: 33.97 s
+Epoch 6/500, train error: 0.352647, val error: 0.359254. Elapsed time: 34.07 s
+Epoch 7/500, train error: 0.327318, val error: 0.333369. Elapsed time: 34.12 s
+Epoch 8/500, train error: 0.305425, val error: 0.310460. Elapsed time: 34.16 s
+Epoch 9/500, train error: 0.286342, val error: 0.290143. Elapsed time: 34.16 s
+Epoch 10/500, train error: 0.269603, val error: 0.272218. Elapsed time: 34.14 s
+Epoch 11/500, train error: 0.254836, val error: 0.256441. Elapsed time: 34.19 s
+Epoch 12/500, train error: 0.241753, val error: 0.242492. Elapsed time: 34.17 s
+Epoch 13/500, train error: 0.230118, val error: 0.230254. Elapsed time: 34.18 s
+Epoch 14/500, train error: 0.219739, val error: 0.219393. Elapsed time: 34.19 s
+Epoch 15/500, train error: 0.210461, val error: 0.209766. Elapsed time: 34.14 s
+Epoch 16/500, train error: 0.202148, val error: 0.201390. Elapsed time: 34.22 s
+Epoch 17/500, train error: 0.194681, val error: 0.193947. Elapsed time: 34.13 s
+Epoch 18/500, train error: 0.187968, val error: 0.187391. Elapsed time: 34.14 s
+Epoch 19/500, train error: 0.181910, val error: 0.181558. Elapsed time: 34.21 s
+Epoch 20/500, train error: 0.176437, val error: 0.176391. Elapsed time: 34.16 s
+Epoch 21/500, train error: 0.171480, val error: 0.171767. Elapsed time: 34.17 s
+Epoch 22/500, train error: 0.166983, val error: 0.167648. Elapsed time: 34.16 s
+Epoch 23/500, train error: 0.162892, val error: 0.163932. Elapsed time: 34.24 s
+Epoch 24/500, train error: 0.159159, val error: 0.160575. Elapsed time: 34.17 s
+Epoch 25/500, train error: 0.155744, val error: 0.157535. Elapsed time: 34.21 s
+Epoch 26/500, train error: 0.152612, val error: 0.154765. Elapsed time: 34.11 s
+Epoch 27/500, train error: 0.149731, val error: 0.152235. Elapsed time: 34.13 s
+Epoch 28/500, train error: 0.147075, val error: 0.149909. Elapsed time: 34.22 s
+Epoch 29/500, train error: 0.144620, val error: 0.147768. Elapsed time: 34.16 s
+Epoch 30/500, train error: 0.142346, val error: 0.145797. Elapsed time: 34.16 s
+Epoch 31/500, train error: 0.140235, val error: 0.143975. Elapsed time: 34.27 s
+Epoch 32/500, train error: 0.138271, val error: 0.142285. Elapsed time: 34.15 s
+Epoch 33/500, train error: 0.136441, val error: 0.140715. Elapsed time: 34.18 s
+Epoch 34/500, train error: 0.134732, val error: 0.139254. Elapsed time: 34.19 s
+Epoch 35/500, train error: 0.133133, val error: 0.137889. Elapsed time: 34.14 s
+Epoch 36/500, train error: 0.131636, val error: 0.136615. Elapsed time: 34.13 s
+Epoch 37/500, train error: 0.130230, val error: 0.135424. Elapsed time: 34.21 s
+Epoch 38/500, train error: 0.128909, val error: 0.134307. Elapsed time: 34.23 s
+Epoch 39/500, train error: 0.127666, val error: 0.133257. Elapsed time: 34.19 s
+Epoch 40/500, train error: 0.126494, val error: 0.132272. Elapsed time: 34.18 s
+Epoch 41/500, train error: 0.125388, val error: 0.131345. Elapsed time: 34.13 s
+Epoch 42/500, train error: 0.124343, val error: 0.130471. Elapsed time: 34.22 s
+Epoch 43/500, train error: 0.123354, val error: 0.129648. Elapsed time: 34.19 s
+Epoch 44/500, train error: 0.122418, val error: 0.128871. Elapsed time: 34.18 s
+Epoch 45/500, train error: 0.121531, val error: 0.128137. Elapsed time: 34.21 s
+Epoch 46/500, train error: 0.120688, val error: 0.127444. Elapsed time: 34.19 s
+Epoch 47/500, train error: 0.119887, val error: 0.126784. Elapsed time: 34.22 s
+Epoch 48/500, train error: 0.119125, val error: 0.126159. Elapsed time: 34.20 s
+Epoch 49/500, train error: 0.118400, val error: 0.125568. Elapsed time: 34.16 s
+Epoch 50/500, train error: 0.117709, val error: 0.125006. Elapsed time: 34.19 s
+Epoch 51/500, train error: 0.117049, val error: 0.124471. Elapsed time: 34.20 s
+Epoch 52/500, train error: 0.116419, val error: 0.123962. Elapsed time: 34.17 s
+Epoch 53/500, train error: 0.115817, val error: 0.123477. Elapsed time: 34.24 s
+Epoch 54/500, train error: 0.115241, val error: 0.123015. Elapsed time: 34.16 s
+Epoch 55/500, train error: 0.114690, val error: 0.122574. Elapsed time: 35.08 s
+Epoch 56/500, train error: 0.114161, val error: 0.122155. Elapsed time: 35.00 s
+Epoch 57/500, train error: 0.113655, val error: 0.121755. Elapsed time: 34.91 s
+Epoch 58/500, train error: 0.113169, val error: 0.121371. Elapsed time: 35.37 s
+Epoch 59/500, train error: 0.112702, val error: 0.121005. Elapsed time: 35.98 s
+Epoch 60/500, train error: 0.112253, val error: 0.120654. Elapsed time: 36.02 s
+Epoch 61/500, train error: 0.111821, val error: 0.120318. Elapsed time: 38.48 s
+Epoch 62/500, train error: 0.111406, val error: 0.119996. Elapsed time: 37.26 s
+Epoch 63/500, train error: 0.111006, val error: 0.119687. Elapsed time: 36.63 s
+Epoch 64/500, train error: 0.110621, val error: 0.119391. Elapsed time: 38.03 s
+Epoch 65/500, train error: 0.110249, val error: 0.119108. Elapsed time: 35.15 s
+Epoch 66/500, train error: 0.109890, val error: 0.118835. Elapsed time: 35.43 s
+Epoch 67/500, train error: 0.109543, val error: 0.118573. Elapsed time: 34.21 s
+Epoch 68/500, train error: 0.109208, val error: 0.118322. Elapsed time: 34.15 s
+Epoch 69/500, train error: 0.108885, val error: 0.118079. Elapsed time: 34.16 s
+Epoch 70/500, train error: 0.108572, val error: 0.117845. Elapsed time: 34.21 s
+Epoch 71/500, train error: 0.108269, val error: 0.117620. Elapsed time: 34.18 s
+Epoch 72/500, train error: 0.107975, val error: 0.117404. Elapsed time: 34.17 s
+Epoch 73/500, train error: 0.107691, val error: 0.117194. Elapsed time: 34.16 s
+Epoch 74/500, train error: 0.107415, val error: 0.116992. Elapsed time: 34.20 s
+Epoch 75/500, train error: 0.107147, val error: 0.116798. Elapsed time: 34.19 s
+Epoch 76/500, train error: 0.106887, val error: 0.116610. Elapsed time: 34.18 s
+Epoch 77/500, train error: 0.106634, val error: 0.116429. Elapsed time: 34.16 s
+Epoch 78/500, train error: 0.106389, val error: 0.116254. Elapsed time: 34.19 s
+Epoch 79/500, train error: 0.106150, val error: 0.116084. Elapsed time: 34.13 s
+Epoch 80/500, train error: 0.105917, val error: 0.115920. Elapsed time: 34.17 s
+Epoch 81/500, train error: 0.105690, val error: 0.115760. Elapsed time: 34.17 s
+Epoch 82/500, train error: 0.105470, val error: 0.115606. Elapsed time: 34.18 s
+Epoch 83/500, train error: 0.105254, val error: 0.115455. Elapsed time: 34.18 s
+Epoch 84/500, train error: 0.105044, val error: 0.115310. Elapsed time: 34.18 s
+Epoch 85/500, train error: 0.104838, val error: 0.115171. Elapsed time: 34.18 s
+Epoch 86/500, train error: 0.104638, val error: 0.115035. Elapsed time: 34.16 s
+Epoch 87/500, train error: 0.104443, val error: 0.114901. Elapsed time: 34.20 s
+Epoch 88/500, train error: 0.104252, val error: 0.114772. Elapsed time: 34.23 s
+Epoch 89/500, train error: 0.104065, val error: 0.114646. Elapsed time: 34.21 s
+Epoch 90/500, train error: 0.103883, val error: 0.114524. Elapsed time: 34.17 s
+Epoch 91/500, train error: 0.103704, val error: 0.114406. Elapsed time: 34.18 s
+Epoch 92/500, train error: 0.103529, val error: 0.114289. Elapsed time: 34.20 s
+Epoch 93/500, train error: 0.103357, val error: 0.114175. Elapsed time: 34.21 s
+Epoch 94/500, train error: 0.103189, val error: 0.114065. Elapsed time: 34.14 s
+Epoch 95/500, train error: 0.103024, val error: 0.113958. Elapsed time: 34.17 s
+Epoch 96/500, train error: 0.102862, val error: 0.113853. Elapsed time: 34.19 s
+Epoch 97/500, train error: 0.102703, val error: 0.113752. Elapsed time: 34.14 s
+Epoch 98/500, train error: 0.102547, val error: 0.113652. Elapsed time: 34.17 s
+Epoch 99/500, train error: 0.102394, val error: 0.113555. Elapsed time: 34.19 s
+Epoch 100/500, train error: 0.102243, val error: 0.113460. Elapsed time: 34.18 s
+Epoch 101/500, train error: 0.102094, val error: 0.113366. Elapsed time: 34.19 s
+Epoch 102/500, train error: 0.101947, val error: 0.113275. Elapsed time: 34.20 s
+Epoch 103/500, train error: 0.101803, val error: 0.113186. Elapsed time: 34.15 s
+Epoch 104/500, train error: 0.101662, val error: 0.113098. Elapsed time: 34.17 s
+Epoch 105/500, train error: 0.101522, val error: 0.113013. Elapsed time: 34.17 s
+Epoch 106/500, train error: 0.101383, val error: 0.112930. Elapsed time: 34.18 s
+Epoch 107/500, train error: 0.101247, val error: 0.112846. Elapsed time: 34.20 s
+Epoch 108/500, train error: 0.101113, val error: 0.112764. Elapsed time: 34.22 s
+Epoch 109/500, train error: 0.100980, val error: 0.112683. Elapsed time: 34.20 s
+Epoch 110/500, train error: 0.100850, val error: 0.112605. Elapsed time: 34.24 s
+Epoch 111/500, train error: 0.100720, val error: 0.112527. Elapsed time: 34.18 s
+Epoch 112/500, train error: 0.100592, val error: 0.112450. Elapsed time: 34.23 s
+Epoch 113/500, train error: 0.100467, val error: 0.112374. Elapsed time: 34.22 s
+Epoch 114/500, train error: 0.100342, val error: 0.112300. Elapsed time: 34.12 s
+Epoch 115/500, train error: 0.100218, val error: 0.112227. Elapsed time: 34.14 s
+Epoch 116/500, train error: 0.100096, val error: 0.112155. Elapsed time: 34.21 s
+Epoch 117/500, train error: 0.099975, val error: 0.112084. Elapsed time: 34.16 s
+Epoch 118/500, train error: 0.099856, val error: 0.112014. Elapsed time: 34.20 s
+Epoch 119/500, train error: 0.099737, val error: 0.111944. Elapsed time: 34.14 s
+Epoch 120/500, train error: 0.099618, val error: 0.111876. Elapsed time: 34.17 s
+Epoch 121/500, train error: 0.099502, val error: 0.111810. Elapsed time: 34.17 s
+Epoch 122/500, train error: 0.099386, val error: 0.111741. Elapsed time: 34.15 s
+Epoch 123/500, train error: 0.099271, val error: 0.111676. Elapsed time: 34.17 s
+Epoch 124/500, train error: 0.099158, val error: 0.111609. Elapsed time: 34.20 s
+Epoch 125/500, train error: 0.099045, val error: 0.111544. Elapsed time: 34.16 s
+Epoch 126/500, train error: 0.098933, val error: 0.111481. Elapsed time: 34.20 s
+Epoch 127/500, train error: 0.098821, val error: 0.111418. Elapsed time: 34.20 s
+Epoch 128/500, train error: 0.098710, val error: 0.111355. Elapsed time: 34.24 s
+Epoch 129/500, train error: 0.098599, val error: 0.111292. Elapsed time: 34.16 s
+Epoch 130/500, train error: 0.098490, val error: 0.111230. Elapsed time: 34.19 s
+Epoch 131/500, train error: 0.098380, val error: 0.111170. Elapsed time: 34.22 s
+Epoch 132/500, train error: 0.098272, val error: 0.111110. Elapsed time: 34.22 s
+Epoch 133/500, train error: 0.098164, val error: 0.111050. Elapsed time: 34.17 s
+Epoch 134/500, train error: 0.098057, val error: 0.110991. Elapsed time: 34.18 s
+Epoch 135/500, train error: 0.097951, val error: 0.110932. Elapsed time: 34.15 s
+Epoch 136/500, train error: 0.097846, val error: 0.110875. Elapsed time: 34.19 s
+Epoch 137/500, train error: 0.097742, val error: 0.110818. Elapsed time: 34.13 s
+Epoch 138/500, train error: 0.097638, val error: 0.110759. Elapsed time: 34.21 s
+Epoch 139/500, train error: 0.097535, val error: 0.110702. Elapsed time: 34.21 s
+Epoch 140/500, train error: 0.097431, val error: 0.110645. Elapsed time: 34.22 s
+Epoch 141/500, train error: 0.097329, val error: 0.110591. Elapsed time: 34.18 s
+Epoch 142/500, train error: 0.097227, val error: 0.110536. Elapsed time: 34.13 s
+Epoch 143/500, train error: 0.097125, val error: 0.110481. Elapsed time: 34.22 s
+Epoch 144/500, train error: 0.097024, val error: 0.110426. Elapsed time: 34.19 s
+Epoch 145/500, train error: 0.096924, val error: 0.110372. Elapsed time: 34.18 s
+Epoch 146/500, train error: 0.096824, val error: 0.110319. Elapsed time: 34.13 s
+Epoch 147/500, train error: 0.096725, val error: 0.110266. Elapsed time: 34.19 s
+Epoch 148/500, train error: 0.096626, val error: 0.110212. Elapsed time: 34.22 s
+Epoch 149/500, train error: 0.096527, val error: 0.110159. Elapsed time: 34.24 s
+Epoch 150/500, train error: 0.096429, val error: 0.110109. Elapsed time: 34.19 s
+Epoch 151/500, train error: 0.096332, val error: 0.110059. Elapsed time: 34.16 s
+Epoch 152/500, train error: 0.096235, val error: 0.110010. Elapsed time: 34.27 s
+Epoch 153/500, train error: 0.096140, val error: 0.109958. Elapsed time: 34.13 s
+Epoch 154/500, train error: 0.096043, val error: 0.109911. Elapsed time: 34.16 s
+Epoch 155/500, train error: 0.095949, val error: 0.109862. Elapsed time: 34.19 s
+Epoch 156/500, train error: 0.095855, val error: 0.109813. Elapsed time: 34.18 s
+Epoch 157/500, train error: 0.095761, val error: 0.109764. Elapsed time: 34.21 s
+Epoch 158/500, train error: 0.095668, val error: 0.109720. Elapsed time: 34.13 s
+Epoch 159/500, train error: 0.095575, val error: 0.109675. Elapsed time: 34.20 s
+Epoch 160/500, train error: 0.095481, val error: 0.109628. Elapsed time: 34.19 s
+Epoch 161/500, train error: 0.095390, val error: 0.109585. Elapsed time: 34.17 s
+Epoch 162/500, train error: 0.095298, val error: 0.109539. Elapsed time: 34.19 s
+Epoch 163/500, train error: 0.095207, val error: 0.109492. Elapsed time: 34.19 s
+Epoch 164/500, train error: 0.095116, val error: 0.109447. Elapsed time: 34.21 s
+Epoch 165/500, train error: 0.095025, val error: 0.109403. Elapsed time: 34.16 s
+Epoch 166/500, train error: 0.094935, val error: 0.109361. Elapsed time: 34.16 s
+Epoch 167/500, train error: 0.094845, val error: 0.109313. Elapsed time: 34.23 s
+Epoch 168/500, train error: 0.094755, val error: 0.109268. Elapsed time: 34.17 s
+Epoch 169/500, train error: 0.094665, val error: 0.109224. Elapsed time: 34.20 s
+Epoch 170/500, train error: 0.094577, val error: 0.109184. Elapsed time: 34.23 s
+Epoch 171/500, train error: 0.094487, val error: 0.109138. Elapsed time: 34.26 s
+Epoch 172/500, train error: 0.094398, val error: 0.109095. Elapsed time: 34.17 s
+Epoch 173/500, train error: 0.094311, val error: 0.109051. Elapsed time: 34.23 s
+Epoch 174/500, train error: 0.094222, val error: 0.109009. Elapsed time: 34.22 s
+Epoch 175/500, train error: 0.094135, val error: 0.108967. Elapsed time: 34.22 s
+Epoch 176/500, train error: 0.094046, val error: 0.108920. Elapsed time: 34.15 s
+Epoch 177/500, train error: 0.093959, val error: 0.108878. Elapsed time: 34.23 s
+Epoch 178/500, train error: 0.093871, val error: 0.108836. Elapsed time: 34.22 s
+Epoch 179/500, train error: 0.093784, val error: 0.108793. Elapsed time: 34.21 s
+Epoch 180/500, train error: 0.093699, val error: 0.108748. Elapsed time: 34.17 s
+Epoch 181/500, train error: 0.093611, val error: 0.108705. Elapsed time: 34.20 s
+Epoch 182/500, train error: 0.093525, val error: 0.108657. Elapsed time: 34.21 s
+Epoch 183/500, train error: 0.093440, val error: 0.108614. Elapsed time: 34.19 s
+Epoch 184/500, train error: 0.093354, val error: 0.108573. Elapsed time: 34.19 s
+Epoch 185/500, train error: 0.093268, val error: 0.108527. Elapsed time: 34.19 s
+Epoch 186/500, train error: 0.093181, val error: 0.108484. Elapsed time: 34.18 s
+Epoch 187/500, train error: 0.093096, val error: 0.108438. Elapsed time: 34.23 s
+Epoch 188/500, train error: 0.093011, val error: 0.108396. Elapsed time: 34.15 s
+Epoch 189/500, train error: 0.092925, val error: 0.108356. Elapsed time: 34.19 s
+Epoch 190/500, train error: 0.092840, val error: 0.108308. Elapsed time: 34.17 s
+Epoch 191/500, train error: 0.092756, val error: 0.108268. Elapsed time: 34.21 s
+Epoch 192/500, train error: 0.092672, val error: 0.108230. Elapsed time: 34.14 s
+Epoch 193/500, train error: 0.092587, val error: 0.108191. Elapsed time: 34.12 s
+Epoch 194/500, train error: 0.092503, val error: 0.108146. Elapsed time: 34.17 s
+Epoch 195/500, train error: 0.092419, val error: 0.108106. Elapsed time: 34.27 s
+Epoch 196/500, train error: 0.092334, val error: 0.108066. Elapsed time: 34.21 s
+Epoch 197/500, train error: 0.092250, val error: 0.108024. Elapsed time: 34.20 s
+Epoch 198/500, train error: 0.092167, val error: 0.107983. Elapsed time: 34.20 s
+Epoch 199/500, train error: 0.092083, val error: 0.107941. Elapsed time: 34.22 s
+Epoch 200/500, train error: 0.091999, val error: 0.107899. Elapsed time: 34.17 s
+Epoch 201/500, train error: 0.091916, val error: 0.107856. Elapsed time: 34.19 s
+Epoch 202/500, train error: 0.091834, val error: 0.107817. Elapsed time: 35.03 s
+Epoch 203/500, train error: 0.091752, val error: 0.107768. Elapsed time: 35.08 s
+Epoch 204/500, train error: 0.091670, val error: 0.107727. Elapsed time: 34.53 s
+Epoch 205/500, train error: 0.091588, val error: 0.107684. Elapsed time: 34.46 s
+Epoch 206/500, train error: 0.091506, val error: 0.107643. Elapsed time: 34.71 s
+Epoch 207/500, train error: 0.091424, val error: 0.107600. Elapsed time: 34.53 s
+Epoch 208/500, train error: 0.091342, val error: 0.107560. Elapsed time: 34.46 s
+Epoch 209/500, train error: 0.091260, val error: 0.107519. Elapsed time: 34.65 s
+Epoch 210/500, train error: 0.091179, val error: 0.107473. Elapsed time: 34.53 s
+Epoch 211/500, train error: 0.091097, val error: 0.107444. Elapsed time: 34.49 s
+Epoch 212/500, train error: 0.091017, val error: 0.107407. Elapsed time: 34.66 s
+Epoch 213/500, train error: 0.090937, val error: 0.107361. Elapsed time: 34.64 s
+Epoch 214/500, train error: 0.090858, val error: 0.107324. Elapsed time: 34.62 s
+Epoch 215/500, train error: 0.090780, val error: 0.107286. Elapsed time: 34.69 s
+Epoch 216/500, train error: 0.090702, val error: 0.107250. Elapsed time: 35.29 s
+Epoch 217/500, train error: 0.090623, val error: 0.107206. Elapsed time: 35.30 s
+Epoch 218/500, train error: 0.090544, val error: 0.107161. Elapsed time: 35.20 s
+Epoch 219/500, train error: 0.090465, val error: 0.107123. Elapsed time: 35.18 s
+Epoch 220/500, train error: 0.090388, val error: 0.107080. Elapsed time: 35.34 s
+Epoch 221/500, train error: 0.090311, val error: 0.107046. Elapsed time: 36.55 s
+Epoch 222/500, train error: 0.090234, val error: 0.107017. Elapsed time: 35.09 s
+Epoch 223/500, train error: 0.090157, val error: 0.106977. Elapsed time: 34.86 s
+Epoch 224/500, train error: 0.090081, val error: 0.106940. Elapsed time: 34.97 s
+Epoch 225/500, train error: 0.090005, val error: 0.106913. Elapsed time: 35.45 s
+Epoch 226/500, train error: 0.089929, val error: 0.106871. Elapsed time: 35.10 s
+Epoch 227/500, train error: 0.089856, val error: 0.106840. Elapsed time: 35.63 s
+Epoch 228/500, train error: 0.089781, val error: 0.106797. Elapsed time: 35.35 s
+Epoch 229/500, train error: 0.089709, val error: 0.106762. Elapsed time: 36.35 s
+Epoch 230/500, train error: 0.089634, val error: 0.106730. Elapsed time: 36.75 s
+Epoch 231/500, train error: 0.089562, val error: 0.106696. Elapsed time: 34.83 s
+Epoch 232/500, train error: 0.089489, val error: 0.106660. Elapsed time: 35.44 s
+Epoch 233/500, train error: 0.089416, val error: 0.106635. Elapsed time: 34.91 s
+Epoch 234/500, train error: 0.089343, val error: 0.106598. Elapsed time: 36.55 s
+Epoch 235/500, train error: 0.089271, val error: 0.106556. Elapsed time: 37.25 s
+Epoch 236/500, train error: 0.089199, val error: 0.106512. Elapsed time: 36.02 s
+Epoch 237/500, train error: 0.089128, val error: 0.106478. Elapsed time: 35.06 s
+Epoch 238/500, train error: 0.089058, val error: 0.106448. Elapsed time: 35.00 s
+Epoch 239/500, train error: 0.088987, val error: 0.106412. Elapsed time: 35.31 s
+Epoch 240/500, train error: 0.088916, val error: 0.106384. Elapsed time: 34.58 s
+Epoch 241/500, train error: 0.088845, val error: 0.106352. Elapsed time: 36.31 s
+Epoch 242/500, train error: 0.088775, val error: 0.106322. Elapsed time: 34.80 s
+Epoch 243/500, train error: 0.088704, val error: 0.106286. Elapsed time: 34.43 s
+Epoch 244/500, train error: 0.088635, val error: 0.106244. Elapsed time: 35.04 s
+Epoch 245/500, train error: 0.088566, val error: 0.106216. Elapsed time: 35.53 s
+Epoch 246/500, train error: 0.088497, val error: 0.106180. Elapsed time: 35.56 s
+Epoch 247/500, train error: 0.088428, val error: 0.106155. Elapsed time: 34.46 s
+Epoch 248/500, train error: 0.088359, val error: 0.106111. Elapsed time: 34.38 s
+Epoch 249/500, train error: 0.088290, val error: 0.106078. Elapsed time: 34.34 s
+Epoch 250/500, train error: 0.088223, val error: 0.106050. Elapsed time: 34.38 s
+Epoch 251/500, train error: 0.088156, val error: 0.106014. Elapsed time: 34.32 s
+Epoch 252/500, train error: 0.088089, val error: 0.105977. Elapsed time: 34.47 s
+Epoch 253/500, train error: 0.088023, val error: 0.105950. Elapsed time: 34.34 s
+Epoch 254/500, train error: 0.087956, val error: 0.105921. Elapsed time: 34.26 s
+Epoch 255/500, train error: 0.087889, val error: 0.105897. Elapsed time: 34.40 s
+Epoch 256/500, train error: 0.087823, val error: 0.105862. Elapsed time: 34.33 s
+Epoch 257/500, train error: 0.087756, val error: 0.105830. Elapsed time: 34.26 s
+Epoch 258/500, train error: 0.087691, val error: 0.105802. Elapsed time: 34.74 s
+Epoch 259/500, train error: 0.087623, val error: 0.105759. Elapsed time: 35.15 s
+Epoch 260/500, train error: 0.087559, val error: 0.105726. Elapsed time: 34.17 s
+Epoch 261/500, train error: 0.087495, val error: 0.105689. Elapsed time: 34.24 s
+Epoch 262/500, train error: 0.087430, val error: 0.105654. Elapsed time: 34.43 s
+Epoch 263/500, train error: 0.087365, val error: 0.105617. Elapsed time: 34.42 s
+Epoch 264/500, train error: 0.087301, val error: 0.105586. Elapsed time: 34.54 s
+Epoch 265/500, train error: 0.087236, val error: 0.105555. Elapsed time: 36.82 s
+Epoch 266/500, train error: 0.087174, val error: 0.105516. Elapsed time: 39.24 s
+Epoch 267/500, train error: 0.087113, val error: 0.105467. Elapsed time: 37.77 s
+Epoch 268/500, train error: 0.087049, val error: 0.105429. Elapsed time: 35.80 s
+Epoch 269/500, train error: 0.086986, val error: 0.105402. Elapsed time: 35.00 s
+Epoch 270/500, train error: 0.086924, val error: 0.105375. Elapsed time: 34.46 s
+Epoch 271/500, train error: 0.086863, val error: 0.105328. Elapsed time: 34.63 s
+Epoch 272/500, train error: 0.086800, val error: 0.105300. Elapsed time: 34.62 s
+Epoch 273/500, train error: 0.086739, val error: 0.105273. Elapsed time: 34.38 s
+Epoch 274/500, train error: 0.086678, val error: 0.105245. Elapsed time: 34.57 s
+Epoch 275/500, train error: 0.086617, val error: 0.105213. Elapsed time: 34.47 s
+Epoch 276/500, train error: 0.086557, val error: 0.105170. Elapsed time: 34.54 s
+Epoch 277/500, train error: 0.086497, val error: 0.105128. Elapsed time: 34.41 s
+Epoch 278/500, train error: 0.086437, val error: 0.105098. Elapsed time: 35.14 s
+Epoch 279/500, train error: 0.086378, val error: 0.105069. Elapsed time: 35.07 s
+Epoch 280/500, train error: 0.086320, val error: 0.105040. Elapsed time: 36.22 s
+Epoch 281/500, train error: 0.086260, val error: 0.105005. Elapsed time: 34.60 s
+Epoch 282/500, train error: 0.086200, val error: 0.104952. Elapsed time: 34.42 s
+Epoch 283/500, train error: 0.086139, val error: 0.104911. Elapsed time: 34.67 s
+Epoch 284/500, train error: 0.086080, val error: 0.104872. Elapsed time: 34.81 s
+Epoch 285/500, train error: 0.086020, val error: 0.104826. Elapsed time: 34.67 s
+Epoch 286/500, train error: 0.085961, val error: 0.104787. Elapsed time: 34.72 s
+Epoch 287/500, train error: 0.085903, val error: 0.104749. Elapsed time: 34.57 s
+Epoch 288/500, train error: 0.085845, val error: 0.104714. Elapsed time: 34.55 s
+Epoch 289/500, train error: 0.085787, val error: 0.104667. Elapsed time: 34.41 s
+Epoch 290/500, train error: 0.085729, val error: 0.104624. Elapsed time: 34.29 s
+Epoch 291/500, train error: 0.085672, val error: 0.104589. Elapsed time: 34.35 s
+Epoch 292/500, train error: 0.085616, val error: 0.104545. Elapsed time: 34.37 s
+Epoch 293/500, train error: 0.085560, val error: 0.104504. Elapsed time: 34.36 s
+Epoch 294/500, train error: 0.085503, val error: 0.104478. Elapsed time: 34.48 s
+Epoch 295/500, train error: 0.085445, val error: 0.104445. Elapsed time: 34.31 s
+Epoch 296/500, train error: 0.085390, val error: 0.104401. Elapsed time: 34.41 s
+Epoch 297/500, train error: 0.085333, val error: 0.104364. Elapsed time: 34.34 s
+Epoch 298/500, train error: 0.085276, val error: 0.104338. Elapsed time: 34.33 s
+Epoch 299/500, train error: 0.085219, val error: 0.104301. Elapsed time: 34.31 s
+Epoch 300/500, train error: 0.085164, val error: 0.104272. Elapsed time: 34.35 s
+Epoch 301/500, train error: 0.085108, val error: 0.104215. Elapsed time: 34.41 s
+Epoch 302/500, train error: 0.085054, val error: 0.104166. Elapsed time: 34.32 s
+Epoch 303/500, train error: 0.084999, val error: 0.104139. Elapsed time: 34.36 s
+Epoch 304/500, train error: 0.084945, val error: 0.104091. Elapsed time: 34.36 s
+Epoch 305/500, train error: 0.084890, val error: 0.104062. Elapsed time: 34.37 s
+Epoch 306/500, train error: 0.084836, val error: 0.104003. Elapsed time: 34.31 s
+Epoch 307/500, train error: 0.084782, val error: 0.103984. Elapsed time: 34.27 s
+Epoch 308/500, train error: 0.084730, val error: 0.103953. Elapsed time: 34.31 s
+Epoch 309/500, train error: 0.084676, val error: 0.103913. Elapsed time: 34.36 s
+Epoch 310/500, train error: 0.084621, val error: 0.103886. Elapsed time: 34.49 s
+Epoch 311/500, train error: 0.084567, val error: 0.103863. Elapsed time: 34.42 s
+Epoch 312/500, train error: 0.084514, val error: 0.103821. Elapsed time: 34.17 s
+Epoch 313/500, train error: 0.084461, val error: 0.103783. Elapsed time: 34.27 s
+Epoch 314/500, train error: 0.084407, val error: 0.103750. Elapsed time: 34.29 s
+Epoch 315/500, train error: 0.084354, val error: 0.103722. Elapsed time: 34.25 s
+Epoch 316/500, train error: 0.084302, val error: 0.103686. Elapsed time: 34.18 s
+Epoch 317/500, train error: 0.084251, val error: 0.103658. Elapsed time: 34.18 s
+Epoch 318/500, train error: 0.084198, val error: 0.103618. Elapsed time: 34.21 s
+Epoch 319/500, train error: 0.084146, val error: 0.103576. Elapsed time: 34.33 s
+Epoch 320/500, train error: 0.084094, val error: 0.103537. Elapsed time: 34.16 s
+Epoch 321/500, train error: 0.084042, val error: 0.103489. Elapsed time: 34.21 s
+Epoch 322/500, train error: 0.083991, val error: 0.103449. Elapsed time: 34.17 s
+Epoch 323/500, train error: 0.083940, val error: 0.103410. Elapsed time: 34.19 s
+Epoch 324/500, train error: 0.083889, val error: 0.103369. Elapsed time: 34.17 s
+Epoch 325/500, train error: 0.083838, val error: 0.103310. Elapsed time: 34.28 s
+Epoch 326/500, train error: 0.083786, val error: 0.103270. Elapsed time: 34.14 s
+Epoch 327/500, train error: 0.083736, val error: 0.103232. Elapsed time: 34.24 s
+Epoch 328/500, train error: 0.083685, val error: 0.103179. Elapsed time: 34.18 s
+Epoch 329/500, train error: 0.083634, val error: 0.103135. Elapsed time: 34.18 s
+Epoch 330/500, train error: 0.083585, val error: 0.103098. Elapsed time: 34.16 s
+Epoch 331/500, train error: 0.083536, val error: 0.103039. Elapsed time: 34.28 s
+Epoch 332/500, train error: 0.083488, val error: 0.103019. Elapsed time: 34.22 s
+Epoch 333/500, train error: 0.083439, val error: 0.102962. Elapsed time: 34.21 s
+Epoch 334/500, train error: 0.083391, val error: 0.102913. Elapsed time: 34.12 s
+Epoch 335/500, train error: 0.083343, val error: 0.102881. Elapsed time: 34.20 s
+Epoch 336/500, train error: 0.083296, val error: 0.102844. Elapsed time: 34.28 s
+Epoch 337/500, train error: 0.083247, val error: 0.102798. Elapsed time: 34.19 s
+Epoch 338/500, train error: 0.083199, val error: 0.102754. Elapsed time: 34.21 s
+Epoch 339/500, train error: 0.083155, val error: 0.102715. Elapsed time: 34.15 s
+Epoch 340/500, train error: 0.083107, val error: 0.102677. Elapsed time: 34.17 s
+Epoch 341/500, train error: 0.083061, val error: 0.102634. Elapsed time: 34.20 s
+Epoch 342/500, train error: 0.083013, val error: 0.102598. Elapsed time: 34.15 s
+Epoch 343/500, train error: 0.082964, val error: 0.102552. Elapsed time: 34.20 s
+Epoch 344/500, train error: 0.082918, val error: 0.102510. Elapsed time: 34.11 s
+Epoch 345/500, train error: 0.082871, val error: 0.102459. Elapsed time: 34.19 s
+Epoch 346/500, train error: 0.082825, val error: 0.102427. Elapsed time: 34.14 s
+Epoch 347/500, train error: 0.082779, val error: 0.102377. Elapsed time: 34.16 s
+Epoch 348/500, train error: 0.082733, val error: 0.102346. Elapsed time: 34.18 s
+Epoch 349/500, train error: 0.082688, val error: 0.102298. Elapsed time: 34.22 s
+Epoch 350/500, train error: 0.082643, val error: 0.102257. Elapsed time: 34.20 s
+Epoch 351/500, train error: 0.082597, val error: 0.102214. Elapsed time: 34.18 s
+Epoch 352/500, train error: 0.082554, val error: 0.102168. Elapsed time: 34.88 s
+Epoch 353/500, train error: 0.082508, val error: 0.102142. Elapsed time: 34.49 s
+Epoch 354/500, train error: 0.082461, val error: 0.102103. Elapsed time: 34.18 s
+Epoch 355/500, train error: 0.082418, val error: 0.102061. Elapsed time: 34.20 s
+Epoch 356/500, train error: 0.082373, val error: 0.102009. Elapsed time: 34.52 s
+Epoch 357/500, train error: 0.082330, val error: 0.101976. Elapsed time: 34.92 s
+Epoch 358/500, train error: 0.082286, val error: 0.101943. Elapsed time: 34.91 s
+Epoch 359/500, train error: 0.082242, val error: 0.101933. Elapsed time: 35.55 s
+Epoch 360/500, train error: 0.082197, val error: 0.101881. Elapsed time: 35.35 s
+Epoch 361/500, train error: 0.082154, val error: 0.101851. Elapsed time: 34.53 s
+Epoch 362/500, train error: 0.082112, val error: 0.101818. Elapsed time: 34.89 s
+Epoch 363/500, train error: 0.082068, val error: 0.101784. Elapsed time: 34.81 s
+Epoch 364/500, train error: 0.082026, val error: 0.101734. Elapsed time: 34.58 s
+Epoch 365/500, train error: 0.081984, val error: 0.101683. Elapsed time: 34.14 s
+Epoch 366/500, train error: 0.081942, val error: 0.101649. Elapsed time: 34.39 s
+Epoch 367/500, train error: 0.081899, val error: 0.101602. Elapsed time: 34.30 s
+Epoch 368/500, train error: 0.081857, val error: 0.101563. Elapsed time: 34.49 s
+Epoch 369/500, train error: 0.081815, val error: 0.101515. Elapsed time: 34.36 s
+Epoch 370/500, train error: 0.081773, val error: 0.101490. Elapsed time: 35.89 s
+Epoch 371/500, train error: 0.081731, val error: 0.101438. Elapsed time: 35.25 s
+Epoch 372/500, train error: 0.081689, val error: 0.101396. Elapsed time: 35.42 s
+Epoch 373/500, train error: 0.081649, val error: 0.101369. Elapsed time: 35.64 s
+Epoch 374/500, train error: 0.081609, val error: 0.101337. Elapsed time: 35.65 s
+Epoch 375/500, train error: 0.081568, val error: 0.101286. Elapsed time: 34.93 s
+Epoch 376/500, train error: 0.081527, val error: 0.101230. Elapsed time: 34.43 s
+Epoch 377/500, train error: 0.081487, val error: 0.101200. Elapsed time: 34.35 s
+Epoch 378/500, train error: 0.081445, val error: 0.101166. Elapsed time: 34.31 s
+Epoch 379/500, train error: 0.081405, val error: 0.101133. Elapsed time: 34.35 s
+Epoch 380/500, train error: 0.081365, val error: 0.101091. Elapsed time: 34.26 s
+Epoch 381/500, train error: 0.081325, val error: 0.101061. Elapsed time: 34.42 s
+Epoch 382/500, train error: 0.081284, val error: 0.101011. Elapsed time: 34.31 s
+Epoch 383/500, train error: 0.081243, val error: 0.100981. Elapsed time: 34.23 s
+Epoch 384/500, train error: 0.081205, val error: 0.100942. Elapsed time: 34.25 s
+Epoch 385/500, train error: 0.081165, val error: 0.100904. Elapsed time: 34.30 s
+Epoch 386/500, train error: 0.081126, val error: 0.100865. Elapsed time: 34.26 s
+Epoch 387/500, train error: 0.081088, val error: 0.100823. Elapsed time: 35.31 s
+Epoch 388/500, train error: 0.081051, val error: 0.100776. Elapsed time: 34.78 s
+Epoch 389/500, train error: 0.081011, val error: 0.100741. Elapsed time: 35.24 s
+Epoch 390/500, train error: 0.080972, val error: 0.100699. Elapsed time: 34.74 s
+Epoch 391/500, train error: 0.080934, val error: 0.100672. Elapsed time: 34.72 s
+Epoch 392/500, train error: 0.080896, val error: 0.100649. Elapsed time: 34.94 s
+Epoch 393/500, train error: 0.080858, val error: 0.100605. Elapsed time: 34.23 s
+Epoch 394/500, train error: 0.080819, val error: 0.100575. Elapsed time: 34.25 s
+Epoch 395/500, train error: 0.080781, val error: 0.100533. Elapsed time: 34.71 s
+Epoch 396/500, train error: 0.080743, val error: 0.100483. Elapsed time: 35.59 s
+Epoch 397/500, train error: 0.080706, val error: 0.100437. Elapsed time: 34.46 s
+Epoch 398/500, train error: 0.080669, val error: 0.100397. Elapsed time: 34.21 s
+Epoch 399/500, train error: 0.080631, val error: 0.100375. Elapsed time: 34.21 s
+Epoch 400/500, train error: 0.080593, val error: 0.100347. Elapsed time: 34.22 s
+Epoch 401/500, train error: 0.080555, val error: 0.100333. Elapsed time: 34.25 s
+Epoch 402/500, train error: 0.080517, val error: 0.100282. Elapsed time: 34.35 s
+Epoch 403/500, train error: 0.080479, val error: 0.100251. Elapsed time: 35.29 s
+Epoch 404/500, train error: 0.080441, val error: 0.100212. Elapsed time: 34.36 s
+Epoch 405/500, train error: 0.080404, val error: 0.100178. Elapsed time: 34.24 s
+Epoch 406/500, train error: 0.080368, val error: 0.100123. Elapsed time: 34.13 s
+Epoch 407/500, train error: 0.080332, val error: 0.100082. Elapsed time: 34.22 s
+Epoch 408/500, train error: 0.080294, val error: 0.100053. Elapsed time: 34.23 s
+Epoch 409/500, train error: 0.080258, val error: 0.100014. Elapsed time: 34.19 s
+Epoch 410/500, train error: 0.080222, val error: 0.099989. Elapsed time: 34.15 s
+Epoch 411/500, train error: 0.080187, val error: 0.099957. Elapsed time: 34.15 s
+Epoch 412/500, train error: 0.080151, val error: 0.099910. Elapsed time: 34.23 s
+Epoch 413/500, train error: 0.080113, val error: 0.099881. Elapsed time: 34.22 s
+Epoch 414/500, train error: 0.080075, val error: 0.099839. Elapsed time: 34.17 s
+Epoch 415/500, train error: 0.080040, val error: 0.099812. Elapsed time: 34.24 s
+Epoch 416/500, train error: 0.080003, val error: 0.099789. Elapsed time: 34.50 s
+Epoch 417/500, train error: 0.079968, val error: 0.099766. Elapsed time: 34.29 s
+Epoch 418/500, train error: 0.079932, val error: 0.099726. Elapsed time: 34.30 s
+Epoch 419/500, train error: 0.079898, val error: 0.099696. Elapsed time: 34.29 s
+Epoch 420/500, train error: 0.079861, val error: 0.099665. Elapsed time: 34.34 s
+Epoch 421/500, train error: 0.079827, val error: 0.099638. Elapsed time: 34.29 s
+Epoch 422/500, train error: 0.079792, val error: 0.099606. Elapsed time: 34.27 s
+Epoch 423/500, train error: 0.079756, val error: 0.099571. Elapsed time: 34.26 s
+Epoch 424/500, train error: 0.079721, val error: 0.099542. Elapsed time: 34.32 s
+Epoch 425/500, train error: 0.079685, val error: 0.099505. Elapsed time: 34.33 s
+Epoch 426/500, train error: 0.079649, val error: 0.099463. Elapsed time: 34.43 s
+Epoch 427/500, train error: 0.079614, val error: 0.099438. Elapsed time: 34.30 s
+Epoch 428/500, train error: 0.079580, val error: 0.099406. Elapsed time: 34.26 s
+Epoch 429/500, train error: 0.079544, val error: 0.099377. Elapsed time: 34.32 s
+Epoch 430/500, train error: 0.079508, val error: 0.099346. Elapsed time: 34.41 s
+Epoch 431/500, train error: 0.079473, val error: 0.099311. Elapsed time: 34.21 s
+Epoch 432/500, train error: 0.079439, val error: 0.099297. Elapsed time: 34.16 s
+Epoch 433/500, train error: 0.079405, val error: 0.099255. Elapsed time: 34.13 s
+Epoch 434/500, train error: 0.079371, val error: 0.099233. Elapsed time: 34.17 s
+Epoch 435/500, train error: 0.079336, val error: 0.099204. Elapsed time: 34.51 s
+Epoch 436/500, train error: 0.079302, val error: 0.099160. Elapsed time: 34.24 s
+Epoch 437/500, train error: 0.079267, val error: 0.099120. Elapsed time: 34.86 s
+Epoch 438/500, train error: 0.079232, val error: 0.099091. Elapsed time: 34.66 s
+Epoch 439/500, train error: 0.079197, val error: 0.099066. Elapsed time: 34.37 s
+Epoch 440/500, train error: 0.079164, val error: 0.099043. Elapsed time: 34.23 s
+Epoch 441/500, train error: 0.079129, val error: 0.099008. Elapsed time: 34.29 s
+Epoch 442/500, train error: 0.079095, val error: 0.098973. Elapsed time: 34.26 s
+Epoch 443/500, train error: 0.079061, val error: 0.098951. Elapsed time: 34.23 s
+Epoch 444/500, train error: 0.079027, val error: 0.098902. Elapsed time: 34.34 s
+Epoch 445/500, train error: 0.078993, val error: 0.098869. Elapsed time: 34.31 s
+Epoch 446/500, train error: 0.078959, val error: 0.098840. Elapsed time: 34.27 s
+Epoch 447/500, train error: 0.078925, val error: 0.098811. Elapsed time: 34.41 s
+Epoch 448/500, train error: 0.078890, val error: 0.098779. Elapsed time: 34.22 s
+Epoch 449/500, train error: 0.078856, val error: 0.098741. Elapsed time: 34.46 s
+Epoch 450/500, train error: 0.078822, val error: 0.098696. Elapsed time: 34.24 s
+Epoch 451/500, train error: 0.078787, val error: 0.098650. Elapsed time: 34.30 s
+Epoch 452/500, train error: 0.078755, val error: 0.098617. Elapsed time: 34.31 s
+Epoch 453/500, train error: 0.078722, val error: 0.098580. Elapsed time: 34.23 s
+Epoch 454/500, train error: 0.078689, val error: 0.098551. Elapsed time: 34.31 s
+Epoch 455/500, train error: 0.078655, val error: 0.098505. Elapsed time: 35.33 s
+Epoch 456/500, train error: 0.078623, val error: 0.098483. Elapsed time: 34.37 s
+Epoch 457/500, train error: 0.078590, val error: 0.098447. Elapsed time: 34.41 s
+Epoch 458/500, train error: 0.078556, val error: 0.098416. Elapsed time: 34.14 s
+Epoch 459/500, train error: 0.078523, val error: 0.098372. Elapsed time: 34.44 s
+Epoch 460/500, train error: 0.078491, val error: 0.098336. Elapsed time: 35.44 s
+Epoch 461/500, train error: 0.078457, val error: 0.098300. Elapsed time: 34.79 s
+Epoch 462/500, train error: 0.078424, val error: 0.098275. Elapsed time: 34.74 s
+Epoch 463/500, train error: 0.078391, val error: 0.098232. Elapsed time: 34.76 s
+Epoch 464/500, train error: 0.078359, val error: 0.098201. Elapsed time: 34.14 s
+Epoch 465/500, train error: 0.078325, val error: 0.098184. Elapsed time: 34.22 s
+Epoch 466/500, train error: 0.078292, val error: 0.098144. Elapsed time: 34.55 s
+Epoch 467/500, train error: 0.078259, val error: 0.098131. Elapsed time: 34.18 s
+Epoch 468/500, train error: 0.078227, val error: 0.098093. Elapsed time: 34.20 s
+Epoch 469/500, train error: 0.078194, val error: 0.098048. Elapsed time: 34.24 s
+Epoch 470/500, train error: 0.078161, val error: 0.098017. Elapsed time: 34.27 s
+Epoch 471/500, train error: 0.078129, val error: 0.097974. Elapsed time: 34.21 s
+Epoch 472/500, train error: 0.078097, val error: 0.097927. Elapsed time: 34.15 s
+Epoch 473/500, train error: 0.078064, val error: 0.097900. Elapsed time: 34.21 s
+Epoch 474/500, train error: 0.078032, val error: 0.097877. Elapsed time: 34.29 s
+Epoch 475/500, train error: 0.078000, val error: 0.097846. Elapsed time: 34.20 s
+Epoch 476/500, train error: 0.077968, val error: 0.097813. Elapsed time: 34.20 s
+Epoch 477/500, train error: 0.077935, val error: 0.097773. Elapsed time: 34.24 s
+Epoch 478/500, train error: 0.077904, val error: 0.097743. Elapsed time: 34.18 s
+Epoch 479/500, train error: 0.077873, val error: 0.097707. Elapsed time: 34.19 s
+Epoch 480/500, train error: 0.077841, val error: 0.097655. Elapsed time: 34.21 s
+Epoch 481/500, train error: 0.077808, val error: 0.097607. Elapsed time: 34.19 s
+Epoch 482/500, train error: 0.077775, val error: 0.097572. Elapsed time: 34.22 s
+Epoch 483/500, train error: 0.077743, val error: 0.097540. Elapsed time: 34.20 s
+Epoch 484/500, train error: 0.077712, val error: 0.097492. Elapsed time: 34.19 s
+Epoch 485/500, train error: 0.077680, val error: 0.097456. Elapsed time: 34.17 s
+Epoch 486/500, train error: 0.077648, val error: 0.097430. Elapsed time: 34.22 s
+Epoch 487/500, train error: 0.077618, val error: 0.097402. Elapsed time: 34.21 s
+Epoch 488/500, train error: 0.077586, val error: 0.097372. Elapsed time: 34.22 s
+Epoch 489/500, train error: 0.077555, val error: 0.097340. Elapsed time: 34.16 s
+Epoch 490/500, train error: 0.077525, val error: 0.097307. Elapsed time: 34.23 s
+Epoch 491/500, train error: 0.077493, val error: 0.097265. Elapsed time: 34.17 s
+Epoch 492/500, train error: 0.077462, val error: 0.097224. Elapsed time: 34.17 s
+Epoch 493/500, train error: 0.077431, val error: 0.097194. Elapsed time: 34.17 s
+Epoch 494/500, train error: 0.077399, val error: 0.097174. Elapsed time: 34.15 s
+Epoch 495/500, train error: 0.077368, val error: 0.097155. Elapsed time: 34.12 s
+Epoch 496/500, train error: 0.077337, val error: 0.097112. Elapsed time: 34.22 s
+Epoch 497/500, train error: 0.077306, val error: 0.097081. Elapsed time: 34.20 s
+Epoch 498/500, train error: 0.077274, val error: 0.097044. Elapsed time: 34.18 s
+Epoch 499/500, train error: 0.077243, val error: 0.097015. Elapsed time: 34.19 s
+Epoch 500/500, train error: 0.077213, val error: 0.096972. Elapsed time: 34.17 s
+Training completed in 17228.09 seconds.
