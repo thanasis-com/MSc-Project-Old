@@ -33,7 +33,7 @@ image=image.astype(numpy.float32)
 #setting parameters for the network
 data_size=(None,1,image[0][0].shape[0],image[0][0].shape[1])
 #load the pretrained network
-myNet=myTools.createPretrainedNN2(data_size,filters=numberOfFilters, modelFile=modelFilename)
+myNet=myTools.createPretrainedNN2(data_size, modelFile=modelFilename, filters=numberOfFilters)
 #make predictions for the image
 res=myNet(image)
 #crop the center of the mask

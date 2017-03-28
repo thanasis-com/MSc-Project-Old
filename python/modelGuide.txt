@@ -1,0 +1,9 @@
+THIS IS THE MODEL GUIDE
+
+
+
+
+model020New.npz:
+
+-classic network structure
+-64 filters

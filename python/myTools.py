@@ -2,6 +2,7 @@ import myClasses
 import theano
 import theano.tensor as T
 import numpy
+import sys
 from PIL import Image
 
 from os import listdir
@@ -575,20 +576,26 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	#net['conv000'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv0000'], num_filters=30, filter_size=6))
 	#net['conv00'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=35, filter_size=6))
 	#net['conv0'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv00'], num_filters=35, filter_size=6))
-	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=64, filter_size=5))
-	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv1'], pool_size=2)
-	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=64, filter_size=5))
-	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv2'], pool_size=2)
-	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=64, filter_size=5))
-	net['pool3'] = lasagne.layers.Pool2DLayer(net['conv3'], pool_size=2)
-	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=64, filter_size=5))
-	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=64, filter_size=5))
+	net['conv1'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['data'], num_filters=50, filter_size=7))
+	net['conv11'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv1'], num_filters=50, filter_size=7))
+	net['pool1'] = lasagne.layers.Pool2DLayer(net['conv11'], pool_size=2)
+	net['conv2'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool1'], num_filters=50, filter_size=7))
+	net['conv22'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv2'], num_filters=50, filter_size=7))
+	net['pool2'] = lasagne.layers.Pool2DLayer(net['conv22'], pool_size=2)
+	net['conv3'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool2'], num_filters=50, filter_size=7))
+	net['conv33'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['conv3'], num_filters=50, filter_size=7))
+	net['pool3'] = lasagne.layers.Pool2DLayer(net['conv33'], pool_size=2)
+	net['conv4'] = lasagne.layers.batch_norm(lasagne.layers.Conv2DLayer(net['pool3'], num_filters=50, filter_size=7))
+	net['deconv4']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['conv4'], num_filters=50, filter_size=7))
 	net['unpool3']= lasagne.layers.InverseLayer(net['deconv4'], net['pool3'])
-	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=64, filter_size=5))
+	net['deconv33']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool3'], num_filters=50, filter_size=7))
+	net['deconv3']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv33'], num_filters=50, filter_size=7))
 	net['unpool2']= lasagne.layers.InverseLayer(net['deconv3'], net['pool2'])
-	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=64, filter_size=5))
+	net['deconv22']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool2'], num_filters=50, filter_size=7))
+	net['deconv2']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv22'], num_filters=50, filter_size=7))
 	net['unpool1']= lasagne.layers.InverseLayer(net['deconv2'], net['pool1'])
-	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=64, filter_size=5))
+	net['deconv11']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['unpool1'], num_filters=50, filter_size=7))
+	net['deconv1']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv11'], num_filters=50, filter_size=7))
 	net['output']= lasagne.layers.batch_norm(myClasses.Deconv2DLayer(net['deconv1'], num_filters=1, filter_size=1, nonlinearity=lasagne.nonlinearities.sigmoid))
 
 
@@ -769,6 +776,8 @@ def createPretrainedNN(data_size):
 
 #same ase createPretrainedNN, but with arguments
 def createPretrainedNN2(data_size, filters, modelFile):
+
+	filters=int(filters)
 
 	#creating symbolic variables for input and output
 	input_var = T.tensor4('input')
