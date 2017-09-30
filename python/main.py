@@ -21,8 +21,8 @@ import numpy as np
 import lasagne
 from lasagne import layers
 from lasagne.updates import nesterov_momentum
-from nolearn.lasagne import NeuralNet
-from nolearn.lasagne import visualize
+#from nolearn.lasagne import NeuralNet
+#from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 import sklearn
@@ -49,7 +49,7 @@ dataSet=dataSet.astype(numpy.uint8)
 
 dataSet=myTools.cropCenter(dataSet, 83.1)#81.2 83.1
 
-dataSet=myTools.augmentData(dataSet, numOfTiles=4, overlap=False, imageWidth=850, imageHeight=850)#830 850
+dataSet=myTools.augmentData(dataSet, numOfTiles=1, overlap=False, imageWidth=850, imageHeight=850)#830 850
 
 dataSet=dataSet.astype(numpy.float32)
 
@@ -63,7 +63,7 @@ masks=masks.astype(numpy.float32)
 
 #masks=myTools.dt(masks, 20)
 
-masks=myTools.augmentData(masks, numOfTiles=4, overlap=False, imageWidth=850, imageHeight=850)
+masks=myTools.augmentData(masks, numOfTiles=1, overlap=False, imageWidth=850, imageHeight=850)
 
 masks=masks.astype(numpy.float32)
 
@@ -81,7 +81,7 @@ imgsWidth, imgsHeight =train[0][0].shape
 
 data_size=(None,1,imgsWidth,imgsHeight)
 
-numOfBatches=43#43
+numOfBatches=86
 batchSize=int(math.floor(train.shape[0]/numOfBatches))
 
 

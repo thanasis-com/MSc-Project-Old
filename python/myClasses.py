@@ -5,8 +5,7 @@ import numpy as np
 import lasagne
 from lasagne import layers
 from lasagne.updates import nesterov_momentum
-from nolearn.lasagne import NeuralNet
-from nolearn.lasagne import visualize
+#from nolearn.lasagne import visualize
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer
@@ -82,4 +81,3 @@ class Unpool2DLayer(lasagne.layers.Layer):
         input_shape = input.shape
         output_shape = self.get_output_shape_for(input_shape)
         return input.repeat(2, axis=2).repeat(2, axis=3)
-
