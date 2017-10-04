@@ -25,11 +25,18 @@ image=image[:,:,0]
 #most needed type casting
 image=image.astype(numpy.uint8)
 #crop the center
-image=myTools.cropCenter1(image, 100)
+#image=myTools.cropCenter1(image, 100)
 #this step is mysteriously needed
-image=myTools.augmentMasks(image.reshape(1,1,image.shape[0],image.shape[1]), numOfTiles=1, overlap=False, imageWidth=image.shape[0], imageHeight=image.shape[1])
+image=myTools.augmentData(image.reshape(1,1,image.shape[0],image.shape[1]), numOfTiles=1, overlap=False, imageWidth=image.shape[0], imageHeight=image.shape[1])
 #another vital type casting
 image=image.astype(numpy.float32)
+
+imageMean=numpy.mean(image, keepdims=True)
+
+
+image=image-imageMean
+
+
 #setting parameters for the network
 data_size=(None,1,image[0][0].shape[0],image[0][0].shape[1])
 #load the pretrained network

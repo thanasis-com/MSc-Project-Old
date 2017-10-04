@@ -33,7 +33,11 @@ from matplotlib import gridspec
 
 import lasagne
 from lasagne.layers import InputLayer, Conv2DLayer, DenseLayer, MaxPool2DLayer, InverseLayer, Pool2DLayer
-from myClasses import Deconv2DLayer
+from lasagne.layers import (InputLayer, ConcatLayer, Pool2DLayer, ReshapeLayer, DimshuffleLayer, NonlinearityLayer,
+                            DropoutLayer, Deconv2DLayer, batch_norm)
+from lasagne.layers import Conv2DLayer as ConvLayer
+from lasagne.init import HeNormal
+#from myClasses import Deconv2DLayer
 
 
 #imports all image names from a specific path and turns them into numpy arrays,
@@ -700,6 +704,173 @@ def createNN(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learnin
 	numpy.savez('model.npz', *lasagne.layers.get_all_param_values(net['output']))
 	return get_preds
 
+#creates a convolutional neural network
+def createUnet(data_size, X, Y, valX, valY, epochs, n_batches, batch_size, learning_rate, w_decay):
+
+	#creating symbolic variables for input and output
+	input_var = T.tensor4('input')
+	target_var = T.tensor4('targets')
+	#initialising an empty network
+	net = {}
+	base_n_filters=64
+	do_dropout=True
+	nonlinearity=lasagne.nonlinearities.rectify
+	pad='same'
+
+	#Input layer:
+	net['input'] = InputLayer(data_size, input_var=input_var)
+
+	net['contr_1_1'] = batch_norm(ConvLayer(net['input'], base_n_filters, 3, nonlinearity=nonlinearity, pad=pad))
+	net['contr_1_2'] = batch_norm(ConvLayer(net['contr_1_1'], base_n_filters, 3, nonlinearity=nonlinearity, pad=pad))
+	net['pool1'] = Pool2DLayer(net['contr_1_2'], 2)
+
+	net['contr_2_1'] = batch_norm(ConvLayer(net['pool1'], base_n_filters*2, 3, nonlinearity=nonlinearity, pad=pad))
+	net['contr_2_2'] = batch_norm(ConvLayer(net['contr_2_1'], base_n_filters*2, 3, nonlinearity=nonlinearity, pad=pad))
+	net['pool2'] = Pool2DLayer(net['contr_2_2'], 2)
+
+	net['contr_3_1'] = batch_norm(ConvLayer(net['pool2'], base_n_filters*4, 3, nonlinearity=nonlinearity, pad=pad))
+	net['contr_3_2'] = batch_norm(ConvLayer(net['contr_3_1'], base_n_filters*4, 3, nonlinearity=nonlinearity, pad=pad))
+	net['pool3'] = Pool2DLayer(net['contr_3_2'], 2)
+
+	net['contr_4_1'] = batch_norm(ConvLayer(net['pool3'], base_n_filters*8, 3, nonlinearity=nonlinearity, pad=pad))
+	net['contr_4_2'] = batch_norm(ConvLayer(net['contr_4_1'], base_n_filters*8, 3, nonlinearity=nonlinearity, pad=pad))
+	l = net['pool4'] = Pool2DLayer(net['contr_4_2'], 2)
+	# the paper does not really describe where and how dropout is added. Feel free to try more options
+	if do_dropout:
+		l = DropoutLayer(l, p=0.1)
+
+	net['encode_1'] = batch_norm(ConvLayer(l, base_n_filters*16, 3, nonlinearity=nonlinearity, pad=pad))
+	net['encode_2'] = batch_norm(ConvLayer(net['encode_1'], base_n_filters*16, 3, nonlinearity=nonlinearity, pad=pad))
+	net['upscale1'] = batch_norm(Deconv2DLayer(net['encode_2'], base_n_filters*16, 2, 2, crop="valid", nonlinearity=nonlinearity))
+
+	net['concat1'] = ConcatLayer([net['upscale1'], net['contr_4_2']], cropping=(None, None, "center", "center"))
+	net['expand_1_1'] = batch_norm(ConvLayer(net['concat1'], base_n_filters*8, 3, nonlinearity=nonlinearity, pad=pad))
+	net['expand_1_2'] = batch_norm(ConvLayer(net['expand_1_1'], base_n_filters*8, 3, nonlinearity=nonlinearity, pad=pad))
+	net['upscale2'] = batch_norm(Deconv2DLayer(net['expand_1_2'], base_n_filters*8, 2, 2, crop="valid", nonlinearity=nonlinearity))
+
+	net['concat2'] = ConcatLayer([net['upscale2'], net['contr_3_2']], cropping=(None, None, "center", "center"))
+	net['expand_2_1'] = batch_norm(ConvLayer(net['concat2'], base_n_filters*4, 3, nonlinearity=nonlinearity, pad=pad))
+	net['expand_2_2'] = batch_norm(ConvLayer(net['expand_2_1'], base_n_filters*4, 3, nonlinearity=nonlinearity, pad=pad))
+	net['upscale3'] = batch_norm(Deconv2DLayer(net['expand_2_2'], base_n_filters*4, 2, 2, crop="valid", nonlinearity=nonlinearity))
+
+	net['concat3'] = ConcatLayer([net['upscale3'], net['contr_2_2']], cropping=(None, None, "center", "center"))
+	net['expand_3_1'] = batch_norm(ConvLayer(net['concat3'], base_n_filters*2, 3, nonlinearity=nonlinearity, pad=pad))
+	net['expand_3_2'] = batch_norm(Deconv2DLayer(net['expand_3_1'], base_n_filters*2, 3, nonlinearity=nonlinearity))#, pad=pad))
+	net['upscale4'] = batch_norm(Deconv2DLayer(net['expand_3_2'], base_n_filters*2, 2, 2, crop="valid", nonlinearity=nonlinearity))
+
+	net['concat4'] = ConcatLayer([net['upscale4'], net['contr_1_2']], cropping=(None, None, "center", "center"))
+	net['expand_4_1'] = batch_norm(Deconv2DLayer(net['concat4'], base_n_filters, 3, nonlinearity=nonlinearity))#, pad=pad))
+	net['expand_4_2'] = batch_norm(Deconv2DLayer(net['expand_4_1'], base_n_filters, 3, nonlinearity=nonlinearity))#, pad=pad))
+
+	net['output'] = batch_norm(Deconv2DLayer(net['expand_4_2'], 1, 2, nonlinearity=lasagne.nonlinearities.sigmoid))
+
+
+
+	print('--------------------')
+	print('Network architecture: \n')
+
+	#get all layers
+	allLayers=lasagne.layers.get_all_layers(net['output'])
+	#for each layer print its shape information
+	for l in allLayers:
+		print(lasagne.layers.get_output_shape(l))
+
+
+	#print the total number of trainable parameters of the network
+	print('\nThe total number of trainable parameters is %d' % (lasagne.layers.count_params(net['output'])))
+	print('\nTraining on %d images' % (X.shape[0]))
+
+	#with np.load('model.npz') as f:
+	#	param_values = [f['arr_%d' % i] for i in range(len(f.files))]
+
+	#lasagne.layers.set_all_param_values(net['output'], param_values)
+
+	myNet=net['output']
+
+	lr = learning_rate
+	weight_decay = w_decay
+
+	#define how to get the prediction of the network
+	prediction = lasagne.layers.get_output(myNet)
+
+	#define the cost function
+	#loss = lasagne.objectives.squared_error(prediction, target_var)
+	#loss = loss.mean()
+	loss = myCrossEntropy(prediction, target_var)
+	loss = loss.mean()
+	#also add weight decay to the cost function
+	weightsl2 = lasagne.regularization.regularize_network_params(myNet, lasagne.regularization.l2)
+	loss += weight_decay * weightsl2
+
+	#get all the trainable parameters of the network
+	params = lasagne.layers.get_all_params(myNet, trainable=True)
+
+	#define the update function for each training step
+	updates = lasagne.updates.adam(loss, params, learning_rate=lr)
+
+	#compile a train function
+	train_fn = theano.function([input_var, target_var], loss, updates=updates)
+
+ 	#defining same things for testing
+	##"deterministic=True" disables stochastic behaviour, such as dropout
+	test_prediction = lasagne.layers.get_output(myNet, deterministic=True)
+	test_loss = myCrossEntropy(test_prediction, target_var)
+	test_loss = test_loss.mean()
+	test_acc = T.mean(T.eq(T.argmax(test_prediction, axis=1), target_var),dtype=theano.config.floatX)
+
+	#compile a theano validation function
+	val_fn = theano.function([input_var, target_var], test_loss)
+
+	#compile a theano function to make predictions with the network
+	get_preds = theano.function([input_var], test_prediction)
+
+	####### the actual training ########
+	print('--------------------')
+	#get the number of training examples
+	n_examples = X.shape[0]
+
+	start_time = time.time()
+
+	cost_history=[]
+
+	#for each epoch train for all the batches
+	for epoch in xrange(epochs):
+		epoch_time_start=time.time()
+		batch_cost_history=[]
+
+		#for each batch train and update the weights
+		for batch in xrange(n_batches):
+			x_batch = X[batch*batch_size: (batch+1) * batch_size]
+			y_batch = Y[batch*batch_size: (batch+1) * batch_size]
+
+			this_cost = train_fn(x_batch, y_batch)
+
+			batch_cost_history.append(this_cost)
+
+		epoch_cost = np.mean(batch_cost_history)
+		cost_history.append(epoch_cost)
+
+		#spliting the calculation of the test loss to half, so that it does not waste much memory
+		test_cost=0
+		for i in xrange(valX.shape[0]):
+			test_cost+=val_fn(np.reshape(valX[i,:,:,:], (1,1,valX.shape[2],valX.shape[3])),np.reshape(valY[i,:,:,:],(1,1,valY.shape[2],valY.shape[3])))
+		test_cost = np.float32(test_cost/valX.shape[0])
+		epoch_time_end = time.time()
+		print('Epoch %d/%d, train error: %f, val error: %f. Elapsed time: %.2f s' % (epoch+1, epochs, epoch_cost, test_cost, epoch_time_end-epoch_time_start))
+
+	end_time = time.time()
+	print('Training completed in %.2f seconds.' % (end_time - start_time))
+
+
+	#for each layer print the resulted filters
+	#for l in range(1, len(allLayers)):
+	#	if isinstance(allLayers[l], Conv2DLayer):
+	#		visualize.plot_conv_weights(allLayers[l])
+
+
+	numpy.savez('model.npz', *lasagne.layers.get_all_param_values(net['output']))
+	return get_preds
+
 
 def createPretrainedNN(data_size):
 
@@ -945,9 +1116,9 @@ def myCrossEntropy(predictions, targets):
 
 	r=np.float32(0.80)
 
-	#myFactor=T.sum(predictions>0.1)/T.sum(predictions<2.0)
+	#myFactor=T.sum(predictions>0.3 and predictions<0.7)/T.sum(predictions<2.0)
 
-	return -1*targets*T.log(predictions)*0.05+(-1)*(1-targets)*T.log(1-predictions)*1.0
+	return -1*targets*T.log(predictions)*1.0+(-1)*(1-targets)*T.log(1-predictions)*0.5
 
 
 def myTestCrossEntropy(predictions, targets):
